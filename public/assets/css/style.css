@@ -553,12 +553,3 @@ video {
 [hidden]:where(:not([hidden="until-found"])) {
   display: none;
 }
-
-.font-Mont {
-  font-family: Montserrat, sans-serif;
-}
-
-.text-9xl {
-  font-size: 8rem;
-  line-height: 1;
-}
