@@ -8,6 +8,27 @@
 </head>
 <body>
 
+    <header class="w-full pt-1 h-fit">
+        <nav class="flex flex-row items-center justify-between px-2 py-2 pt-2 lg:px-12">
+            <img class="pl-2 w-36" src="assets/images/logo.png" alt="COMPANY LOGO">
+            <ul class="items-center justify-between hidden gap-8 pr-20 text-lg lg:flex">
+                <li><a class="navItem" href="#">HOME</a></li>
+                <li><a class="navItem" href="#">ABOUT</a></li>
+                <li><a class="navItem" href="#">SERVICES</a></li>
+                <li><a class="navItem" href="#">FAQ</a></li>
+                <li><a class="navItem" href="#">CONTACT</a></li>
+            </ul>
+            
+            <div class="flex justify-between gap-4 ">
+                <div class="relative flex items-center cursor-pointer">
+                    <span class="icon-[iconoir--bag] text-black text-3xl hover:text-lBrown active:text-dBrown transition-all" ></span>
+                    <div class="absolute right-0 flex items-center justify-center w-5 h-5 rounded-full top-3 bg-lBrown font-Mont">0</div>
+                </div>
+                <span class="icon-[iconamoon--menu-burger-horizontal] cursor-pointer text-black text-3xl lg:hidden hover:text-lBrown active:text-dBrown"></span>
+            </div>
+        </nav>
+    </header>
+
     <div class="pt-20 px-4">
         <!-- Search Sort & Filter Bar -->
         <div class="flex flex-col md:flex-row justify-around items-center gap-4 md:gap-0">
@@ -29,27 +50,11 @@
     </div>
 
     <!-- Product cards Container -->
-    <div class="container max-w-full mx-auto justify-between grid grid-cols-1 gap-20 sm:grid-cols-2 md:grid-cols-3 mt-8 px-4 md:px-0">
-        <!-- Card 1 -->
-        <div class="flex flex-col bg-white rounded-lg p-4 hover:shadow-lg transition-shadow duration-300 max-w-xs mx-auto">
-            <img src="assets/images/Products/Beds/bed 1/1.png" class="bg-whiteGrey p-2" alt="Product Image">
-            <div class="flex flex-col mt-4">
-                <div class="reviews flex gap-1 items-center">
-                    <div class="flex">
-                        <span class="icon-[ri--star-fill] text-lBrown w-3"></span>
-                        <span class="icon-[ri--star-fill] text-lBrown w-3"></span>
-                        <span class="icon-[ri--star-fill] text-lBrown w-3"></span>
-                        <span class="icon-[ri--star-fill] text-lBrown w-3"></span>
-                        <span class="icon-[ri--star-fill] text-lBrown w-3"></span>
-                    </div>
-                    <p class="text-SoftGray text-sm">(Reviews)</p>
-                    <p class="text-lBrown text-sm ml-auto">$250</p>
-                </div>
-                <p class="text-lg font-semibold mt-2">Lorem Ipsum</p>
-                <button class="bg-lBrown text-white py-1 rounded mt-2 border-2 border-transparent hover:bg-white hover:border-lBrown hover:text-lBrown transition-all duration-300">SEE DETAILS</button>
-            </div>
-        </div>
-
+    <div id="card" class="container max-w-full mx-auto justify-between grid grid-cols-1 gap-20 sm:grid-cols-2 md:grid-cols-3 mt-8 px-4 md:px-0">
     </div>
+    </div>
+
+
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>

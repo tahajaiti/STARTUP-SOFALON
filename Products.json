@@ -1,0 +1,56 @@
+{
+    "products": [
+      {
+        "Beds": [
+          {
+            "mainImage": "assets/images/Products/Beds/bed1/1.png",
+            "images": [
+              "assets/images/Products/Beds/bed1/2.jpg",
+              "assets/images/Products/Beds/bed1/3.jpg"
+            ],
+            "title": "KLEPPSTAD",
+            "price": "$ 250"
+          },
+          {
+            "mainImage": "assets/images/Products/Beds/bed2/1.png",
+            "images": [
+              "assets/images/Products/Beds/bed2/2.jpg",
+              "assets/images/Products/Beds/bed2/3.jpg"
+            ],
+            "title": "SONGESAND",
+            "price": "$ 350"
+          },
+          {
+            "mainImage": "assets/images/Products/Beds/bed3/1.png",
+            "images": [
+              "assets/images/Products/Beds/bed3/2.jpg",
+              "assets/images/Products/Beds/bed3/3.jpg"
+            ],
+            "title": "GLAMBERGET",
+            "price": "$ 150"
+          },
+          {
+            "mainImage": "assets/images/Products/Beds/bed4/1.png",
+            "images": [
+              "assets/images/Products/Beds/bed4/2.jpg",
+              "assets/images/Products/Beds/bed4/3.jpg"
+            ],
+            "title": "RAMNEFJÄLL",
+            "price": "$ 450"
+          }
+        ],
+        "Chairs": [
+          {
+            "mainImage": "assets/images/Products/Chairs/chair1/1.png",
+            "images": [
+              "assets/images/Products/Chairs/chair1/2.jpg",
+              "assets/images/Products/Chairs/chair1/3.jpg"
+            ],
+            "title": "LIVELY",
+            "price": "$ 100"
+          }
+        ]
+      }
+    ]
+  }
+  
