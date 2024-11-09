@@ -6,8 +6,101 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Document</title>
 </head>
-<body>
-    <span class="icon-[line-md--search-filled] text-black text-4xl"></span>
+<body class="font-Mont">
+    
+    <header class="w-full pt-1 h-fit">
+        <nav class="flex flex-row items-center justify-between px-2 py-2 pt-2 lg:px-12">
+            <img class="pl-2 w-36" src="assets/images/logo.png" alt="COMPANY LOGO">
+            <ul class="items-center justify-between hidden gap-8 pr-20 text-lg lg:flex">
+                <li><a class="navItem" href="#">HOME</a></li>
+                <li><a class="navItem" href="#">ABOUT</a></li>
+                <li><a class="navItem" href="#">SERVICES</a></li>
+                <li><a class="navItem" href="#">FAQ</a></li>
+                <li><a class="navItem" href="#">CONTACT</a></li>
+            </ul>
+            
+            <div class="flex justify-between gap-4 ">
+                <div class="relative flex items-center cursor-pointer">
+                    <span class="icon-[iconoir--bag] text-black text-3xl hover:text-lBrown active:text-dBrown transition-all" ></span>
+                    <div class="absolute right-0 flex items-center justify-center w-5 h-5 rounded-full top-3 bg-lBrown font-Mont">0</div>
+                </div>
+                <span class="icon-[iconamoon--menu-burger-horizontal] cursor-pointer text-black text-3xl lg:hidden hover:text-lBrown active:text-dBrown"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- carousel -->
+        <section class="carousel h-screen flex relative">
+            <div class="cContainer">
+                <h1 class="before:bg-lBrown before:w-1 before:h-6 inline-block before:block before:absolute before:left-1 lg:text-xl text-lg">SOFALO Furniture</h1>
+                <h2 class="lg:text-6xl text-dBrown text-3xl font-extrabold italic tracking-widest max-w-1 ">NEW COLLECTION</h2>
+                <a href="#" class="text-center bg-lBrown px-16 py-2 text-white rounded-sm">SHOP NOW</a>
+            </div>
+            <img class="absolute -z-10 h-fit w-fit top-0" src="assets/images/homeslides/slide1.jpg" alt="">
+        </section>
+        <!--  -->
+
+        <!-- hot products -->
+        <section class="flex flex-col justify-center m-auto items-center border mt-44 w-[80%]">
+            <h2 class="productHeading">HOT PRODUCTS</h2>
+
+            <div class="flex justify-around items-center w-screen my-10">
+
+                <div class="w-60 h-fit flex flex-col bg-gray-100 hover:bg-slate-200 hover:scale-105 transition-all cursor-pointer">
+                    <img class="w-fit" src="assets/images/Products/Beds/bed 3/1.png" alt="">
+                    <p class="flex justify-center text-xl font-normal tracking-wide">Lorem ipsum</p>
+                    <div class="flex justify-between">
+                        <div class="flex justify-start items-center">
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <p class="text-slate-400 pl-2">(reviews)</p>
+                        </div>
+                        <p class="text-lBrown pr-2 text-xl">$99</p>
+                    </div>
+                </div>
+
+                <div class="w-60 h-fit flex flex-col bg-gray-100 hover:bg-slate-200 hover:scale-105 transition-all cursor-pointer">
+                    <img src="assets/images/Products/Beds/bed 3/1.png" alt="">
+                    <p class="flex justify-center text-xl font-normal tracking-wide">Lorem ipsum</p>
+                    <div class="flex justify-between">
+                        <div class="flex justify-start items-center">
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <p class="text-slate-400 pl-2">(reviews)</p>
+                        </div>
+                        <p class="text-lBrown pr-2 text-xl">$99</p>
+                    </div>
+                </div>
+
+                <div class="w-60 h-fit flex flex-col bg-gray-100 hover:bg-slate-200 hover:scale-105 transition-all cursor-pointer">
+                    <img src="assets/images/Products/Beds/bed 3/1.png" alt="">
+                    <p class="flex justify-center text-xl font-normal tracking-wide">Lorem ipsum</p>
+                    <div class="flex justify-between">
+                        <div class="flex justify-start items-center">
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <p class="text-slate-400 pl-2">(reviews)</p>
+                        </div>
+                        <p class="text-lBrown pr-2 text-xl">$99</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+
 
 </body>
 </html>

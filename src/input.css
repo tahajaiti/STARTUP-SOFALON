@@ -3,3 +3,15 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@layer components{
+    .navItem{
+        @apply tracking-widest transition-all hover:text-lBrown active:text-dBrown;
+    }
+    .cContainer{
+        @apply 2xl:top-72 xl:scale-100 xl:left-48 xl:top-56 lg:top-36 lg:left-5 sm:top-24 sm:scale-75 scale-50 left-0 flex absolute flex-col gap-3 p-2 justify-center items-start transition-all;
+    }
+    .productHeading{
+        @apply before:bg-lBrown before:bottom-0 before:w-full before:h-1.5 before:transition-all transition-all before:left-0 before:block before:absolute relative inline-block p-2 text-4xl;
+    }   
+}

@@ -5,5 +5,8 @@
   },
   "dependencies": {
     "@iconify/json": "^2.2.269"
+  },
+  "scripts": {
+    "dev": "npx tailwindcss -i ./input.css -o ./assets/css/style.css --watch"
   }
 }
