@@ -12,8 +12,8 @@ module.exports = {
         lBrown: "#DDA15E",
         dBrown: "#AA6122",
       },
-      fontFamily: {Mont: ["Montserrat", "sans-serif",]},
+      fontFamily: { Mont: ["Montserrat", "sans-serif"] },
     },
   },
-  plugins: [addDynamicIconSelectors(),],
+  plugins: [addDynamicIconSelectors()],
 };

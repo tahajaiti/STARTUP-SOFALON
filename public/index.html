@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Document</title>
 </head>
+
 <body class="font-Mont">
-    
+
     <header class="w-full pt-1 h-fit">
         <nav class="flex flex-row items-center justify-between px-2 py-2 pt-2 lg:px-12">
             <img class="pl-2 w-36" src="assets/images/logo.png" alt="COMPANY LOGO">
@@ -18,39 +20,48 @@
                 <li><a class="navItem" href="#">FAQ</a></li>
                 <li><a class="navItem" href="#">CONTACT</a></li>
             </ul>
-            
+
             <div class="flex justify-between gap-4 ">
                 <div class="relative flex items-center cursor-pointer">
-                    <span class="icon-[iconoir--bag] text-black text-3xl hover:text-lBrown active:text-dBrown transition-all" ></span>
-                    <div class="absolute right-0 flex items-center justify-center w-5 h-5 rounded-full top-3 bg-lBrown font-Mont">0</div>
+                    <span
+                        class="icon-[iconoir--bag] text-black text-3xl hover:text-lBrown active:text-dBrown transition-all"></span>
+                    <div
+                        class="absolute right-0 flex items-center justify-center w-5 h-5 rounded-full top-3 bg-lBrown font-Mont">
+                        0</div>
                 </div>
-                <span class="icon-[iconamoon--menu-burger-horizontal] cursor-pointer text-black text-3xl lg:hidden hover:text-lBrown active:text-dBrown"></span>
+                <span
+                    class="icon-[iconamoon--menu-burger-horizontal] cursor-pointer text-black text-3xl lg:hidden hover:text-lBrown active:text-dBrown"></span>
             </div>
         </nav>
     </header>
 
-    <main>
+    <main class="flex flex-col gap-5 h-screen">
 
         <!-- carousel -->
-        <section class="carousel h-screen flex relative">
-            <div class="cContainer">
-                <h1 class="before:bg-lBrown before:w-1 before:h-6 inline-block before:block before:absolute before:left-1 lg:text-xl text-lg">SOFALO Furniture</h1>
-                <h2 class="lg:text-6xl text-dBrown text-3xl font-extrabold italic tracking-widest max-w-1 ">NEW COLLECTION</h2>
-                <a href="#" class="text-center bg-lBrown px-16 py-2 text-white rounded-sm">SHOP NOW</a>
+        <section class="h-400px relative max-w-full ">
+            <img class="flex self-center h-fit -z-50" src="assets/images/homeslides/slide1.jpg" alt="">
+            <div class="homeInfo">
+                <h1
+                    class="pl-1 before:left-0 before:w-1 before:h-full before:absolute before:block before:bg-lBrown text-2xl relative inline-block">
+                    SOFALO Furnitures</h1>
+                <h2 class="text-dBrown tracking-widest italic font-extrabold text-4xl lg:text-6xl max-w-1">NEW
+                    COLLECTION</h2>
+                <a class="active:opacity-50 active:scale-95 transition-all drop-shadow-lg hover:scale-105 hover:bg-white hover:text-lBrown text-xl w-full bg-lBrown rounded text-white text-center"
+                    href="#">SHOP NOW</a>
             </div>
-            <img class="absolute -z-10 h-fit w-fit top-0" src="assets/images/homeslides/slide1.jpg" alt="">
         </section>
         <!--  -->
 
         <!-- hot products -->
-        <section class="flex flex-col justify-center m-auto items-center border mt-44">
+        <section class="flex flex-col justify-center m-auto items-center">
             <h2 class="productHeading">HOT PRODUCTS</h2>
 
             <!-- container -->
-            <div class="flex justify-around items-center w-full my-10">
+            <div class="flex flex-col md:flex-row justify-evenly items-center w-full my-10">
 
                 <!-- card -->
-                <div class="w-fit h-fit flex flex-col drop-shadow-sm border scale-75 bg-whittt hover:bg-gray-100 hover:scale-[0.8] transition-all cursor-pointer">
+                <div
+                    class="homeCard">
                     <img class="w-full self-center" src="assets/images/Products/Beds/bed 3/1.png" alt="">
                     <p class="flex justify-center text-2xl font-normal tracking-widest">Lorem ipsum</p>
                     <div class="flex justify-between w-full">
@@ -67,7 +78,8 @@
                 </div>
 
                 <!-- card -->
-                <div class="w-fit h-fit flex flex-col drop-shadow-sm border scale-75 bg-whittt hover:bg-gray-100 hover:scale-[0.8] transition-all cursor-pointer">
+                <div
+                    class="homeCard">
                     <img class="w-full self-center" src="assets/images/Products/Beds/bed 3/1.png" alt="">
                     <p class="flex justify-center text-2xl font-normal tracking-widest">Lorem ipsum</p>
                     <div class="flex justify-between w-full">
@@ -84,7 +96,8 @@
                 </div>
 
                 <!-- card -->
-                <div class="w-fit h-fit flex flex-col drop-shadow-sm border scale-75 bg-whittt hover:bg-gray-100 hover:scale-[0.8] transition-all cursor-pointer">
+                <div
+                    class="homeCard">
                     <img class="w-full self-center" src="assets/images/Products/Beds/bed 3/1.png" alt="">
                     <p class="flex justify-center text-2xl font-normal tracking-widest">Lorem ipsum</p>
                     <div class="flex justify-between w-full">
@@ -99,13 +112,141 @@
                         <p class="text-lBrown pr-2 text-2xl">$99</p>
                     </div>
                 </div>
-                
+
             </div>
         </section>
 
+        <!-- new products -->
+        <section class="flex flex-col justify-center m-auto items-center">
+            <h2 class="productHeading">NEW PRODUCTS</h2>
+
+            <!-- container -->
+            <div class="flex flex-col md:flex-row justify-evenly items-center w-full my-10">
+
+                <!-- card -->
+                <div
+                    class="homeCard">
+                    <img class="w-full self-center" src="assets/images/Products/Beds/bed 3/1.png" alt="">
+                    <p class="flex justify-center text-2xl font-normal tracking-widest">Lorem ipsum</p>
+                    <div class="flex justify-between w-full">
+                        <div class="flex justify-start items-center">
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <p class="text-slate-400 pl-2">(reviews)</p>
+                        </div>
+                        <p class="text-lBrown pr-2 text-2xl">$99</p>
+                    </div>
+                </div>
+
+                <!-- card -->
+                <div
+                    class="homeCard">
+                    <img class="w-full self-center" src="assets/images/Products/Beds/bed 3/1.png" alt="">
+                    <p class="flex justify-center text-2xl font-normal tracking-widest">Lorem ipsum</p>
+                    <div class="flex justify-between w-full">
+                        <div class="flex justify-start items-center">
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <p class="text-slate-400 pl-2">(reviews)</p>
+                        </div>
+                        <p class="text-lBrown pr-2 text-2xl">$99</p>
+                    </div>
+                </div>
+
+                <!-- card -->
+                <div
+                    class="homeCard">
+                    <img class="w-full self-center" src="assets/images/Products/Beds/bed 3/1.png" alt="">
+                    <p class="flex justify-center text-2xl font-normal tracking-widest">Lorem ipsum</p>
+                    <div class="flex justify-between w-full">
+                        <div class="flex justify-start items-center">
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <p class="text-slate-400 pl-2">(reviews)</p>
+                        </div>
+                        <p class="text-lBrown pr-2 text-2xl">$99</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- category -->
+        <section class="text-3xl m-auto flex justify-center flex-col">
+            <h2>SHOP BY <span class="text-lBrown">CATEGORY</span></h2>
+            <h3 class="text-xl border-b-2 border-lBrown w-fit"><span class="text-lBrown">5 </span>CATEGORIES</h3>
+
+            <!-- container -->
+            <div class="flex flex-wrap flex-col md:flex-row gap-16 md:gap-32 justify-evenly items-center w-full my-10">
+
+                <!-- card -->
+                <div class="catCard">
+                    <span class="icon-[material-symbols-light--bed] text-[10rem]"></span>
+                    <h4 class="text-xl text-center text-gray-400">BEDS</h4>
+                </div>
+
+                <!--card  -->
+                <div class="catCard">
+                    <span class="icon-[material-symbols-light--data-table-outline] text-[10rem]"></span>
+                    <h4 class="text-xl text-center text-gray-400">STORAGE</h4>
+                </div>
+
+                <!--card  -->
+                <div class="catCard">
+                    <span class="icon-[material-symbols-light--kitchen-outline] text-[10rem]"></span>
+                    <h4 class="text-xl text-center text-gray-400">KITCHENWARE</h4>
+                </div>
+
+                <!--card  -->
+                <div class="catCard">
+                    <span class="icon-[material-symbols-light--table-bar-outline] text-[10rem]"></span>
+                    <h4 class="text-xl text-center text-gray-400">TABLES</h4>
+                </div>
+
+                <!--card  -->
+                <div class="catCard">
+                    <span class="icon-[material-symbols-light--potted-plant-outline] text-[10rem]"></span>
+                    <h4 class="text-xl text-center text-gray-400">DECORATION</h4>
+                </div>
+            </div>
+        </section>
+
+        <!-- footer -->
+        <footer class="flex flex-row justify-between px-10">
+            <!-- home -->
+             <div class="flex flex-col text-gray-400 gap-2">
+                <h2 class="text-2xl text-black border-b-2 border-black font-bold text-left">HOME</h2>
+                <p>Assembly Guides</p>
+                <p>Furniture Packages</p>
+                <p>Hot Products</p>
+                <p>New Designs</p>
+             </div>
+
+             <!-- about -->
+             <div class="flex flex-col text-gray-400 gap-2">
+                <h2 class="text-2xl text-black border-b-2 border-black font-bold text-left">
+                    ABOUT</h2>
+                <p>Trade Program</p>
+                <p>Gift Cards</p>
+                <p>About us</p>
+                <p>Who Are We</p>
+             </div>
+
+             div class="flex flex-col">
+                <img class="w-1/2" src="assets/images/logo.png" alt="">
+            </div>
+
+        </footer>
     </main>
-    
-
-
 </body>
+
 </html>

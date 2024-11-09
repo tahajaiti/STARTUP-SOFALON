@@ -8,10 +8,17 @@
     .navItem{
         @apply tracking-widest transition-all hover:text-lBrown active:text-dBrown;
     }
-    .cContainer{
-        @apply 2xl:top-72 xl:scale-100 xl:left-48 xl:top-56 lg:top-36 lg:left-5 sm:top-24 sm:scale-75 scale-50 left-0 flex absolute flex-col gap-3 p-2 justify-center items-start transition-all;
-    }
     .productHeading{
-        @apply before:bg-lBrown before:bottom-0 before:w-full before:h-1.5 before:transition-all transition-all before:left-0 before:block before:absolute relative inline-block p-2 text-4xl;
+        @apply border-b-2 border-lBrown py-2 text-4xl;
     }   
+    .homeInfo{
+        @apply 2xl:left-72 2xl:scale-110 2xl:top-96 lg:left-44 lg:top-64 lg:scale-100 md:top-44 md:scale-90 sm:top-28 sm:scale-75 scale-[0.6] absolute left-0 top-3 gap-5 flex items-start justify-start flex-col transition-all;
+    }
+    .catCard{
+        @apply bg-whittt hover:text-lBrown hover:scale-105 hover:bg-gray-100 transition-all cursor-pointer drop-shadow-xl px-2 active:scale-95 active:opacity-50 w-fit h-fit;
+    }
+    .homeCard{
+        @apply w-fit h-fit flex flex-col rounded-md backdrop:drop-shadow-xl border scale-75 bg-whittt hover:bg-gray-100 hover:scale-[0.8] transition-all cursor-pointer;
+    }
 }
+
