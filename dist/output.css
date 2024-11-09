@@ -598,8 +598,9 @@ video {
   top: 0.75rem;
 }
 
-.m-10 {
-  margin: 2.5rem;
+.mx-9 {
+  margin-left: 2.25rem;
+  margin-right: 2.25rem;
 }
 
 .my-20 {
@@ -607,9 +608,12 @@ video {
   margin-bottom: 5rem;
 }
 
-.mx-9 {
-  margin-left: 2.25rem;
-  margin-right: 2.25rem;
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
 }
 
 .mb-5 {
@@ -618,18 +622,6 @@ video {
 
 .mb-9 {
   margin-bottom: 2.25rem;
-}
-
-.me-9 {
-  margin-inline-end: 2.25rem;
-}
-
-.mb-4 {
-  margin-bottom: 1rem;
-}
-
-.mb-10 {
-  margin-bottom: 2.5rem;
 }
 
 .block {
@@ -688,10 +680,6 @@ video {
   height: 70%;
 }
 
-.h-\[800px\] {
-  height: 800px;
-}
-
 .h-\[90\%\] {
   height: 90%;
 }
@@ -707,10 +695,6 @@ video {
 
 .h-svh {
   height: 100svh;
-}
-
-.h-9 {
-  height: 2.25rem;
 }
 
 .w-1\/2 {
@@ -833,10 +817,6 @@ video {
   border-radius: 9999px;
 }
 
-.rounded-lg {
-  border-radius: 0.5rem;
-}
-
 .rounded-xl {
   border-radius: 0.75rem;
 }
@@ -844,11 +824,6 @@ video {
 .rounded-e-full {
   border-start-end-radius: 9999px;
   border-end-end-radius: 9999px;
-}
-
-.rounded-e-lg {
-  border-start-end-radius: 0.5rem;
-  border-end-end-radius: 0.5rem;
 }
 
 .border {
@@ -863,32 +838,14 @@ video {
   border-width: 4px;
 }
 
-.border-y-4 {
-  border-top-width: 4px;
-  border-bottom-width: 4px;
-}
-
-.border-y {
-  border-top-width: 1px;
-  border-bottom-width: 1px;
-}
-
-.border-x {
-  border-left-width: 1px;
-  border-right-width: 1px;
-}
-
 .border-x-4 {
   border-left-width: 4px;
   border-right-width: 4px;
 }
 
-.border-e-4 {
-  border-inline-end-width: 4px;
-}
-
-.border-b {
-  border-bottom-width: 1px;
+.border-y-4 {
+  border-top-width: 4px;
+  border-bottom-width: 4px;
 }
 
 .border-b-4 {
@@ -900,29 +857,19 @@ video {
   border-color: rgb(170 97 34 / var(--tw-border-opacity));
 }
 
-.border-lBrown {
-  --tw-border-opacity: 1;
-  border-color: rgb(221 161 94 / var(--tw-border-opacity));
-}
-
-.border-dark {
-  --tw-border-opacity: 1;
-  border-color: rgb(35 32 32 / var(--tw-border-opacity));
-}
-
 .border-gray {
   --tw-border-opacity: 1;
   border-color: rgb(54 53 55 / var(--tw-border-opacity));
 }
 
+.border-lBrown {
+  --tw-border-opacity: 1;
+  border-color: rgb(221 161 94 / var(--tw-border-opacity));
+}
+
 .bg-lBrown {
   --tw-bg-opacity: 1;
   background-color: rgb(221 161 94 / var(--tw-bg-opacity));
-}
-
-.bg-dark {
-  --tw-bg-opacity: 1;
-  background-color: rgb(35 32 32 / var(--tw-bg-opacity));
 }
 
 .px-2 {
