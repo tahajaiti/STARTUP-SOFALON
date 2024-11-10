@@ -32,23 +32,22 @@ const showSlide = () => {
         newContentTl.set(newContent, {
             x: -10000,
             scale: 5,
-            skewX: 25,
-            filter: "blur(10px)",
-        })
-        .to(newContent, {
-            x: 100,
-            scale: 1,
-            skewX: 0,
-            delay: 0.25,
-            duration: 0.5,
-            ease: 'ease.in',
+            skewX: 100,
+            filter: "blur(5px)",
         })
         .to(newContent, {
             x: 0,
-            duration: 0.35,
+            scale: 1,
+            skewX: 0,
+            delay: 0.5,
+            duration: 0.2,
+            ease: 'elastic',
+        })
+        .to(newContent, {
+            duration: 0.1,
             filter: "blur(0px)",
-            ease: 'ease.in',
-        });
+            ease: 'ease',
+        }),"<";
 
         const newImgTl = gsap.timeline();
         newImgTl.set(newImg, {
