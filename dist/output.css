@@ -598,26 +598,6 @@ video {
   top: 0.75rem;
 }
 
-.right-\[\] {
-  right: ;
-}
-
-.right-\[50\%\] {
-  right: 50%;
-}
-
-.left-\[50\%\] {
-  left: 50%;
-}
-
-.left-\[0\] {
-  left: 0;
-}
-
-.left-0 {
-  left: 0px;
-}
-
 .mx-9 {
   margin-left: 2.25rem;
   margin-right: 2.25rem;
@@ -642,14 +622,6 @@ video {
 
 .mb-9 {
   margin-bottom: 2.25rem;
-}
-
-.mr-10 {
-  margin-right: 2.5rem;
-}
-
-.ml-10 {
-  margin-left: 2.5rem;
 }
 
 .block {
@@ -698,10 +670,6 @@ video {
 
 .h-\[100\%\] {
   height: 100%;
-}
-
-.h-\[592px\] {
-  height: 592px;
 }
 
 .h-\[70\%\] {
@@ -753,10 +721,6 @@ video {
   width: 1.25rem;
 }
 
-.w-\[1380px\] {
-  width: 1380px;
-}
-
 .w-\[2\%\] {
   width: 2%;
 }
@@ -769,17 +733,13 @@ video {
   width: 90%;
 }
 
-.w-full {
-  width: 100%;
-}
-
 .w-fit {
   width: -moz-fit-content;
   width: fit-content;
 }
 
-.max-w-full {
-  max-width: 100%;
+.w-full {
+  width: 100%;
 }
 
 .cursor-pointer {
@@ -788,10 +748,6 @@ video {
 
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.grid-rows-6 {
-  grid-template-rows: repeat(6, minmax(0, 1fr));
 }
 
 .flex-row {
@@ -951,24 +907,17 @@ video {
   padding-top: 1.25rem;
 }
 
-.pb-10 {
-  padding-bottom: 2.5rem;
-}
-
-.pr-14 {
-  padding-right: 3.5rem;
-}
-
-.pl-10 {
-  padding-left: 2.5rem;
-}
-
 .text-center {
   text-align: center;
 }
 
 .font-Mont {
   font-family: Montserrat, sans-serif;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .text-3xl {
@@ -994,11 +943,6 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
 }
 
 .font-extrabold {
@@ -1142,20 +1086,16 @@ video {
     display: none;
   }
 
-  .sm\:h-\[90\%\] {
-    height: 90%;
-  }
-
   .sm\:h-\[592px\] {
     height: 592px;
   }
 
-  .sm\:w-\[1380px\] {
-    width: 1380px;
+  .sm\:h-\[90\%\] {
+    height: 90%;
   }
 
-  .sm\:w-\[90\%\] {
-    width: 90%;
+  .sm\:w-\[1380px\] {
+    width: 1380px;
   }
 
   .sm\:grid-cols-2 {
@@ -1207,10 +1147,6 @@ video {
 
   .lg\:hidden {
     display: none;
-  }
-
-  .lg\:w-\[1000px\] {
-    width: 1000px;
   }
 
   .lg\:px-12 {
