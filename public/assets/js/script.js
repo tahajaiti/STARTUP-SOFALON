@@ -1,6 +1,12 @@
 let card = document.getElementById('card');
 let pagination1 = document.getElementById('pagination1');
 let pagination2 = document.getElementById('pagination2');
+
+const sortButton = document.getElementById('sortButton');
+const filterButton = document.getElementById('filterButton');
+const sortOptions = document.getElementById('sortOptions');
+const filterOptions = document.getElementById('filterOptions');
+
 let data = null;
 
 
@@ -62,3 +68,15 @@ function setActiveButton(activeButton, inactiveButton) {
 }
 
 fetchProducts();
+
+
+
+
+sortButton.addEventListener('click', () => {
+    if (sortOptions.style.display === 'none') {
+        sortOptions.style.display = 'block';
+    } else {
+        sortOptions.style.display = 'none';
+    }
+});
+

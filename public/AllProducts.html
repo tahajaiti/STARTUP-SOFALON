@@ -30,23 +30,36 @@
     </header>
 
     <div class="pt-20 px-4">
-        <!-- Search Sort & Filter Bar -->
+        <!-- Search -->
         <div class="flex flex-col md:flex-row justify-around items-center gap-4 md:gap-0">
             <div class="shadow-lg rounded-3xl border border-SoftGray focus:border-gray-500 w-full md:w-[20%] flex items-center">
                 <span class="icon-[ic--round-search] text-2xl text-SoftGray ml-4"></span>
                 <input type="text" placeholder="Search" class="focus:outline-none bg-transparent px-4 py-2 w-full">
             </div>
             <div class="flex gap-5 justify-center mt-2 md:mt-0">
-                <div class="flex gap-2 shadow-md p-2 justify-center items-center rounded-3xl w-[120px]">
+                <!-- Sort -->
+                <div class="flex gap-2 shadow-md p-2 justify-center items-center rounded-3xl w-[120px] cursor-pointer" id="sortButton">
                     <p class="text-SoftGray">Sort by</p>
                     <span class="icon-[ri--arrow-down-s-line] mt-1 text-SoftGray"></span>
                 </div>
-                <div class="flex gap-2 shadow-md p-2 justify-center items-center rounded-3xl w-[120px]">
+        
+                <!-- Filter -->
+                <div class="flex gap-2 shadow-md p-2 justify-center items-center rounded-3xl w-[120px] cursor-pointer" id="filterButton">
                     <p class="text-SoftGray">Filter by</p>
                     <span class="icon-[ri--arrow-down-s-line] mt-1 text-SoftGray"></span>
                 </div>
+        
+                <!-- Sort Options-->
+                <div id="sortOptions" style="display: none;" class="absolute mt-10 bg-white shadow-md rounded-lg w-[150px]">
+                    <p class="sort-option px-4 py-2 hover:bg-lBrown hover:text-white cursor-pointer">Price: High to Low</p>
+                    <p class="sort-option px-4 py-2 hover:bg-lBrown hover:text-white cursor-pointer">Price: Low to High</p>
+                    <p class="sort-option px-4 py-2 hover:bg-lBrown hover:text-white cursor-pointer">A-Z</p>
+                    <p class="sort-option px-4 py-2 hover:bg-lBrown hover:text-white cursor-pointer">Z-A</p>
+                </div>
+                
             </div>
         </div>
+        
     </div>
 
     <!-- Product cards Container -->
