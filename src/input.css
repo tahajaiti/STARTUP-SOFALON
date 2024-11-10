@@ -30,7 +30,7 @@
         @apply flex flex-col gap-2 text-3xl absolute left-[10%] top-[30%] w-[500px] max-w-[80%] z-10
     }
     .carBtn{
-        @apply w-fit transition-all active:scale-95 active:opacity-75 hover:scale-110 hover:bg-white hover:text-lBrown text-2xl px-10 py-1 rounded-sm text-white bg-lBrown;
+        @apply w-fit transition-all active:scale-95 active:opacity-75 hover:scale-110 hover:bg-white hover:text-lBrown text-2xl px-10 py-1 rounded-sm text-white ;
     }
 }
 
