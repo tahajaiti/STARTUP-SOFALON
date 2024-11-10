@@ -4,11 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
 </head>
+<header class="w-full pt-1 h-fit">
+    <nav class="flex flex-row items-center justify-between px-2 py-2 pt-2 lg:px-12">
+        <img class="pl-2 w-36" src="assets/images/logo.png" alt="COMPANY LOGO">
+        <ul class="items-center justify-between hidden gap-8 pr-20 text-lg lg:flex">
+            <li><a class="navItem" href="#">HOME</a></li>
+            <li><a class="navItem" href="#">ABOUT</a></li>
+            <li><a class="navItem" href="#">SERVICES</a></li>
+            <li><a class="navItem" href="#">FAQ</a></li>
+            <li><a class="navItem" href="#">CONTACT</a></li>
+        </ul>
+        
+        
+</header>
+<body class="bg-white text-gray-800 font-Mont">
 
-    <body >
+  <main class="px-8 py-12 space-y-12 max-w-6xl mx-auto">
+    <!-- Our Company Section -->
+    <section class="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-8">
+      <img src="./assets/images/aboutimages/image1ABOUT.jpg" alt="Our Company Image" class="w-full md:w-1/2 h-64 object-cover">
+      <div class="md:w-1/2 space-y-2">
+        <p class="text-sm font-semibold text-yellow-600">WE DESIGN FURNITURE</p>
+        <h2 class="text-2xl font-bold  font-sans text-gray-900">OUR COMPANY</h2>
+        <p class="font-sans " >At SOFALO, we believe that every space has the potential to inspire. Our collection of furniture and decor is thoughtfully curated to offer quality, style, and affordability, allowing you to create rooms that feel both personal and inviting. We’re committed to making the process of transforming your home simple, enjoyable, and rewarding.</p>
+      </div>
+    </section>
+
+  </main>
+
+<script src="./assets/about.js/script.js"></script>
+
 
     
 </body>
