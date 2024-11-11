@@ -24,27 +24,27 @@ async function fetchProducts() {
     data = await response.json();
 
     currentPageN = Math.ceil(data.products.length / 12);
-    console.log(currentPageN);
+    // console.log(currentPageN);
 
     DisplayCards(GFG(data.products, 1, 12));
     addPagination();
     azArray = [...data.products];
 
     AZ.addEventListener('click',function () {
-        SortAZ(azArray);
+        Sort(azArray,1);
         DisplayCards(GFG(azArray, 1, 12));
     });
 
     ZA.addEventListener('click',function () {
-        SortZA(azArray);
+        Sort(azArray,2);
         DisplayCards(GFG(azArray, 1, 12));
     });
     HTL.addEventListener('click',function () {
-        SortPriceHighLow(azArray);
+        Sort(azArray,3);
         DisplayCards(GFG(azArray, 1, 12));
     });
     LTH.addEventListener('click',function () {
-        SortPriceLowHight(azArray);
+        Sort(azArray,4);
         DisplayCards(GFG(azArray, 1, 12));
     });
 }
@@ -153,49 +153,47 @@ searchInput.addEventListener("keyup", (e)=> {
 }); 
 
 // Sort Function
-function SortAZ(arr){
-    for (var i = 0; i < arr.length; i++) {
-        for (var j = 0; j < (arr.length - i - 1); j++) {
-            if (arr[j].title > arr[j + 1].title) {
-                var temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
+function Sort(arr,type){
+    if (type === 1) {
+        for (var i = 0; i < arr.length; i++) {
+            for (var j = 0; j < (arr.length - i - 1); j++) {
+                if (arr[j].title > arr[j + 1].title) {
+                    var temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
             }
         }
-    }
-}
 
-function SortZA(arr){
-    for (var i = 0; i < arr.length; i++) {
-        for (var j = 0; j < (arr.length - i - 1); j++) {
-            if (arr[j].title < arr[j + 1].title) {
-                var temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
+    }else if(type === 2){
+        for (var i = 0; i < arr.length; i++) {
+            for (var j = 0; j < (arr.length - i - 1); j++) {
+                if (arr[j].title < arr[j + 1].title) {
+                    var temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }  
+    }else if(type === 3){
+
+        for (var i = 0; i < arr.length; i++) {
+            for (var j = 0; j < (arr.length - i - 1); j++) {
+                if (Number(arr[j].price )  < Number(arr[j + 1].price)) {
+                    var temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
             }
         }
-    }
-}
-
-function SortPriceHighLow(arr){
-    for (var i = 0; i < arr.length; i++) {
-        for (var j = 0; j < (arr.length - i - 1); j++) {
-            if (Number(arr[j].price )  < Number(arr[j + 1].price)) {
-                var temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-            }
-        }
-    }
-}
-
-function SortPriceLowHight(arr){
-    for (var i = 0; i < arr.length; i++) {
-        for (var j = 0; j < (arr.length - i - 1); j++) {
-            if (Number(arr[j].price )  > Number(arr[j + 1].price)) {
-                var temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
+    } else if(type === 4){
+        for (var i = 0; i < arr.length; i++) {
+            for (var j = 0; j < (arr.length - i - 1); j++) {
+                if (Number(arr[j].price )  > Number(arr[j + 1].price)) {
+                    var temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
             }
         }
     }
