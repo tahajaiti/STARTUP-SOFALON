@@ -43,6 +43,10 @@ async function fetchProducts() {
         SortPriceHighLow(azArray);
         DisplayCards(GFG(azArray, 1, 12));
     });
+    LTH.addEventListener('click',function () {
+        SortPriceLowHight(azArray);
+        DisplayCards(GFG(azArray, 1, 12));
+    });
 }
 
 
@@ -177,6 +181,18 @@ function SortPriceHighLow(arr){
     for (var i = 0; i < arr.length; i++) {
         for (var j = 0; j < (arr.length - i - 1); j++) {
             if (Number(arr[j].price )  < Number(arr[j + 1].price)) {
+                var temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+}
+
+function SortPriceLowHight(arr){
+    for (var i = 0; i < arr.length; i++) {
+        for (var j = 0; j < (arr.length - i - 1); j++) {
+            if (Number(arr[j].price )  > Number(arr[j + 1].price)) {
                 var temp = arr[j];
                 arr[j] = arr[j + 1];
                 arr[j + 1] = temp;
