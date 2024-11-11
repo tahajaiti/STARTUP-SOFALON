@@ -40,35 +40,53 @@ async function fetchProducts() {
     AZ.addEventListener('click',function () {
         Sort(azArray,1);
         DisplayCards(GFG(azArray, 1, 12));
+        sortOptions.style.display = 'none';
+        filterOptions.style.display = 'none';
     });
 
     ZA.addEventListener('click',function () {
         Sort(azArray,2);
         DisplayCards(GFG(azArray, 1, 12));
+        sortOptions.style.display = 'none';
+        filterOptions.style.display = 'none';
     });
     HTL.addEventListener('click',function () {
         Sort(azArray,3);
         DisplayCards(GFG(azArray, 1, 12));
+        sortOptions.style.display = 'none';
+        filterOptions.style.display = 'none';
     });
     LTH.addEventListener('click',function () {
         Sort(azArray,4);
         DisplayCards(GFG(azArray, 1, 12));
+        sortOptions.style.display = 'none';
+        filterOptions.style.display = 'none';
     });
    
     Beds.addEventListener('click', function(){
          DisplayCards(Filtre(arrrr,1));
+         filterOptions.style.display = 'none';
+         sortOptions.style.display = 'none';
     })
     Decoration.addEventListener('click', function(){
          DisplayCards(Filtre(arrrr,2));
+         filterOptions.style.display = 'none';
+         sortOptions.style.display = 'none';
     })
     Kitchen.addEventListener('click', function(){
          DisplayCards(Filtre(arrrr,3));
+         filterOptions.style.display = 'none';
+         sortOptions.style.display = 'none';
     })
     Storagee.addEventListener('click', function(){
          DisplayCards(Filtre(arrrr,4));
+         filterOptions.style.display = 'none';
+         sortOptions.style.display = 'none';
     })
     Tables.addEventListener('click', function(){
          DisplayCards(Filtre(arrrr,5));
+         filterOptions.style.display = 'none';
+         sortOptions.style.display = 'none';
     })
 }
 
@@ -99,12 +117,21 @@ function DisplayCards(products) {
                         <p class="text-lBrown text-sm ml-auto">$ ${product.price}</p>
                     </div>
                     <p class="text-lg font-semibold mt-2">${product.title}</p>
-                    <button class="bg-lBrown text-white py-1 rounded mt-2 border-2 border-transparent hover:bg-white hover:border-lBrown hover:text-lBrown transition-all duration-300">
+                    <button id ="details" class="bg-lBrown text-white py-1 rounded mt-2 border-2 border-transparent hover:bg-white hover:border-lBrown hover:text-lBrown transition-all duration-300">
                         SEE DETAILS
                     </button>
                 </div>
             </div>`;
     });
+
+    let details = document.querySelectorAll('#details');
+    details.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            const productId = products[index].id;
+            window.location.href = `ProductDetails.html?id=${productId}`;
+        });
+    });
+    
 }
 
 const addPagination = () => {
@@ -226,6 +253,7 @@ function Sort(arr,type){
 
 function Filtre(obj,type){
     let newarray = [];
+    pagination.style.display = 'none';
     if(type === 1){
 
         for (let key in obj) {
