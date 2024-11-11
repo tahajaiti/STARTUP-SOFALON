@@ -116,3 +116,16 @@ filterButton.addEventListener('click', () => {
         filterOptions.style.display = 'none';
     }
 });
+
+
+// Search Function 
+const searchInput = document.getElementById('searchInput');
+searchInput.addEventListener("keyup", (e)=> {
+
+
+    const searchData = e.target.value.toLowerCase();
+    
+    const fileterdData = data.products.filter(o => o.title.toLowerCase().startsWith(searchData));
+
+    DisplayCards(fileterdData);
+}); 
