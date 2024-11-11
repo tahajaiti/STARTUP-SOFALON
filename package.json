@@ -8,6 +8,6 @@
     "gsap": "^3.12.5"
   },
   "scripts": {
-    "dev": "npx tailwindcss -i ./input.css -o ./assets/css/style.css --watch"
+    "dev": "npx tailwindcss -i ./src/input.css -o ./public/assets/css/style.css --watch"
   }
 }
