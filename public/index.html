@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="/node_modules/animejs/lib/anime.min.js"></script>
 
     <title>Document</title>
 </head>
@@ -14,8 +15,8 @@
 
     <header class="w-full pt-1 h-fit relative z-50">
         <nav id="mobileNav" 
-        class="fixed z-[100] mt-[-10px] w-full h-full bg-white/50 backdrop-filter backdrop-blur-lg">
-            <ul class="items-center flex-col justify-between flex gap-8 p-2 text-lg h-2/3">
+        class="fixed z-[100] mt-[-10px] w-full hidden h-full bg-white/50 backdrop-filter backdrop-blur-lg">
+            <ul class="items-center flex-col justify-between flex gap-8 p-10 text-lg h-2/3">
                 <span id="closeNav" class="icon-[line-md--close] text-4xl self-end cursor-pointer hover:text-lBrown"></span>
                 <li><a class="navItem p-2" href="#">HOME</a></li>
                 <li><a class="navItem p-2" href="#">PRODUCTS</a></li>
@@ -311,7 +312,7 @@
         </footer>
     </main>
 
-    <!-- <script src="assets/js/home/carousel.js"></script> -->
+    <script src="assets/js/home/carousel.js"></script>
      <script src="assets/js/navbar.js"></script>
 </body>
 

@@ -19,49 +19,35 @@ const showSlide = () => {
         const newContent = activeNew.querySelector('.itemContent');
         const newImg = activeNew.querySelector('img');
 
-        const tl = gsap.timeline({
-            onComplete: resolve
+        activeOld.classList.remove('active');
+        activeNew.classList.add('active');
+
+        const timeline = anime.timeline({
+            easing: 'easeOutQuad',
+            duration: 500,
+            complete: resolve
         });
 
-        tl.add(() => {
-            activeOld.classList.remove('active');
-            activeNew.classList.add('active');
-        });
+        timeline
+        .add({
+            targets: newContent,
+            translateX: [-1000, 0],
+            scale: [5, 1],
+            opacity: [0, 1],
+            filter: ["blur(5px)", "blur(0px)"],
+            delay: 250,
+            duration: 50,
+            easing: 'easeOutQuad'
+        })
 
-        const newContentTl = gsap.timeline();
-        newContentTl.set(newContent, {
-            x: -10000,
-            scale: 5,
-            skewX: 100,
-            filter: "blur(5px)",
-        })
-        .to(newContent, {
-            x: 0,
-            scale: 1,
-            skewX: 0,
-            delay: 0.5,
-            duration: 0.2,
-            ease: 'elastic',
-        })
-        .to(newContent, {
-            duration: 0.1,
-            filter: "blur(0px)",
-            ease: 'ease',
-        }),"<";
-
-        const newImgTl = gsap.timeline();
-        newImgTl.set(newImg, {
-            scale: 5,
-            opacity: 0,
-            filter: "blur(20px)",
-        })
-        .to(newImg, {
-            scale: 1,
-            opacity: 1,
-            filter: "blur(0px)",
-            duration: 0.25,
-            ease: "ease",
-        });
+        .add({
+            targets: newImg,
+            scale: [5, 1],
+            opacity: [0, 1],
+            filter: ["blur(20px)", "blur(0px)"],
+            duration: 150,
+            easing: 'easeOutQuad'
+        }, 0);
     });
 };
 

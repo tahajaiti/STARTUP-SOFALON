@@ -5,6 +5,7 @@
   },
   "dependencies": {
     "@iconify/json": "^2.2.269",
+    "animejs": "^3.2.2",
     "gsap": "^3.12.5"
   },
   "scripts": {
