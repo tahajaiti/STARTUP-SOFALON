@@ -29,25 +29,25 @@ const showSlide = () => {
         });
 
         timeline
-        .add({
-            targets: newContent,
-            translateX: [-1000, 0],
-            scale: [5, 1],
-            opacity: [0, 1],
-            filter: ["blur(5px)", "blur(0px)"],
-            delay: 250,
-            duration: 50,
-            easing: 'easeOutQuad'
-        })
+            .add({
+                targets: newContent,
+                translateX: [-1000, 0],
+                scale: [5, 1],
+                opacity: [0, 1],
+                filter: ["blur(5px)", "blur(0px)"],
+                delay: 250,
+                duration: 100,
+                easing: 'easeOutElastic'
+            })
 
-        .add({
-            targets: newImg,
-            scale: [5, 1],
-            opacity: [0, 1],
-            filter: ["blur(20px)", "blur(0px)"],
-            duration: 150,
-            easing: 'easeOutQuad'
-        }, 0);
+            .add({
+                targets: newImg,
+                scale: [5, 1],
+                opacity: [0, 1],
+                filter: ["blur(20px)", "blur(0px)"],
+                duration: 150,
+                easing: 'easeOutQuad'
+            }, 0);
     });
 };
 
@@ -58,4 +58,6 @@ const startSlide = async () => {
     }
 };
 
-startSlide(); // Start the slide
+startSlide();
+
+
