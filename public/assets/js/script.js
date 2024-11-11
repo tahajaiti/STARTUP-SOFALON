@@ -10,6 +10,7 @@ const sortOptions = document.getElementById('sortOptions');
 const filterOptions = document.getElementById('filterOptions');
 
 let AZ = document.getElementById('AZ');
+let ZA = document.getElementById('ZA');
 let data = null;
 let InitialProducts;
 let azArray;
@@ -27,8 +28,13 @@ async function fetchProducts() {
     azArray = [...data.products];
 
     AZ.addEventListener('click',function () {
-        console.log('okkkkkkkkkkkkkkksdbddggdgd');
         SortAZ(azArray);
+        DisplayCards(GFG(azArray, 1, 12));
+    });
+    
+    ZA.addEventListener('click',function () {
+        SortZA(azArray);
+        DisplayCards(GFG(azArray, 1, 12));
     });
 }
 
@@ -76,9 +82,7 @@ const addPagination = () => {
             newPage.textContent = i;
             pagination.appendChild(newPage);
             newPage.addEventListener('click', () => {
-                DisplayCards(GFG(data.products, i, 12));
-
-                console.log(GFG(data.products, i, 12));
+                DisplayCards(GFG(azArray, i, 12));
 
                 window.scrollTo({ top: 0, behavior: 'smooth' });
                 ActivePage(newPage);
@@ -148,5 +152,16 @@ function SortAZ(arr){
             }
         }
     }
-    DisplayCards(arr);
+}
+
+function SortZA(arr){
+    for (var i = 0; i < arr.length; i++) {
+        for (var j = 0; j < (arr.length - i - 1); j++) {
+            if (arr[j].title < arr[j + 1].title) {
+                var temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
 }
