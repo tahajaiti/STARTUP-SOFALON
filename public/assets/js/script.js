@@ -14,6 +14,12 @@ let ZA = document.getElementById('ZA');
 let HTL = document.getElementById('HTL');
 let LTH = document.getElementById('LTH');
 
+let Beds = document.getElementById('Beds');
+let Decoration = document.getElementById('Decoration');
+let Kitchen = document.getElementById('Kitchen');
+let Storagee = document.getElementById('Storage');
+let Tables = document.getElementById('Tables');
+
 let data = null;
 let InitialProducts;
 let azArray;
@@ -29,6 +35,7 @@ async function fetchProducts() {
     DisplayCards(GFG(data.products, 1, 12));
     addPagination();
     azArray = [...data.products];
+    let arrrr = [...data.products];
 
     AZ.addEventListener('click',function () {
         Sort(azArray,1);
@@ -47,6 +54,22 @@ async function fetchProducts() {
         Sort(azArray,4);
         DisplayCards(GFG(azArray, 1, 12));
     });
+   
+    Beds.addEventListener('click', function(){
+         DisplayCards(Filtre(arrrr,1));
+    })
+    Decoration.addEventListener('click', function(){
+         DisplayCards(Filtre(arrrr,2));
+    })
+    Kitchen.addEventListener('click', function(){
+         DisplayCards(Filtre(arrrr,3));
+    })
+    Storagee.addEventListener('click', function(){
+         DisplayCards(Filtre(arrrr,4));
+    })
+    Tables.addEventListener('click', function(){
+         DisplayCards(Filtre(arrrr,5));
+    })
 }
 
 
@@ -196,5 +219,55 @@ function Sort(arr,type){
                 }
             }
         }
+    }
+}
+
+// Filtre function
+
+function Filtre(obj,type){
+    let newarray = [];
+    if(type === 1){
+
+        for (let key in obj) {
+            if (obj[key].category === 'Beds') {
+                newarray.push(obj[key]);
+            }
+        }
+        return newarray;
+    }else if(type === 2){
+
+        for (let key in obj) {
+            if (obj[key].category === 'Decoration') {
+                newarray.push(obj[key]);
+            }
+        }
+        return newarray;
+        
+    }else if(type === 3){
+
+        for (let key in obj) {
+            if (obj[key].category === 'Kitchen') {
+                newarray.push(obj[key]);
+            }
+        }
+        return newarray;
+        
+    }else if(type === 4){
+
+        for (let key in obj) {
+            if (obj[key].category === 'Storage') {
+                newarray.push(obj[key]);
+            }
+        }
+        return newarray;
+        
+    }else if(type === 5){
+
+        for (let key in obj) {
+            if (obj[key].category === 'Tables') {
+                newarray.push(obj[key]);
+            }
+        }
+        return newarray;
     }
 }
