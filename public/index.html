@@ -14,7 +14,7 @@
 </head>
 
 <body class=" h-svh  ">
-    <header class="pt-1 h-fit mb-9  sm:w-[1380px] w-full">
+    <header class="pt-1 h-fit mb-9 w-full">
         <nav class=" flex flex-row items-center justify-between px-2 py-2 pt-2 lg:px-12">
             <img class="pl-2 w-36" src="/public/assets/images/homeslides/company logo .png" alt="COMPANY LOGO">
             <ul class="items-center justify-between hidden gap-8 pr-20 text-lg lg:flex">
@@ -39,7 +39,7 @@
         </nav>
     </header>
     <main class="w-fit">
-        <div class="sm:h-[592px]  sm:w-[1380px] grid sm:grid-cols-2 gap-10  ">
+        <div class=" grid sm:grid-cols-2 gap-10  ">
             <div>
                 <div
                     class=" sm:h-[90%] sm:rounded-e-full border-dBrown sm:border-4 border-y-4 sm:shadow-md sm:shadow-dark  flex sm:justify-center sm:items-center justify-center h-16">
@@ -80,7 +80,7 @@
                     <div
                         class="flex justify-center items-center flex-col gap-2 sm:mb-0 mb-5 transition ease-in-out delay-150 hover:translate-y-1 hover:scale-110 duration-75">
                         <div
-                            class=" w-40 h-40 flex justify-center items-center border-lBrown border-4 rounded-2xl  hover:border-dBrown  ">
+                            class=" w-40 h-40 flex justify-center items-center border-lBrown border-4 rounded-2xl  hover:border-dBrown" onclick="UserRights()">
                             <img src="/public/assets/images/FAQs/return-box.png" class="w-36 h-36" alt="">
                         </div>
                         <p class="font-Mont text-4xl text-gray w-1/2 text-center  ">REFUND POLICY</p>
@@ -88,7 +88,7 @@
                     <div
                         class="flex justify-center items-center flex-col gap-2 sm:mb-0 mb-5 transition ease-in-out delay-150 hover:translate-y-1 hover:scale-110 duration-75">
                         <div
-                            class=" w-40 h-40 flex justify-center items-center border-lBrown border-4 rounded-2xl  hover:border-dBrown  ">
+                            class=" w-40 h-40 flex justify-center items-center border-lBrown border-4 rounded-2xl  hover:border-dBrown  "  onclick="UserRights()">
                             <img src="/public/assets/images/FAQs/trust.png" class="w-36 h-36" alt="">
                         </div>
                         <p class="font-Mont text-4xl text-gray w-1/2 text-center  ">Trust</p>
@@ -96,7 +96,7 @@
                     <div
                         class="flex justify-center items-center flex-col gap-2 sm:mb-0 mb-5 transition ease-in-out delay-150 hover:translate-y-1 hover:scale-110 duration-75">
                         <div
-                            class=" w-40 h-40 flex justify-center items-center border-lBrown border-4 rounded-2xl  hover:border-dBrown  ">
+                            class=" w-40 h-40 flex justify-center items-center border-lBrown border-4 rounded-2xl  hover:border-dBrown  "  onclick="UserRights()">
                             <img src="/public/assets/images/FAQs/payement.png" class="w-36 h-36" alt="">
                         </div>
                         <p class="font-Mont text-4xl text-gray w-1/2 text-center  ">PAYMENT</p>
@@ -106,7 +106,7 @@
 
         </div>
         <div id="UserRights"
-            class=" hidden  w-[90%] right-0 my-20 justify-self-center border-4 border-lBrown rounded-3xl shadow-md shadow-gray flex  items-center flex-col gap-6 pt-5 ">
+            class=" hidden  w-[90%] my-20 justify-self-center border-4 border-lBrown rounded-3xl shadow-md shadow-gray flex  items-center flex-col gap-6 pt-5 ">
             <div class=" w-32 h-32 flex justify-center items-center border-lBrown border-2 rounded-full  ">
                 <img src="/public/assets/images/FAQs/support.png" class="w-24 h-24" alt="">
             </div>
@@ -114,7 +114,7 @@
             <div class="w-[80%] h-[70%] flex flex-col justify-between  gap-4 mb-10 ">
                 <div class="list_user_rights">
                 <div onclick="ouvrir_qustion(1)" 
-                    class="bg-lBrown rounded-2xl flex justify-between  items-center transition ease-in-out delay-75 hover:translate-y-1 hover:scale-110 duration-75 hover:bg-dBrown ">
+                    class="bg-lBrown rounded-2xl flex justify-between  items-center transition ease-in-out delay-75 hover:translate-y-1 hover:scale-110 duration-75 hover:bg-dBrown transition-all">
                     <p class=" pl-3 text-3xl font-Mont">why i can trust in our company ?</p>
                     <img class="opacity-60 w-14 h-14 hover:opacity-100" src="/public/assets/images/FAQs/ouvrir .png"
                         alt="ouvrir">
@@ -180,81 +180,7 @@
             </div>
             </div>
         </div>
-        <div id="UserRights"
-        class=" hidden  w-[90%] right-0 my-20 justify-self-center border-4 border-lBrown rounded-3xl shadow-md shadow-gray flex  items-center flex-col gap-6 pt-5 ">
-        <div class=" w-32 h-32 flex justify-center items-center border-lBrown border-2 rounded-full  ">
-            <img src="/public/assets/images/FAQs/support.png" class="w-24 h-24" alt="">
-        </div>
-        <p class="font-Mont text-4xl text-gray w-1/2 text-center  ">USER RIGHTS</p>
-        <div class="w-[80%] h-[70%] flex flex-col justify-between  gap-4 mb-10 ">
-            <div class="list_user_rights">
-            <div onclick="ouvrir_qustion(1)" 
-                class="bg-lBrown rounded-2xl flex justify-between  items-center transition ease-in-out delay-75 hover:translate-y-1 hover:scale-110 duration-75 hover:bg-dBrown ">
-                <p class=" pl-3 text-3xl font-Mont">why i can trust in our company ?</p>
-                <img class="opacity-60 w-14 h-14 hover:opacity-100" src="/public/assets/images/FAQs/ouvrir .png"
-                    alt="ouvrir">
-            </div>
-            <div id="Q1" class="border-gray border-x-4 border-b-4 rounded-xl hidden ">
-                <p class="mx-9 mb-4"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam vero vel dignissimos quod aliquid, deleniti molestiae doloremque laboriosam. Quam accusantium cumque et repudiandae minus odio autem quo blanditiis. Dolore, tempore?lorem Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime doloremque modi, quo, architecto veritatis, inventore consectetur magnam dolores ipsam enim iure velit nesciunt earum id? Voluptates tempore sed necessitatibus omnis.</p>
-            </div>
-        </div>
-            <div>
-            <div onclick="ouvrir_qustion(2)" 
-                class="bg-lBrown rounded-2xl flex justify-between  items-center transition ease-in-out delay-75 hover:translate-y-1 hover:scale-110 duration-75 hover:bg-dBrown ">
-                <p class=" pl-3 text-3xl font-Mont">why i can trust in our company ?</p>
-                <img class="opacity-60 w-14 h-14 hover:opacity-100" src="/public/assets/images/FAQs/ouvrir .png"
-                    alt="ouvrir">
-            </div>
-            <div id="Q2" class="border-gray border-x-4 border-b-4 rounded-xl hidden ">
-                <p class="mx-9 mb-4"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam vero vel dignissimos quod aliquid, deleniti molestiae doloremque laboriosam. Quam accusantium cumque et repudiandae minus odio autem quo blanditiis. Dolore, tempore?lorem Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime doloremque modi, quo, architecto veritatis, inventore consectetur magnam dolores ipsam enim iure velit nesciunt earum id? Voluptates tempore sed necessitatibus omnis.</p>
-            </div>
-        </div>
-            <div>
-            <div onclick="ouvrir_qustion(3)" 
-                class="bg-lBrown rounded-2xl flex justify-between  items-center transition ease-in-out delay-75 hover:translate-y-1 hover:scale-110 duration-75 hover:bg-dBrown ">
-                <p class=" pl-3 text-3xl font-Mont">why i can trust in our company ?</p>
-                <img class="opacity-60 w-14 h-14 hover:opacity-100" src="/public/assets/images/FAQs/ouvrir .png"
-                    alt="ouvrir">
-            </div>
-            <div id="Q3" class="border-gray border-x-4 border-b-4 rounded-xl hidden ">
-                <p class="mx-9 mb-4"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam vero vel dignissimos quod aliquid, deleniti molestiae doloremque laboriosam. Quam accusantium cumque et repudiandae minus odio autem quo blanditiis. Dolore, tempore?lorem Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime doloremque modi, quo, architecto veritatis, inventore consectetur magnam dolores ipsam enim iure velit nesciunt earum id? Voluptates tempore sed necessitatibus omnis.</p>
-            </div>
-        </div>
-            <div>
-            <div onclick="ouvrir_qustion(4)" 
-                class="bg-lBrown rounded-2xl flex justify-between  items-center transition ease-in-out delay-75 hover:translate-y-1 hover:scale-110 duration-75 hover:bg-dBrown ">
-                <p class=" pl-3 text-3xl font-Mont">why i can trust in our company ?</p>
-                <img class="opacity-60 w-14 h-14 hover:opacity-100" src="/public/assets/images/FAQs/ouvrir .png"
-                    alt="ouvrir">
-            </div>
-            <div id="Q4" class="border-gray border-x-4 border-b-4 rounded-xl hidden ">
-                <p class="mx-9 mb-4"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam vero vel dignissimos quod aliquid, deleniti molestiae doloremque laboriosam. Quam accusantium cumque et repudiandae minus odio autem quo blanditiis. Dolore, tempore?lorem Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime doloremque modi, quo, architecto veritatis, inventore consectetur magnam dolores ipsam enim iure velit nesciunt earum id? Voluptates tempore sed necessitatibus omnis.</p>
-            </div>
-        </div>
-            <div>
-            <div onclick="ouvrir_qustion(5)" 
-                class="bg-lBrown rounded-2xl flex justify-between  items-center transition ease-in-out delay-75 hover:translate-y-1 hover:scale-110 duration-75 hover:bg-dBrown ">
-                <p class=" pl-3 text-3xl font-Mont">why i can trust in our company ?</p>
-                <img class="opacity-60 w-14 h-14 hover:opacity-100" src="/public/assets/images/FAQs/ouvrir .png"
-                    alt="ouvrir">
-            </div>
-            <div id="Q5" class="border-gray border-x-4 border-b-4 rounded-xl hidden ">
-                <p class="mx-9 mb-4"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam vero vel dignissimos quod aliquid, deleniti molestiae doloremque laboriosam. Quam accusantium cumque et repudiandae minus odio autem quo blanditiis. Dolore, tempore?lorem Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime doloremque modi, quo, architecto veritatis, inventore consectetur magnam dolores ipsam enim iure velit nesciunt earum id? Voluptates tempore sed necessitatibus omnis.</p>
-            </div>
-        </div>
-            <div>
-            <div onclick="ouvrir_qustion(6)" 
-                class="bg-lBrown rounded-2xl flex justify-between  items-center transition ease-in-out delay-75 hover:translate-y-1 hover:scale-110 duration-75 hover:bg-dBrown ">
-                <p class=" pl-3 text-3xl font-Mont">why i can trust in our company ?</p>
-                <img class="opacity-60 w-14 h-14 hover:opacity-100" src="/public/assets/images/FAQs/ouvrir .png"
-                    alt="ouvrir">
-            </div>
-            <div id="Q6" class="border-gray border-x-4 border-b-4 rounded-xl hidden">
-                <p class="mx-9 mb-4"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam vero vel dignissimos quod aliquid, deleniti molestiae doloremque laboriosam. Quam accusantium cumque et repudiandae minus odio autem quo blanditiis. Dolore, tempore?lorem Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime doloremque modi, quo, architecto veritatis, inventore consectetur magnam dolores ipsam enim iure velit nesciunt earum id? Voluptates tempore sed necessitatibus omnis.</p>
-            </div>
-        </div>
-        </div>
-    </div>
+        
     </main>
     <footer class="h-36">
 
