@@ -1,4 +1,4 @@
-const card = document.querySelector(".homeCard");
+const cards = document.querySelectorAll(".homeCard");
 let data = null;
 
 async function getData() {
@@ -16,11 +16,17 @@ async function getData() {
 const loadData = () => {
     if (!data) return;
 
-    const title = card.querySelector('#productName'); 
-    const img = card.querySelector('img');
+    cards.forEach((card) => {
+        const randomIndex = Math.floor(Math.random() * data.products.length);
+        const randomProduct = data.products[randomIndex];
 
-    title.textContent = data.products[0].title;
-    img.src = data.products[0].mainImage;
+        const title = card.querySelector('#productName');
+        const img = card.querySelector('img');
+
+        if (title) title.textContent = randomProduct.title;
+        if (img) img.src = randomProduct.mainImage;
+    });
 };
+
 
 document.addEventListener('DOMContentLoaded', getData);
