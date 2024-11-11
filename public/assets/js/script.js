@@ -11,6 +11,9 @@ const filterOptions = document.getElementById('filterOptions');
 
 let AZ = document.getElementById('AZ');
 let ZA = document.getElementById('ZA');
+let HTL = document.getElementById('HTL');
+let LTH = document.getElementById('LTH');
+
 let data = null;
 let InitialProducts;
 let azArray;
@@ -31,9 +34,13 @@ async function fetchProducts() {
         SortAZ(azArray);
         DisplayCards(GFG(azArray, 1, 12));
     });
-    
+
     ZA.addEventListener('click',function () {
         SortZA(azArray);
+        DisplayCards(GFG(azArray, 1, 12));
+    });
+    HTL.addEventListener('click',function () {
+        SortPriceHighLow(azArray);
         DisplayCards(GFG(azArray, 1, 12));
     });
 }
@@ -62,7 +69,7 @@ function DisplayCards(products) {
                             <span class="icon-[ri--star-fill] text-lBrown w-3"></span>
                         </div>
                         <p class="text-SoftGray text-sm">(Reviews)</p>
-                        <p class="text-lBrown text-sm ml-auto">${product.price}</p>
+                        <p class="text-lBrown text-sm ml-auto">$ ${product.price}</p>
                     </div>
                     <p class="text-lg font-semibold mt-2">${product.title}</p>
                     <button class="bg-lBrown text-white py-1 rounded mt-2 border-2 border-transparent hover:bg-white hover:border-lBrown hover:text-lBrown transition-all duration-300">
@@ -158,6 +165,18 @@ function SortZA(arr){
     for (var i = 0; i < arr.length; i++) {
         for (var j = 0; j < (arr.length - i - 1); j++) {
             if (arr[j].title < arr[j + 1].title) {
+                var temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+}
+
+function SortPriceHighLow(arr){
+    for (var i = 0; i < arr.length; i++) {
+        for (var j = 0; j < (arr.length - i - 1); j++) {
+            if (Number(arr[j].price )  < Number(arr[j + 1].price)) {
                 var temp = arr[j];
                 arr[j] = arr[j + 1];
                 arr[j + 1] = temp;
