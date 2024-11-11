@@ -9,9 +9,10 @@ const filterButton = document.getElementById('filterButton');
 const sortOptions = document.getElementById('sortOptions');
 const filterOptions = document.getElementById('filterOptions');
 
+let AZ = document.getElementById('AZ');
 let data = null;
 let InitialProducts;
-
+let azArray;
 
 let currentPageN;
 async function fetchProducts() {
@@ -23,6 +24,12 @@ async function fetchProducts() {
 
     DisplayCards(GFG(data.products, 1, 12));
     addPagination();
+    azArray = [...data.products];
+
+    AZ.addEventListener('click',function () {
+        console.log('okkkkkkkkkkkkkkksdbddggdgd');
+        SortAZ(azArray);
+    });
 }
 
 
@@ -129,3 +136,17 @@ searchInput.addEventListener("keyup", (e)=> {
 
     DisplayCards(fileterdData);
 }); 
+
+// Sort Function
+function SortAZ(arr){
+    for (var i = 0; i < arr.length; i++) {
+        for (var j = 0; j < (arr.length - i - 1); j++) {
+            if (arr[j].title > arr[j + 1].title) {
+                var temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+    DisplayCards(arr);
+}
