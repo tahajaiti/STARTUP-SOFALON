@@ -13,15 +13,27 @@
 <body class="font-Mont">
 
     <header class="w-full pt-1 h-fit relative z-50">
+        <nav id="mobileNav" 
+        class="fixed z-[100] mt-[-10px] w-full h-full bg-white/50 backdrop-filter backdrop-blur-lg">
+            <ul class="items-center flex-col justify-between flex gap-8 p-2 text-lg h-2/3">
+                <span id="closeNav" class="icon-[line-md--close] text-4xl self-end cursor-pointer hover:text-lBrown"></span>
+                <li><a class="navItem p-2" href="#">HOME</a></li>
+                <li><a class="navItem p-2" href="#">PRODUCTS</a></li>
+                <li><a class="navItem p-2" href="#">ABOUT</a></li>
+                <li><a class="navItem p-2" href="#">FAQ</a></li>
+                <li><a class="navItem p-2" href="#">CONTACT</a></li>
+            </ul>
+        </nav>
+
         <nav class="flex flex-row items-center justify-between px-2 py-2 pt-2 lg:px-12">
             <img class="pl-2 w-36" src="assets/images/logo.png" alt="COMPANY LOGO">
             <ul class="items-center justify-between hidden gap-8 pr-20 text-lg lg:flex">
                 <li><a class="navItem" href="#">HOME</a></li>
+                <li><a class="navItem" href="#">PRODUCTS</a></li>
                 <li><a class="navItem" href="#">ABOUT</a></li>
-                <li><a class="navItem" href="#">SERVICES</a></li>
                 <li><a class="navItem" href="#">FAQ</a></li>
                 <li><a class="navItem" href="#">CONTACT</a></li>
-            </ul>
+            </ul>        
 
             <div class="flex justify-between gap-10 ">
                 <div class="relative flex items-center cursor-pointer">
@@ -31,7 +43,7 @@
                         class="absolute right-0 flex items-center justify-center w-5 h-5 rounded-full top-3 bg-lBrown font-Mont">
                         0</div>
                 </div>
-                <span
+                <span id="openNav"
                     class="icon-[iconamoon--menu-burger-horizontal] cursor-pointer text-black text-3xl lg:hidden hover:text-lBrown active:text-dBrown"></span>
             </div>
         </nav>
@@ -299,7 +311,8 @@
         </footer>
     </main>
 
-    <script src="assets/js/home/carousel.js"></script>
+    <!-- <script src="assets/js/home/carousel.js"></script> -->
+     <script src="assets/js/navbar.js"></script>
 </body>
 
 </html>
