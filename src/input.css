@@ -7,3 +7,5 @@
 .navItem{
     @apply tracking-widest transition-all hover:text-lBrown active:text-dBrown;
 }
+
+
