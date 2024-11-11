@@ -49,9 +49,9 @@ const loadData = () => {
             opacity: [0, 1],
             scale: [0.3, 0.75],
             filter: ["blur(10px)", "blur(0px)"],
-            delay: anime.stagger(100, {easing: 'easeOutElastic',direction: 'reverse'}),
+            delay: anime.stagger(100, {easing: 'easeInQuart',direction: 'reverse'}),
             duration: 700,
-            easing: 'easeInQuad',
+            easing: 'easeInOutElastic',
         });
 };
 
