@@ -64,5 +64,19 @@ async function fetchProducts() {
                 </div>
 
     ` 
+    let mainImage = document.getElementById('mainImage');
+    let var1 = document.getElementById('var1');
+    let var2 = document.getElementById('var2');
+    let var3 = document.getElementById('var3');
+
+    let thumbnails = [var1, var2, var3];
+    thumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', function() {
+            thumbnails.forEach(thmb => thmb.classList.remove('border', 'border-lBrown'));
+            mainImage.src = this.src;
+            this.classList.add('border', 'border-lBrown');
+        });
+    });
+
 }
 fetchProducts();
