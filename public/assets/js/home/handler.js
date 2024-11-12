@@ -55,6 +55,13 @@ const loadData = () => {
         });
 };
 
+document.querySelectorAll(".catCard").forEach(card => {
+    card.addEventListener("click", () => {
+        const category = card.getAttribute("category");
+        window.location.href = `AllProducts.html?category=${category.toLowerCase()}`;
+    });
+});
+
 setInterval  (() => {
     loadData();
 }, 10000);

@@ -1,24 +1,21 @@
-let card = document.getElementById('card');
+const card = document.getElementById('card');
 const pagination = document.getElementById('pagination');
-let pagination1 = document.getElementById('pagination1');
-let pagination2 = document.getElementById('pagination2');
-
 
 const sortButton = document.getElementById('sortButton');
 const filterButton = document.getElementById('filterButton');
 const sortOptions = document.getElementById('sortOptions');
 const filterOptions = document.getElementById('filterOptions');
 
-let AZ = document.getElementById('AZ');
-let ZA = document.getElementById('ZA');
-let HTL = document.getElementById('HTL');
-let LTH = document.getElementById('LTH');
+const AZ = document.getElementById('AZ');
+const ZA = document.getElementById('ZA');
+const HTL = document.getElementById('HTL');
+const LTH = document.getElementById('LTH');
 
-let Beds = document.getElementById('Beds');
-let Decoration = document.getElementById('Decoration');
-let Kitchen = document.getElementById('Kitchen');
-let Storagee = document.getElementById('Storage');
-let Tables = document.getElementById('Tables');
+const Beds = document.getElementById('Beds');
+const Decoration = document.getElementById('Decoration');
+const Kitchen = document.getElementById('Kitchen');
+const Storagee = document.getElementById('Storage');
+const Tables = document.getElementById('Tables');
 
 let data = null;
 let InitialProducts;
@@ -154,8 +151,6 @@ const addPagination = () => {
     };
 };
 
-
-
 function ActivePage(activebtn) {
     const AllPage = document.querySelectorAll('#page');
 
@@ -183,7 +178,6 @@ filterButton.addEventListener('click', () => {
         filterOptions.style.display = 'none';
     }
 });
-
 
 // Search Function 
 const searchInput = document.getElementById('searchInput');
@@ -245,7 +239,6 @@ function Sort(arr,type){
 }
 
 // Filtre function
-
 function Filtre(obj,type){
     let newarray = [];
     pagination.style.display = 'none';
