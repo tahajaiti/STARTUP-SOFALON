@@ -4,10 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta Description -->
+    <meta name="description"
+        content="Discover Sofalo, your one-stop online shop for stylish and affordable furniture, home decor, and storage solutions. 
+     Shop quality beds, tables, kitchenware, and more with convenient delivery options. Find inspiration for every room in your home with Sofalo.">
+
+    <!-- Keywords -->
+    <meta name="keywords"
+        content="furniture, home decor, Sofalo, affordable furniture, beds, tables, kitchenware, storage, IKEA alternative, online shopping, stylish furniture">
+
+    <!-- Open Graph Metadata (for social media) -->
+    <meta property="og:title" content="Sofalo - Stylish & Affordable Home Furniture and Decor">
+    <meta property="og:description" content="Transform your home with Sofalo's quality furniture and decor at affordable prices. From beds and tables
+      to kitchenware and decoration, find everything you need for your living space.">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Metadata -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sofalo - Stylish & Affordable Furniture">
+    <meta name="twitter:description"
+        content="Shop Sofalo for affordable and stylish furniture for every room. Your space, your style, made easy.">
+    <!-- Author -->
+    <meta name="author" content="DOTEXE TEAM">
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="/node_modules/animejs/lib/anime.min.js"></script>
-    <title>Product Page</title>
+    
+    <title>Sofalo - High-Quality Furniture for Your Home</title>
 </head>
 
 <body class="font-Mont">
@@ -36,7 +60,7 @@
             </ul>
 
             <div class="flex justify-between gap-10 ">
-                <div  class="relative flex items-center cursor-pointer">
+                <div class="relative flex items-center cursor-pointer">
                     <span id="openCart"
                         class="icon-[iconoir--bag] text-black text-3xl hover:text-lBrown active:text-dBrown transition-all"></span>
                     <div id="cartNum"
@@ -48,7 +72,8 @@
             </div>
         </nav>
 
-        <nav id="cartMain" class="fixed hidden top-0 flex justify-end bg-black/10 backdrop-blur-md h-screen w-full z-[1000] ">
+        <nav id="cartMain"
+            class="fixed hidden top-0 flex justify-end bg-black/10 backdrop-blur-md h-screen w-full z-[1000] ">
             <div id="cartReal" class="lg:w-1/3 md:w-1/2 w-full flex flex-col bg-white h-full">
                 <!-- heading -->
                 <div class="drop-shadow-lg flex justify-between p-2 items-center flex-row h-[5%] bg-lBrown w-full">
@@ -60,7 +85,8 @@
 
                     <!-- card -->
                     <div class="bg-white w-full h-1/5 flex flex-row">
-                        <img class="w-1/3 object-cover h-full bg-white" src="assets/images/Products/Beds/bed1/1.png" alt="">
+                        <img class="w-1/3 object-cover h-full bg-white" src="assets/images/Products/Beds/bed1/1.png"
+                            alt="">
                         <div class="w-full h-full flex flex-col justify-start p-2">
                             <div class="flex justify-between">
                                 <p class="text-2xl">TITLE</p>
@@ -83,9 +109,10 @@
                     <p id="cartTotal" class="text-2xl font-bold">TOTAL: 555$</p>
                     <p id="cartSum" class="text-gray-400">SUMMARY: 400$</p>
                     <p id="cartTax" class="text-gray-400">TAX: 23$</p>
-                    <a class="w-full h-full pt-2 text-center text-xl font-bold text-white bg-lBrown hover:bg-dBrown transition-all" href="#">CHECKOUT</a>
+                    <a class="w-full h-full pt-2 text-center text-xl font-bold text-white bg-lBrown hover:bg-dBrown transition-all"
+                        href="#">CHECKOUT</a>
                 </div>
-        
+
             </div>
         </nav>
     </header>
@@ -93,112 +120,114 @@
     <main>
         <div id="ProductDetails" class="flex flex-col md:flex-row p-4 mt-20 container mx-auto">
 
-        <div class="flex flex-col justify-center items-center m-auto md:w-1/2 md:mr-8">
-            <div class="flex flex-col items-center self-end">
-                <div class="mainImage bg-whiteGrey mb-4 p-2 w-[400px]">
-                    <img id="mainImagee" class="m-auto w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto object-cover"
-                        alt="main image">
-                </div>
+            <div class="flex flex-col justify-center items-center m-auto md:w-1/2 md:mr-8">
+                <div class="flex flex-col items-center self-end">
+                    <div class="mainImage bg-whiteGrey mb-4 p-2 w-[400px]">
+                        <img id="mainImagee"
+                            class="m-auto w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto object-cover"
+                            alt="main image">
+                    </div>
 
-                <div class="variableImages flex gap-4 justify-center mt-4">
-                    <img id="var1" class="w-16 h-16 object-cover cursor-pointer" src="" alt="variable Image">
-                    <img id="var2" class="w-16 h-16 object-cover cursor-pointer" src="" alt="variable Image">
-                    <img id="var3" class="w-16 h-16 object-cover cursor-pointer" src="" alt="variable Image">
-                </div>
-            </div>
-        </div>
-
-        <div class="md:w-1/2 md:pl-8 flex flex-col justify-start mt-4 md:mt-0">
-            <h2 id="titleProduct" class="text-4xl font-semibold mb-2"></h2>
-            <div class="flex items-center gap-2 text-lg mb-4 pb-8">
-                <span class="line-through text-SoftGray text-2xl">$300</span>
-                <span id="priceProduct" class="text-lBrown text-2xl"></span>
-            </div>
-
-            <hr class="w-full lg:w-[80%] h-[1px] bg-SoftGray border-0">
-
-            <p id="descriptionProduct" class="text-SoftGray mb-6 w-full lg:w-[80%] pt-8"></p>
-
-            <div class="flex items-center justify-center lg:justify-start gap-4 mb-4 pb-8">
-                <div class="flex items-center border border-SoftGray">
-                    <p id="Qnt"
-                        class="w-10 text-center pt-3 border border-SoftGray text-SoftGray h-[51px] focus:outline-none">
-                    </p>
-                    <div class="flex flex-col">
-                        <button id="plus" class="px-2 border border-SoftGray h-[25.5px] text-SoftGray">+</button>
-                        <button id="minus" class="px-2 border border-SoftGray h-[25.5px] text-SoftGray">-</button>
+                    <div class="variableImages flex gap-4 justify-center mt-4">
+                        <img id="var1" class="w-16 h-16 object-cover cursor-pointer" src="" alt="variable Image">
+                        <img id="var2" class="w-16 h-16 object-cover cursor-pointer" src="" alt="variable Image">
+                        <img id="var3" class="w-16 h-16 object-cover cursor-pointer" src="" alt="variable Image">
                     </div>
                 </div>
-                <button id="addCart" class="bg-lBrown w-[60%] text-white px-6 py-2 font-semibold h-[51px]">ADD TO CART</button>
             </div>
 
-            <hr class="w-full lg:w-[80%] h-[1px] bg-SoftGray border-0">
+            <div class="md:w-1/2 md:pl-8 flex flex-col justify-start mt-4 md:mt-0">
+                <h2 id="titleProduct" class="text-4xl font-semibold mb-2"></h2>
+                <div class="flex items-center gap-2 text-lg mb-4 pb-8">
+                    <span class="line-through text-SoftGray text-2xl">$300</span>
+                    <span id="priceProduct" class="text-lBrown text-2xl"></span>
+                </div>
 
-            <div class="text-sm text-SoftGray pt-8">
-                <div class="flex gap-4"><strong class="text-gray">SKU:</strong>
-                    <p id="SKU"></p>
+                <hr class="w-full lg:w-[80%] h-[1px] bg-SoftGray border-0">
+
+                <p id="descriptionProduct" class="text-SoftGray mb-6 w-full lg:w-[80%] pt-8"></p>
+
+                <div class="flex items-center justify-center lg:justify-start gap-4 mb-4 pb-8">
+                    <div class="flex items-center border border-SoftGray">
+                        <p id="Qnt"
+                            class="w-10 text-center pt-3 border border-SoftGray text-SoftGray h-[51px] focus:outline-none">
+                        </p>
+                        <div class="flex flex-col">
+                            <button id="plus" class="px-2 border border-SoftGray h-[25.5px] text-SoftGray">+</button>
+                            <button id="minus" class="px-2 border border-SoftGray h-[25.5px] text-SoftGray">-</button>
+                        </div>
+                    </div>
+                    <button id="addCart" class="bg-lBrown w-[60%] text-white px-6 py-2 font-semibold h-[51px]">ADD TO
+                        CART</button>
                 </div>
-                <div class="flex gap-4"><strong class="text-gray">Categories:</strong>
-                    <p id="category"></p>
+
+                <hr class="w-full lg:w-[80%] h-[1px] bg-SoftGray border-0">
+
+                <div class="text-sm text-SoftGray pt-8">
+                    <div class="flex gap-4"><strong class="text-gray">SKU:</strong>
+                        <p id="SKU"></p>
+                    </div>
+                    <div class="flex gap-4"><strong class="text-gray">Categories:</strong>
+                        <p id="category"></p>
+                    </div>
+                    <div class="flex gap-4"><strong class="text-gray">Stock:</strong>
+                        <p id="stock"></p>
+                    </div>
                 </div>
-                <div class="flex gap-4"><strong class="text-gray">Stock:</strong>
-                    <p id="stock"></p>
+            </div>
+
+        </div>
+        <div>
+
+            <div class="title flex flex-col align-center pt-20">
+                <h1 class="self-center text-6xl">Reviews</h1>
+                <p class="text-SoftGray self-center text-xl">reviews about this product</p>
+            </div>
+
+            <div
+                class="reviews flex flex-col md:flex-row items-center md:justify-around pt-10 pb-10 space-y-8 md:space-y-0">
+                <div class="review1 bg-whiteGrey flex flex-col items-center p-4 w-60 md:w-auto max-w-xs">
+                    <img class="w-40 h-30 md:w-72 md:h-72 p-2"
+                        src="./assets/images/reviews/Alex-Foord-e1644436249973.jpg" alt="">
+                    <i class="text-lg md:text-2xl">Mohammed</i>
+                    <div class="flex">
+                        <span class="icon-[ri--star-fill] text-lBrown text-xl md:text-2xl"></span>
+                        <span class="icon-[ri--star-fill] text-lBrown text-xl md:text-2xl"></span>
+                        <span class="icon-[ri--star-fill] text-lBrown text-xl md:text-2xl"></span>
+                        <span class="icon-[ri--star-fill] text-lBrown text-xl md:text-2xl"></span>
+                        <span class="icon-[ri--star-fill] text-lBrown text-xl md:text-2xl"></span>
+                    </div>
+                    <p class="text-SoftGray text-sm md:text-base pb-2">Great Product</p>
+                </div>
+
+                <div class="review2 bg-whiteGrey flex flex-col items-center p-4 w-60 md:w-auto max-w-xs">
+                    <img class="w-40 h-40 md:w-72 md:h-72 p-2"
+                        src="./assets/images/reviews/business-woman-manager-or-human.jpg" alt="">
+                    <i class="text-lg md:text-2xl">Asmae</i>
+                    <div class="flex">
+                        <span class="icon-[ri--star-fill] text-lBrown text-xl md:text-2xl"></span>
+                        <span class="icon-[ri--star-fill] text-lBrown text-xl md:text-2xl"></span>
+                        <span class="icon-[ri--star-fill] text-lBrown text-xl md:text-2xl"></span>
+                        <span class="icon-[ri--star-fill] text-lBrown text-xl md:text-2xl"></span>
+                        <span class="icon-[ri--star-fill] text-lBrown text-xl md:text-2xl"></span>
+                    </div>
+                    <p class="text-SoftGray text-sm md:text-base pb-2">Nice Product</p>
+                </div>
+
+                <div class="review3 bg-whiteGrey flex flex-col items-center p-4 w-60 md:w-auto max-w-xs">
+                    <img class="w-40 h-40 md:w-72 md:h-72 p-2" src="./assets/images/reviews/amit.jpg" alt="">
+                    <i class="text-lg md:text-2xl">Ahmed</i>
+                    <div class="flex">
+                        <span class="icon-[ri--star-fill] text-lBrown text-xl md:text-2xl"></span>
+                        <span class="icon-[ri--star-fill] text-lBrown text-xl md:text-2xl"></span>
+                        <span class="icon-[ri--star-fill] text-lBrown text-xl md:text-2xl"></span>
+                        <span class="icon-[ri--star-fill] text-lBrown text-xl md:text-2xl"></span>
+                        <span class="icon-[ri--star-fill] text-lBrown text-xl md:text-2xl"></span>
+                    </div>
+                    <p class="text-SoftGray text-sm md:text-base pb-2">Good Product</p>
                 </div>
             </div>
         </div>
-
-    </div>
-    <div>
-
-        <div class="title flex flex-col align-center pt-20">
-            <h1 class="self-center text-6xl">Reviews</h1>
-            <p class="text-SoftGray self-center text-xl">reviews about this product</p>
-        </div>
-
-        <div
-            class="reviews flex flex-col md:flex-row items-center md:justify-around pt-10 pb-10 space-y-8 md:space-y-0">
-            <div class="review1 bg-whiteGrey flex flex-col items-center p-4 w-60 md:w-auto max-w-xs">
-                <img class="w-40 h-30 md:w-72 md:h-72 p-2" src="./assets/images/reviews/Alex-Foord-e1644436249973.jpg"
-                    alt="">
-                <i class="text-lg md:text-2xl">Mohammed</i>
-                <div class="flex">
-                    <span class="icon-[ri--star-fill] text-lBrown text-xl md:text-2xl"></span>
-                    <span class="icon-[ri--star-fill] text-lBrown text-xl md:text-2xl"></span>
-                    <span class="icon-[ri--star-fill] text-lBrown text-xl md:text-2xl"></span>
-                    <span class="icon-[ri--star-fill] text-lBrown text-xl md:text-2xl"></span>
-                    <span class="icon-[ri--star-fill] text-lBrown text-xl md:text-2xl"></span>
-                </div>
-                <p class="text-SoftGray text-sm md:text-base pb-2">Great Product</p>
-            </div>
-
-            <div class="review2 bg-whiteGrey flex flex-col items-center p-4 w-60 md:w-auto max-w-xs">
-                <img class="w-40 h-40 md:w-72 md:h-72 p-2"
-                    src="./assets/images/reviews/business-woman-manager-or-human.jpg" alt="">
-                <i class="text-lg md:text-2xl">Asmae</i>
-                <div class="flex">
-                    <span class="icon-[ri--star-fill] text-lBrown text-xl md:text-2xl"></span>
-                    <span class="icon-[ri--star-fill] text-lBrown text-xl md:text-2xl"></span>
-                    <span class="icon-[ri--star-fill] text-lBrown text-xl md:text-2xl"></span>
-                    <span class="icon-[ri--star-fill] text-lBrown text-xl md:text-2xl"></span>
-                    <span class="icon-[ri--star-fill] text-lBrown text-xl md:text-2xl"></span>
-                </div>
-                <p class="text-SoftGray text-sm md:text-base pb-2">Nice Product</p>
-            </div>
-
-            <div class="review3 bg-whiteGrey flex flex-col items-center p-4 w-60 md:w-auto max-w-xs">
-                <img class="w-40 h-40 md:w-72 md:h-72 p-2" src="./assets/images/reviews/amit.jpg" alt="">
-                <i class="text-lg md:text-2xl">Ahmed</i>
-                <div class="flex">
-                    <span class="icon-[ri--star-fill] text-lBrown text-xl md:text-2xl"></span>
-                    <span class="icon-[ri--star-fill] text-lBrown text-xl md:text-2xl"></span>
-                    <span class="icon-[ri--star-fill] text-lBrown text-xl md:text-2xl"></span>
-                    <span class="icon-[ri--star-fill] text-lBrown text-xl md:text-2xl"></span>
-                    <span class="icon-[ri--star-fill] text-lBrown text-xl md:text-2xl"></span>
-                </div>
-                <p class="text-SoftGray text-sm md:text-base pb-2">Good Product</p>
-            </div>
-        </div>
-    </div>
     </main>
 
 
