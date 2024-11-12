@@ -10,6 +10,8 @@ module.exports = {
         mustard: "#FEFAE0",
         lBrown: "#DDA15E",
         dBrown: "#AA6122",
+        SoftGray :'#878787',
+        whiteGrey : '#F6F6F6',
       },
       fontFamily: {
         Mont: ["Montserrat", "sans-serif"], 
