@@ -2,4 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+@layer components {
+  .navItem {
+    @apply tracking-widest transition-all hover:text-lBrown active:text-dBrown;
+  }
+  .productHeading {
+    @apply border-b-2 border-lBrown py-2 text-4xl z-40;
+  }
+  .catCard {
+    @apply bg-whittt hover:text-lBrown hover:scale-105 hover:bg-gray-100 transition-all cursor-pointer drop-shadow-xl px-2 active:scale-95 active:opacity-50 w-fit h-fit;
+  }
+  .homeCard {
+    @apply w-full h-fit flex flex-col rounded-md drop-shadow-xl border scale-75 bg-whittt hover:bg-gray-100 transition-all cursor-pointer;
+  }
+  .listItem {
+    @apply absolute inset-0 overflow-hidden opacity-0 transition-all;
+  }
+  .listItem.active {
+    @apply opacity-100 z-[9];
+  }
+  .itemContent {
+    @apply flex flex-col gap-2 text-3xl absolute left-[10%] top-[30%] w-[500px] max-w-[80%] z-10;
+  }
+  .carBtn {
+    @apply w-fit transition-all active:scale-95 active:opacity-75 hover:scale-110 hover:bg-white hover:text-lBrown text-2xl px-10 py-1 rounded-sm text-white;
+  }
+  .footerHover {
+    @apply transition-all hover:scale-105 hover:text-lBrown cursor-pointer;
+  }
+}
+
+.listItem::after {
+  content: "";
+  width: 100%;
+  height: 60%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-image: linear-gradient(to top, #ffffff 20%, transparent);
+}
