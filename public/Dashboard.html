@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        <script src="/node_modules/animejs/lib/anime.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+      
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>Document</title>
+      </head>
+      <body class="bg-gray-100">
+
+        <div class="flex flex-col md:flex-row min-h-screen">
+        
+          <aside class="w-full md:w-64 bg-white shadow-lg hidden md:block">
+            <div class="p-4 flex items-center space-x-2">
+              <img src="./assets/images/logo.png" alt="Logo" class="h-8 w-32">
+            </div>
+            <nav class="mt-8">
+              <ul>
+                <li><a href="#" class="flex items-center p-4 hover:bg-gray-100"><span class="mr-2"><span class="icon-[fluent-mdl2--b-i-dashboard]" style="color: #DDA15E;"></span></span>Dashboard</a></li>
+                <li><a href="#" class="flex items-center p-4 hover:bg-gray-100 text-lBrown"><span class="mr-2"><span class="icon-[fluent-mdl2--product]" style="color: #DDA15E;"></span></span>Product</a></li>
+                <li><a href="#" class="flex items-center p-4 hover:bg-gray-100"><span class="mr-2"><span class="icon-[mdi--user]" style="color: #DDA15E;"></span></span>Customer</a></li>
+              </ul>
+            </nav>
+          </aside>
+      
+          
+          <div class="flex-1 p-4 sm:p-6">
+           
+            <div class="flex flex-col sm:flex-row justify-between items-center mb-6 space-y-4 sm:space-y-0">
+              <h1 class="text-2xl font-semibold">Products</h1>
+              <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4">
+                <button class="bg-lBrown text-white px-4 py-2 rounded-md w-full sm:w-auto">Add New Product</button>
+                <div class="relative w-full sm:w-auto">
+                  <input type="text" class="w-full sm:w-auto border border-gray-300 rounded-md pl-8 pr-4 py-2" placeholder="Search">
+                  <span class="absolute left-2 top-2 text-gray-500"><span class="icon-[ic--sharp-search] text-2xl" style="color: #878787;"></span></span>
+                </div>
+                <img src="./assets/images/reviews/Alex-Foord-e1644436249973.jpg" alt="User Avatar" class="h-8 w-8 rounded-full">
+              </div>
+            </div>
+      
+          
+            <div class="bg-white rounded-lg shadow overflow-x-auto">
+              <table class="min-w-full text-left table-fixed">
+                <thead>
+                  <tr class="border-b">
+                    <th class="py-4 px-6">Product Name</th>
+                    <th class="py-4 px-6 hidden sm:table-cell">Product ID</th>
+                    <th class="py-4 px-6 hidden sm:table-cell">Price</th>
+                    <th class="py-4 px-6">Stock</th>
+                    <th class="py-4 px-6 hidden sm:table-cell">Category</th>
+                    <th class="py-4 px-6">Status</th>
+                    <th class="py-4 px-6">Action</th>
+                  </tr>
+                </thead>
+                <tbody id="table">
+                
+                </tbody>
+              </table>
+            </div>
+      
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center mt-4 space-y-4 sm:space-y-0">
+              <div class="space-x-2">
+                <button class="bg-lBrown text-white px-3 py-1 rounded-full">1</button>
+                <button class="px-3 py-1 rounded-full">2</button>
+                <button class="px-3 py-1 rounded-full">3</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+       
+  
+      <script src="./assets/js/Dashboard.js"></script>
+      </body>
+</html>
