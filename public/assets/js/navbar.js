@@ -2,6 +2,11 @@ const openBtn = document.querySelector('#openNav');
 const closeBtn = document.querySelector('#closeNav');
 const nav = document.querySelector('#mobileNav');
 
+const openCart = document.querySelector('#openCart');
+const closeCart = document.querySelector('#closeCart');
+const mainCart = document.querySelector('#cartMain');
+const cartReal = document.querySelector('#cartReal');
+
 openBtn.addEventListener('mouseenter', (e) => {
     console.log('open');
     anime({
@@ -14,8 +19,6 @@ openBtn.addEventListener('mouseenter', (e) => {
 openBtn.addEventListener('click', (e) => {
     e.preventDefault();
 
-    nav.style.transform = 'translateY(-1000px) scale(0.5)';
-    nav.style.opacity = '0';
     nav.classList.remove('hidden');
 
     anime({
@@ -49,6 +52,51 @@ closeBtn.addEventListener('click', (e) => {
         delay: 100,
         complete: () => {
             nav.classList.add('hidden');
+        }
+    });
+});
+
+// Cart functionality
+
+openCart.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    mainCart.classList.toggle('hidden');
+
+    anime({
+        targets: mainCart,
+        opacity: [0, 1],
+        duration: 500,
+        easing: 'easeOutQuad'
+    });
+
+    anime({
+        targets: cartReal,
+        translateX: [1000, 0],
+        opacity: [0, 1],
+        duration: 250,
+        easing: 'easeOutQuad'
+    });
+});
+
+closeCart.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    anime({
+        targets: cartReal,
+        translateX: [0, 1000],
+        opacity: [1, 0],
+        duration: 250,
+        easing: 'easeInQuad'
+    });
+    
+    anime({
+        targets: mainCart,
+        opacity: [1, 0],
+        duration: 500,
+        easing: 'easeInQuad',
+        complete: () => {
+            mainCart.classList.toggle('hidden');
         }
     });
 });

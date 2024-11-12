@@ -1604,6 +1604,11 @@ video {
   background-color: rgb(239 68 68 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-dBrown:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(170 97 34 / var(--tw-bg-opacity));
+}
+
 .hover\:text-lBrown:hover {
   --tw-text-opacity: 1;
   color: rgb(221 161 94 / var(--tw-text-opacity));
