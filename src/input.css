@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-<<<<<<< HEAD
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 @layer components {
@@ -44,13 +43,3 @@
   bottom: 0;
   background-image: linear-gradient(to top, #ffffff 20%, transparent);
 }
-=======
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
-@layer components {
-  .navItem {
-    @apply tracking-widest transition-all hover:text-lBrown active:text-dBrown;
-}
-
-
->>>>>>> origin/review
