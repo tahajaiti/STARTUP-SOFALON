@@ -11,7 +11,6 @@ openBtn.addEventListener('mouseenter', (e) => {
       });
 });
 
-
 openBtn.addEventListener('click', (e) => {
     e.preventDefault();
 
