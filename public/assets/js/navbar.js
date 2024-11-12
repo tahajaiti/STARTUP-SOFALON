@@ -10,6 +10,8 @@ const cartReal = document.querySelector('#cartReal');
 let cartStorage = JSON.parse(localStorage.getItem("cart")) || [];
 let counter = cartStorage.length || 0;
 
+const TAX = 0.25; //tax rate
+
 //burger menu
 openBtn.addEventListener('mouseenter', (e) => {
     console.log('open');
@@ -112,18 +114,16 @@ const loadNumber = () => {
     const sum = document.querySelector("#cartSum");
     const tax = document.querySelector("#cartTax");
 
+
     number.textContent = counter;
     menuNumber.textContent = `${counter} ITEMS`;
 
-    let totalPrice = 0;
-
-
-    cartStorage.forEach(item => {
+    const totalPrice = cartStorage.reduce((total, item) => {
         const price = parseFloat(item.price.replace(/[^0-9.-]+/g, ""));
-        totalPrice += !isNaN(price) ? price * item.quantity : 0;
-    });
+        return total + (price * item.quantity);
+    }, 0);
 
-    const taxAmount = totalPrice * 0.1;
+    const taxAmount = totalPrice * TAX;
     const subtotal = totalPrice - taxAmount;
 
     sum.textContent = `SUMMARY: ${subtotal.toFixed(2)}$`;
@@ -131,62 +131,55 @@ const loadNumber = () => {
     total.textContent = `TOTAL: ${totalPrice.toFixed(2)}$`;
 
     loadCartItem();
-}
+};
+
 
 const loadCartItem = () => {
     const container = document.querySelector("#cartContainer");
-    container.innerHTML = "";
+    container.innerHTML = ""; 
 
     cartStorage.forEach(item => {
-        const existingItem = [...container.children].find(
-            child => child.querySelector("#itemTitle").innerText === item.title
-        );
+        const description = item.description.split(" ").slice(0, 15).join(" ") + "...";
 
-        if (existingItem) {
-            const quantityElement = existingItem.querySelector("p.font-bold");
-            quantityElement.innerText = `QTY: ${item.quantity}`;
-        } else {
+        const newItem = document.createElement("div");
+        newItem.className = "bg-white w-full h-1/5 flex flex-row";
 
-            const newItem = document.createElement("div");
-            newItem.className = "bg-white w-full h-1/5 flex flex-row";
-
-            const description = item.description.split(" ").slice(0, 15).join(" ") + "...";
-
-            newItem.innerHTML = `
-                <img class="w-1/3 p-4 object-cover h-full bg-white" src="${item.image}" alt="">
-                <div class="w-full h-full flex flex-col justify-start p-2">
-                    <div class="flex justify-between">
-                        <p id="itemTitle" class="text-2xl">${item.title}</p>
-                        <span id="removeFromCart" class="icon-[iconamoon--trash-light] text-2xl cursor-pointer hover:bg-red-500 transition-all"></span>
-                    </div>
-                    <p class="text-gray-500 h-full">${description}</p>
-                    <div class="flex justify-between flex-wrap">
-                        <p class="font-bold">QTY: ${item.quantity}</p>
-                        <p class="text-lBrown font-medium">${item.price}</p>
-                    </div>
+        newItem.innerHTML = `
+            <img class="w-1/3 p-4 object-cover h-full bg-white" src="${item.image}" alt="">
+            <div class="w-full h-full flex flex-col justify-start p-2">
+                <div class="flex justify-between">
+                    <p id="itemTitle" class="text-2xl">${item.title}</p>
+                    <span id="removeFromCart" class="icon-[iconamoon--trash-light] text-2xl cursor-pointer hover:bg-red-500 transition-all"></span>
                 </div>
-            `;
+                <p class="text-gray-500 h-full">${description}</p>
+                <div class="flex justify-between flex-wrap">
+                    <p class="font-bold">QTY: ${item.quantity}</p>
+                    <p class="text-lBrown font-medium">${item.price}</p>
+                </div>
+            </div>
+        `;
 
-            container.appendChild(newItem);
+        container.appendChild(newItem);
 
-            const removeBtn = newItem.querySelector("#removeFromCart");
-            removeBtn.addEventListener("click", (e) => {
-                e.preventDefault();
-                const itemTitle = newItem.querySelector("#itemTitle").innerText;
-                const itemIndex = cartStorage.findIndex(item => item.title === itemTitle);
-                if (itemIndex > -1) {
-                    cartStorage.splice(itemIndex, 1);
-
-                    localStorage.setItem("cart", JSON.stringify(cartStorage));
-
-                    counter--;
-                    loadNumber();
-                    loadCartItem();
-                }
-            });
-        }
+        const removeBtn = newItem.querySelector("#removeFromCart");
+        removeBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            removeItemFromCart(item.title);
+        });
     });
-}
+};
+
+const removeItemFromCart = (title) => {
+    const itemIndex = cartStorage.findIndex(item => item.title === title);
+    if (itemIndex > -1) {
+        cartStorage.splice(itemIndex, 1);
+        localStorage.setItem("cart", JSON.stringify(cartStorage));
+
+        counter--;
+        loadNumber();
+        loadCartItem(); 
+    }
+};
 
 
 document.addEventListener("DOMContentLoaded", loadNumber);

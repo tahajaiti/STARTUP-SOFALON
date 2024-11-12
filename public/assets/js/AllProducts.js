@@ -168,11 +168,6 @@ function ActivePage(activebtn) {
 }
 
 
-fetchProducts();
-
-
-
-
 sortButton.addEventListener('click', () => {
     if (sortOptions.style.display === 'none') {
         sortOptions.style.display = 'block';
@@ -299,3 +294,5 @@ function Filtre(obj,type){
         return newarray;
     }
 }
+
+document.addEventListener('DOMContentLoaded', fetchProducts);
