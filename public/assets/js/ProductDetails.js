@@ -36,7 +36,7 @@ async function fetchProducts() {
                     <h2 class="text-4xl font-semibold mb-2">${ProductToShow.title}</h2>
                     <div class="flex items-center gap-2 text-lg mb-4 pb-8">
                         <span class="line-through text-SoftGray text-2xl">$300</span>
-                        <span class="text-lBrown text-2xl">${ProductToShow.price}</span>
+                        <span class="text-lBrown text-2xl">$${ProductToShow.price}</span>
                     </div>
 
                     <hr class="w-[80%] h-[1px] bg-SoftGray border-0">
@@ -45,7 +45,7 @@ async function fetchProducts() {
 
                     <div class="flex items-center gap-4 mb-4 pb-8">
                         <div class="flex items-center border border-SoftGray">
-                            <input type="text" value="1" class="w-10 text-center border border-SoftGray text-SoftGray h-[51px] focus:outline-none">
+                            <p class="w-10 text-center pt-3 border border-SoftGray text-SoftGray h-[51px] focus:outline-none">1</p>
                             <div class="flex flex-col">
                                 <button class="px-2 border border-SoftGray h-[25.5px] text-SoftGray">+</button>
                                 <button class="px-2 border border-SoftGray h-[25.5px] text-SoftGray">-</button>
