@@ -14,14 +14,13 @@ const LTH = document.getElementById('LTH');
 const Beds = document.getElementById('Beds');
 const Decoration = document.getElementById('Decoration');
 const Kitchen = document.getElementById('Kitchen');
-const Storagee = document.getElementById('Storage');
+const storage = document.getElementById('Storage');
 const Tables = document.getElementById('Tables');
 
 let data = null;
-let InitialProducts;
 let azArray;
-
 let currentPageN;
+
 async function fetchProducts() {
     const response = await fetch('../../../products.json');
     data = await response.json();
@@ -32,68 +31,25 @@ async function fetchProducts() {
     DisplayCards(GFG(data.products, 1, 12));
     addPagination();
     azArray = [...data.products];
-    let arrrr = [...data.products];
 
-    AZ.addEventListener('click',function () {
-        Sort(azArray,1);
-        DisplayCards(GFG(azArray, 1, 12));
-        sortOptions.style.display = 'none';
-        filterOptions.style.display = 'none';
-    });
+    AZ.addEventListener('click', () => handleSort(azArray, 1));
+    ZA.addEventListener('click', () => handleSort(azArray, 2));
+    HTL.addEventListener('click', () => handleSort(azArray, 3));
+    LTH.addEventListener('click', () => handleSort(azArray, 4));
 
-    ZA.addEventListener('click',function () {
-        Sort(azArray,2);
-        DisplayCards(GFG(azArray, 1, 12));
-        sortOptions.style.display = 'none';
-        filterOptions.style.display = 'none';
-    });
-    HTL.addEventListener('click',function () {
-        Sort(azArray,3);
-        DisplayCards(GFG(azArray, 1, 12));
-        sortOptions.style.display = 'none';
-        filterOptions.style.display = 'none';
-    });
-    LTH.addEventListener('click',function () {
-        Sort(azArray,4);
-        DisplayCards(GFG(azArray, 1, 12));
-        sortOptions.style.display = 'none';
-        filterOptions.style.display = 'none';
-    });
-   
-    Beds.addEventListener('click', function(){
-         DisplayCards(Filtre(arrrr,1));
-         filterOptions.style.display = 'none';
-         sortOptions.style.display = 'none';
-    })
-    Decoration.addEventListener('click', function(){
-         DisplayCards(Filtre(arrrr,2));
-         filterOptions.style.display = 'none';
-         sortOptions.style.display = 'none';
-    })
-    Kitchen.addEventListener('click', function(){
-         DisplayCards(Filtre(arrrr,3));
-         filterOptions.style.display = 'none';
-         sortOptions.style.display = 'none';
-    })
-    Storagee.addEventListener('click', function(){
-         DisplayCards(Filtre(arrrr,4));
-         filterOptions.style.display = 'none';
-         sortOptions.style.display = 'none';
-    })
-    Tables.addEventListener('click', function(){
-         DisplayCards(Filtre(arrrr,5));
-         filterOptions.style.display = 'none';
-         sortOptions.style.display = 'none';
-    })
+    // Set up event listeners for filtering
+    Beds.addEventListener('click', () => handleFilter('Beds'));
+    Decoration.addEventListener('click', () => handleFilter('Decoration'));
+    Kitchen.addEventListener('click', () => handleFilter('Kitchen'));
+    storage.addEventListener('click', () => handleFilter('Storage'));
+    Tables.addEventListener('click', () => handleFilter('Tables'));
 }
-
 
 function GFG(array, currentPage, pageSize) {
     const startIndex = (currentPage - 1) * pageSize;
     const endIndex = startIndex + pageSize;
     return array.slice(startIndex, endIndex);
 }
-
 
 function DisplayCards(products) {
     card.innerHTML = '';
@@ -121,14 +77,14 @@ function DisplayCards(products) {
             </div>`;
     });
 
-    let details = document.querySelectorAll('#details');
+    const details = document.querySelectorAll('#details');
     details.forEach((button, index) => {
         button.addEventListener('click', () => {
             const productId = products[index].id;
             window.location.href = `ProductDetails.html?id=${productId}`;
         });
     });
-    
+
 }
 
 const addPagination = () => {
@@ -151,17 +107,16 @@ const addPagination = () => {
     };
 };
 
-function ActivePage(activebtn) {
+function ActivePage(activeBtn) {
     const AllPage = document.querySelectorAll('#page');
 
     AllPage.forEach((page) => {
         page.classList.add('bg-white', 'border', 'border-SoftGray', 'text-gray');
         page.classList.remove('bg-lBrown', 'text-white');
     });
-    activebtn.classList.add('bg-lBrown', 'text-white');
-    activebtn.classList.remove('bg-white', 'border', 'border-SoftGray', 'text-gray');
+    activeBtn.classList.add('bg-lBrown', 'text-white');
+    activeBtn.classList.remove('bg-white', 'border', 'border-SoftGray', 'text-gray');
 }
-
 
 sortButton.addEventListener('click', () => {
     if (sortOptions.style.display === 'none') {
@@ -181,111 +136,47 @@ filterButton.addEventListener('click', () => {
 
 // Search Function 
 const searchInput = document.getElementById('searchInput');
-searchInput.addEventListener("keyup", (e)=> {
+searchInput.addEventListener("keyup", (e) => {
 
 
     const searchData = e.target.value.toLowerCase();
-    
+
     const fileterdData = data.products.filter(o => o.title.toLowerCase().startsWith(searchData));
 
     DisplayCards(fileterdData);
-}); 
+});
 
 // Sort Function
-function Sort(arr,type){
-    if (type === 1) {
-        for (var i = 0; i < arr.length; i++) {
-            for (var j = 0; j < (arr.length - i - 1); j++) {
-                if (arr[j].title > arr[j + 1].title) {
-                    var temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
-                }
-            }
-        }
-
-    }else if(type === 2){
-        for (var i = 0; i < arr.length; i++) {
-            for (var j = 0; j < (arr.length - i - 1); j++) {
-                if (arr[j].title < arr[j + 1].title) {
-                    var temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
-                }
-            }
-        }  
-    }else if(type === 3){
-
-        for (var i = 0; i < arr.length; i++) {
-            for (var j = 0; j < (arr.length - i - 1); j++) {
-                if (Number(arr[j].price )  < Number(arr[j + 1].price)) {
-                    var temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
-                }
-            }
-        }
-    } else if(type === 4){
-        for (var i = 0; i < arr.length; i++) {
-            for (var j = 0; j < (arr.length - i - 1); j++) {
-                if (Number(arr[j].price )  > Number(arr[j + 1].price)) {
-                    var temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
-                }
-            }
-        }
+function handleSort(arr, type) {
+    let sortedArr;
+    switch (type) {
+        case 1:
+            sortedArr = arr.sort((a, b) => a.title.localeCompare(b.title));
+            break;
+        case 2:
+            sortedArr = arr.sort((a, b) => b.title.localeCompare(a.title));
+            break;
+        case 3:
+            sortedArr = arr.sort((a, b) => b.price - a.price);
+            break;
+        case 4:
+            sortedArr = arr.sort((a, b) => a.price - b.price);
+            break;
     }
+    DisplayCards(GFG(sortedArr, 1, 12));
+    hideOptions();
 }
 
-// Filtre function
-function Filtre(obj,type){
-    let newarray = [];
-    pagination.style.display = 'none';
-    if(type === 1){
+// Filter function
+function handleFilter(category) {
+    const filteredData = data.products.filter(product => product.category === category);
+    DisplayCards(filteredData);
+    hideOptions();
+}
 
-        for (let key in obj) {
-            if (obj[key].category === 'Beds') {
-                newarray.push(obj[key]);
-            }
-        }
-        return newarray;
-    }else if(type === 2){
-
-        for (let key in obj) {
-            if (obj[key].category === 'Decoration') {
-                newarray.push(obj[key]);
-            }
-        }
-        return newarray;
-        
-    }else if(type === 3){
-
-        for (let key in obj) {
-            if (obj[key].category === 'Kitchen') {
-                newarray.push(obj[key]);
-            }
-        }
-        return newarray;
-        
-    }else if(type === 4){
-
-        for (let key in obj) {
-            if (obj[key].category === 'Storage') {
-                newarray.push(obj[key]);
-            }
-        }
-        return newarray;
-        
-    }else if(type === 5){
-
-        for (let key in obj) {
-            if (obj[key].category === 'Tables') {
-                newarray.push(obj[key]);
-            }
-        }
-        return newarray;
-    }
+function hideOptions() {
+    sortOptions.style.display = 'none';
+    filterOptions.style.display = 'none';
 }
 
 document.addEventListener('DOMContentLoaded', fetchProducts);
