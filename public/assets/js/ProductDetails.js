@@ -113,13 +113,31 @@ addCart.addEventListener('click', () => {
 const loadNumber = () => {
     const number = document.querySelector("#cartNum");
     const menuNumber = document.querySelector("#cartMenuNum");
+    const total = document.querySelector("#cartTotal");
+    const sum = document.querySelector("#cartSum");
+    const tax = document.querySelector("#cartTax");
 
     number.textContent = counter;
     menuNumber.textContent = `${counter} ITEMS`;
 
-    console.log(cartStorage);
+    let totalPrice = 0;
+
+
+    cartStorage.forEach(item => {
+        const price = parseFloat(item.price.replace(/[^0-9.-]+/g, ""));
+        totalPrice += !isNaN(price) ? price * item.quantity : 0;
+    });
+
+    const taxAmount = totalPrice * 0.1;
+    const subtotal = totalPrice - taxAmount;
+
+    sum.textContent = `SUMMARY: ${subtotal.toFixed(2)}$`;
+    tax.textContent = `DELIVERY TAX: ${taxAmount.toFixed(2)}$`;
+    total.textContent = `TOTAL: ${totalPrice.toFixed(2)}$`;
+
     loadCartItem();
 }
+
 
 const loadCartItem = () => {
     const container = document.querySelector("#cartContainer");
