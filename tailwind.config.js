@@ -2,7 +2,6 @@ const { addDynamicIconSelectors } = require("@iconify/tailwind");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./public/*.html", "./public/assets/js/*.js"],
   theme: {
     extend: {
       colors: {
@@ -14,8 +13,13 @@ module.exports = {
         SoftGray :'#878787',
         whiteGrey : '#F6F6F6',
       },
-      fontFamily: {Mont: ["Montserrat", "sans-serif",]},
+      fontFamily: {
+        Mont: ["Montserrat", "sans-serif"], 
+        
+      },
     },
   },
-  plugins: [addDynamicIconSelectors(),],
+  plugins: [
+    addDynamicIconSelectors(), 
+  ],
 };
