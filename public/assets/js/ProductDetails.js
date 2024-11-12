@@ -35,7 +35,7 @@ async function fetchProducts(){
       var1.src = ProductToShow.mainImage;
       var2.src = ProductToShow.images[0];
       var3.src = ProductToShow.images[1];
-        let prc = `$ ${ProductToShow.price}`;
+        let prc = `$${ProductToShow.price}`;
         titleProduct.innerText = ProductToShow.title;
         priceProduct.innerText = prc;
         descriptionProduct.innerText = ProductToShow.description;
