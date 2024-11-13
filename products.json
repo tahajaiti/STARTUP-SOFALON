@@ -264,20 +264,7 @@
             "description": "Affordable coffee table that blends well with any decor.",
             "SKU": "TAB345678",
             "stock": 100
-        },
-        {
-            "id": 20,
-            "category": "Tables",
-            "mainImage": "assets/images/Products/Tables/table4/1.png",
-            "images": [
-                "assets/images/Products/Tables/table4/2.jpg",
-                "assets/images/Products/Tables/table4/3.jpg"
-            ],
-            "title": "BRUSALI",
-            "price": "75",
-            "description": "A durable, stylish table with a practical storage shelf underneath.",
-            "SKU": "TAB456789",
-            "stock": 30
         }
+        
     ]
 }   

@@ -21,15 +21,21 @@ let data = JSON.parse(localStorage.getItem("products") || "[]");
 let dataLocal = null;
 let azArray;
 let currentPageN;
-
 async function fetchProducts() {
-    const response = await fetch('../../../products.json');
-    dataLocal = await response.json();
     
-    // Only set `data` if it's empty to avoid duplicates
-    if (data.length === 0 && dataLocal && dataLocal.products) {
-        data = dataLocal.products;
-        localStorage.setItem("products", JSON.stringify(data));
+    if (data.length === 0 && !localStorage.getItem("products_loaded")) {
+        try {
+            const response = await fetch('../../../products.json');
+            dataLocal = await response.json();
+            
+            if (dataLocal && dataLocal.products) {
+                data = dataLocal.products;
+                localStorage.setItem("products", JSON.stringify(data));
+                localStorage.setItem("products_loaded", "true");
+            }
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        }
     }
 
     currentPageN = Math.ceil(data.length / 12);
@@ -48,6 +54,7 @@ async function fetchProducts() {
     Kitchen.addEventListener('click', () => handleFilter('Kitchen'));
     storage.addEventListener('click', () => handleFilter('Storage'));
     Tables.addEventListener('click', () => handleFilter('Tables'));
+
 }
 
 function GFG(array, currentPage, pageSize) {
