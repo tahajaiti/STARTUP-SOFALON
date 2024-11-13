@@ -133,6 +133,7 @@ const removeItem = (title) => {
         localStorage.setItem("products", JSON.stringify(data));
 
         DisplayCards(GFG(data, 1, 12));
+        addPagination();
     }
 };
 
