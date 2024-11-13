@@ -37,7 +37,6 @@ async function fetchProducts() {
     HTL.addEventListener('click', () => handleSort(azArray, 3));
     LTH.addEventListener('click', () => handleSort(azArray, 4));
 
-    // Set up event listeners for filtering
     Beds.addEventListener('click', () => handleFilter('Beds'));
     Decoration.addEventListener('click', () => handleFilter('Decoration'));
     Kitchen.addEventListener('click', () => handleFilter('Kitchen'));
@@ -121,6 +120,7 @@ function ActivePage(activeBtn) {
 sortButton.addEventListener('click', () => {
     if (sortOptions.style.display === 'none') {
         sortOptions.style.display = 'block';
+        filterOptions.style.display = 'none';
     } else {
         sortOptions.style.display = 'none';
     }
@@ -129,6 +129,7 @@ sortButton.addEventListener('click', () => {
 filterButton.addEventListener('click', () => {
     if (filterOptions.style.display === 'none') {
         filterOptions.style.display = 'block';
+        sortOptions.style.display = 'none';
     } else {
         filterOptions.style.display = 'none';
     }
