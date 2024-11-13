@@ -46,7 +46,7 @@ const loadData = () => {
     timeline
         .add({
             targets: cards,
-            translateX: [-10000, 0],
+            translateX: [-5000, 0],
             opacity: [0, 1],
             scale: [0.3, 0.75],
             filter: ["blur(10px)", "blur(0px)"],
@@ -55,13 +55,6 @@ const loadData = () => {
             easing: 'easeInOutElastic',
         });
 };
-
-document.querySelectorAll(".catCard").forEach(card => {
-    card.addEventListener("click", () => {
-        const category = card.getAttribute("category");
-        window.location.href = `AllProducts.html?category=${category.toLowerCase()}`;
-    });
-});
 
 setInterval  (() => {
     loadData();

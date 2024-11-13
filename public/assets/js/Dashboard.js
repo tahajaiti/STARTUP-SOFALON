@@ -3,7 +3,7 @@ let dataLocal = null;
 let azArray;
 let currentPageN;
 
-let nextId = 21;
+let nextId;
 
 const table = document.getElementById('table');
 const addContainer = document.getElementById("addContainer");
@@ -11,14 +11,10 @@ const addProduct = document.getElementById("addProduct");
 const closePop = addContainer.querySelector("#close");
 const pages = document.getElementById('pages');
 
-const addForm = document.querySelector("#add-product-form");
-const formTitle = addForm.querySelector("#title");
-const formPrice = addForm.querySelector("#price");
-const formDescription = addForm.querySelector("#description");
-const formStock = addForm.querySelector("#stock");
-const formSKU = addForm.querySelector("#sku");
-const formCategory = addForm.querySelector("#category");
-const applyForm = addForm.querySelector("#applyBtn");
+const addForm = document.querySelector("#addForm");
+
+const applyBtn = document.querySelector("#applyBtn");
+console.log(applyBtn);
 
 async function fetchProducts() {
 
@@ -42,6 +38,7 @@ async function fetchProducts() {
     DisplayCards(GFG(data, 1, 12));
     addPagination();
     azArray = data;
+    nextId = data.length;
 }
 
 function GFG(array, currentPage, pageSize) {
@@ -142,22 +139,74 @@ const removeItem = (id) => {
     if (itemIndex > -1) {
         data.splice(itemIndex, 1);
         localStorage.setItem("products", JSON.stringify(data));
+        nextId = data.length+1;
 
         DisplayCards(GFG(data, 1, 12));
         addPagination();
     }
 }
 
-applyForm.addEventListener('click', () => {
+applyBtn.addEventListener('click', async (e) => {
+    e.preventDefault();
+    
+    const formTitle = addForm.querySelector("#title");
+    const formPrice = addForm.querySelector("#price");
+    const formDescription = addForm.querySelector("#description");
+    const formStock = addForm.querySelector("#stock");
+    const formSKU = addForm.querySelector("#sku");
+    const formCategory = addForm.querySelector("#category");
+    const formImage = addForm.querySelector("#mainImage");
+    const formImage1 = addForm.querySelector("#image1");
+    const formImage2 = addForm.querySelector("#image2");
+
+    console.log(formImage);
+
+    const mainImageBase64 = await convertToBase64(formImage.files[0]);
+    const image1Base64 = formImage1.files.length ? await convertToBase64(formImage1.files[0]) : null;
+    const image2Base64 = formImage2.files.length ? await convertToBase64(formImage2.files[0]) : null;
+
     const newProduct = {
-        id: Date.now(),
+        id: nextId++,
         title: formTitle.value,
-        price: formPrice.value,
-        stock: formStock.value,
-        sku: formSKU.value,
+        price: parseFloat(formPrice.value),
+        description: formDescription.value,
+        stock: parseInt(formStock.value),
         category: formCategory.value,
-        mainImage: 'https://via.placeholder.com/150'
-    }
-})
+        mainImage: mainImageBase64,
+        SKU: formSKU.value,
+        images: [
+            image1Base64,
+            image2Base64,
+        ]
+    };
+
+    data.push(newProduct);
+    localStorage.setItem("products", JSON.stringify(data));
+
+    DisplayCards(GFG(data, 1, 12));
+    addPagination();
+
+    addContainer.style.display = 'none';
+    formTitle.value = '';
+    formPrice.value = '';
+    formDescription.value = '';
+    formStock.value = '';
+    formSKU.value = '';
+    formCategory.value = '';
+    formImage.value = '';
+    formImage1.value = '';
+    formImage2.value = '';
+
+    
+});
+
+function convertToBase64(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onloadend = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+    });
+}
 
 document.addEventListener("DOMContentLoaded", fetchProducts);

@@ -67,8 +67,8 @@ function DisplayCards(products) {
     card.innerHTML = '';
     products.forEach(product => {
         card.innerHTML += `
-            <div class="flex flex-col bg-white rounded-lg p-4 hover:shadow-lg transition-shadow duration-300 max-w-xs mx-auto">
-                <img src="${product.mainImage}" class="bg-whiteGrey p-2" alt="Product Image">
+            <div class="flex flex-col bg-white w-full justify-between rounded-lg p-4 hover:shadow-lg transition-shadow duration-300 max-w-xs mx-auto">
+                <img src="${product.mainImage}" class="bg-whiteGrey p-2 object-fill h-[200px]" alt="Product Image">
                 <div class="flex flex-col mt-4">
                     <div class="reviews flex gap-1 items-center">
                         <div class="flex">
