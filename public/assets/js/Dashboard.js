@@ -82,7 +82,7 @@ function DisplayCards(products) {
             <tr class="border-b hover:bg-gray-50">
                     <td class="py-4 px-6 flex items-center space-x-2">
                         <img src="${product.mainImage}" alt="Cherry Delight" class="h-8 w-8 rounded-full">
-                        <span>Cherry Delight</span>
+                        <span>${product.title}</span>
                     </td>
                     <td class="py-4 px-6 hidden sm:table-cell">${product.id}</td>
                     <td class="py-4 px-6 hidden sm:table-cell">$${product.price}</td>
