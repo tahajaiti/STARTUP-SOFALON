@@ -663,6 +663,42 @@ video {
   margin-top: 1.5rem;
 }
 
+.mr-3 {
+  margin-right: 0.75rem;
+}
+
+.ml-3 {
+  margin-left: 0.75rem;
+}
+
+.ml-10 {
+  margin-left: 2.5rem;
+}
+
+.ml-1 {
+  margin-left: 0.25rem;
+}
+
+.-ml-8 {
+  margin-left: -2rem;
+}
+
+.ml-96 {
+  margin-left: 24rem;
+}
+
+.ml-60 {
+  margin-left: 15rem;
+}
+
+.ml-0 {
+  margin-left: 0px;
+}
+
+.ml-40 {
+  margin-left: 10rem;
+}
+
 .flex {
   display: flex;
 }
