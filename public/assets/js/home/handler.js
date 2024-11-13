@@ -11,6 +11,7 @@ async function getData() {
         console.error("Error fetching data:", error);
     }
 }
+
 // shuffle
 const shuffleArray = (array) =>{
     for (let i = array.length - 1; i >= 0; i--) {

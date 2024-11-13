@@ -1,6 +1,8 @@
 let ProductDetails = document.getElementById('ProductDetails');
-let data = null;
+const data = JSON.parse(localStorage.getItem("products")) || [];
 let q = 1;
+
+console.log(data);
 
 const TAX = 0.25; //tax rate
 
@@ -27,14 +29,11 @@ const stock = document.getElementById('stock');
 
 console.log('P ID :', productId);
 
-async function fetchProducts() {
-    const response = await fetch('../../../products.json');
-    data = await response.json();
-    let dataProduct = data.products;
+function fetchProducts() {
     let ProductToShow;
-    for (let i = 0; i < dataProduct.length; i++) {
-        if (dataProduct[i].id == productId) {
-            ProductToShow = dataProduct[i];
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].id == productId) {
+            ProductToShow = data[i];
         }
     }
     mainImage.src = ProductToShow.mainImage;

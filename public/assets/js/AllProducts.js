@@ -17,20 +17,26 @@ const Kitchen = document.getElementById('Kitchen');
 const storage = document.getElementById('Storage');
 const Tables = document.getElementById('Tables');
 
-let data = null;
+let data = JSON.parse(localStorage.getItem("products") || "[]");
+let dataLocal = null;
 let azArray;
 let currentPageN;
 
 async function fetchProducts() {
     const response = await fetch('../../../products.json');
-    data = await response.json();
+    dataLocal = await response.json();
+    
+    // Only set `data` if it's empty to avoid duplicates
+    if (data.length === 0 && dataLocal && dataLocal.products) {
+        data = dataLocal.products;
+        localStorage.setItem("products", JSON.stringify(data));
+    }
 
-    currentPageN = Math.ceil(data.products.length / 12);
-    // console.log(currentPageN);
+    currentPageN = Math.ceil(data.length / 12);
 
-    DisplayCards(GFG(data.products, 1, 12));
+    DisplayCards(GFG(data, 1, 12));
     addPagination();
-    azArray = [...data.products];
+    azArray = [...data];
 
     AZ.addEventListener('click', () => handleSort(azArray, 1));
     ZA.addEventListener('click', () => handleSort(azArray, 2));

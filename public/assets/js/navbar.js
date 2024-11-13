@@ -139,7 +139,7 @@ const loadCartItem = () => {
     container.innerHTML = ""; 
 
     cartStorage.forEach(item => {
-        const description = item.description.split(" ").slice(0, 15).join(" ") + "...";
+        const description = item.description.split(" ").slice(0, 10).join(" ") + "...";
 
         const newItem = document.createElement("div");
         newItem.className = "bg-white w-full h-1/5 flex flex-row";
@@ -148,10 +148,10 @@ const loadCartItem = () => {
             <img class="w-1/3 p-4 object-cover h-full bg-white" src="${item.image}" alt="">
             <div class="w-full h-full flex flex-col justify-start p-2">
                 <div class="flex justify-between">
-                    <p id="itemTitle" class="text-2xl">${item.title}</p>
+                    <p id="itemTitle" class="text-xl">${item.title}</p>
                     <span id="removeFromCart" class="icon-[iconamoon--trash-light] text-2xl cursor-pointer hover:bg-red-500 transition-all"></span>
                 </div>
-                <p class="text-gray-500 h-full">${description}</p>
+                <p class="text-gray-500 h-full text-lg">${description}</p>
                 <div class="flex justify-between flex-wrap">
                     <p class="font-bold">QTY: ${item.quantity}</p>
                     <p class="text-lBrown font-medium">${item.price}</p>
