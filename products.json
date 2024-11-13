@@ -1,270 +1,418 @@
 {
-    "products": [
-        {
-            "id": 1,
-            "category": "Beds",
-            "mainImage": "assets/images/Products/Beds/bed1/1.png",
-            "images": [
-                "assets/images/Products/Beds/bed1/2.jpg",
-                "assets/images/Products/Beds/bed1/3.jpg"
-            ],
-            "title": "KLEPPSTAD",
-            "price": "250",
-            "description": "A stylish and comfortable bed frame that adds elegance to any bedroom.",
-            "SKU": "BED123456",
-            "stock": 50
-        },
-        {
-            "id": 2,
-            "category": "Beds",
-            "mainImage": "assets/images/Products/Beds/bed2/1.png",
-            "images": [
-                "assets/images/Products/Beds/bed2/2.jpg",
-                "assets/images/Products/Beds/bed2/3.jpg"
-            ],
-            "title": "SONGESAND",
-            "price": "350",
-            "description": "Elegant and durable bed frame with ample storage space underneath.",
-            "SKU": "BED234567",
-            "stock": 35
-        },
-        {
-            "id": 3,
-            "category": "Beds",
-            "mainImage": "assets/images/Products/Beds/bed3/1.png",
-            "images": [
-                "assets/images/Products/Beds/bed3/2.jpg",
-                "assets/images/Products/Beds/bed3/3.jpg"
-            ],
-            "title": "GLAMBERGET",
-            "price": "150",
-            "description": "A compact and cozy bed frame, perfect for small spaces.",
-            "SKU": "BED345678",
-            "stock": 20
-        },
-        {
-            "id": 4,
-            "category": "Beds",
-            "mainImage": "assets/images/Products/Beds/bed4/1.png",
-            "images": [
-                "assets/images/Products/Beds/bed4/2.jpg",
-                "assets/images/Products/Beds/bed4/3.jpg"
-            ],
-            "title": "RAMNEFJÄLL",
-            "price": "450",
-            "description": "Luxurious bed frame with a modern design and soft-touch finish.",
-            "SKU": "BED456789",
-            "stock": 15
-        },
-        {
-            "id": 5,
-            "category": "Decoration",
-            "mainImage": "assets/images/Products/Decoration/Decoration1/1.png",
-            "images": [
-                "assets/images/Products/Decoration/Decoration1/2.jpg",
-                "assets/images/Products/Decoration/Decoration1/3.jpg"
-            ],
-            "title": "TORARED",
-            "price": "30",
-            "description": "A charming decor item that adds a touch of warmth to any room.",
-            "SKU": "DEC123456",
-            "stock": 100
-        },
-        {
-            "id": 6,
-            "category": "Decoration",
-            "mainImage": "assets/images/Products/Decoration/Decoration2/1.png",
-            "images": [
-                "assets/images/Products/Decoration/Decoration2/2.jpg",
-                "assets/images/Products/Decoration/Decoration2/3.jpg"
-            ],
-            "title": "SVALLET",
-            "price": "70",
-            "description": "Modern decoration with a sleek and minimalist design.",
-            "SKU": "DEC234567",
-            "stock": 80
-        },
-        {
-            "id": 7,
-            "category": "Decoration",
-            "mainImage": "assets/images/Products/Decoration/Decoration3/1.png",
-            "images": [
-                "assets/images/Products/Decoration/Decoration3/2.jpg",
-                "assets/images/Products/Decoration/Decoration3/3.jpg"
-            ],
-            "title": "LAMPAN",
-            "price": "49",
-            "description": "An elegant decorative lamp that fits well in any setting.",
-            "SKU": "DEC345678",
-            "stock": 45
-        },
-        {
-            "id": 8,
-            "category": "Decoration",
-            "mainImage": "assets/images/Products/Decoration/Decoration4/1.png",
-            "images": [
-                "assets/images/Products/Decoration/Decoration4/2.jpg",
-                "assets/images/Products/Decoration/Decoration4/3.jpg"
-            ],
-            "title": "VINDKAST",
-            "price": "65",
-            "description": "Rustic decoration piece that brings an earthy vibe to your space.",
-            "SKU": "DEC456789",
-            "stock": 60
-        },
-        {
-            "id": 9,
-            "category": "Kitchen",
-            "mainImage": "assets/images/Products/Kitchen/kitchen1/1.png",
-            "images": [
-                "assets/images/Products/Kitchen/kitchen1/2.jpg",
-                "assets/images/Products/Kitchen/kitchen1/3.jpg"
-            ],
-            "title": "ENHET",
-            "price": "20",
-            "description": "Compact and versatile kitchen accessory for any home.",
-            "SKU": "KIT123456",
-            "stock": 150
-        },
-        {
-            "id": 10,
-            "category": "Kitchen",
-            "mainImage": "assets/images/Products/Kitchen/kitchen2/1.png",
-            "images": [
-                "assets/images/Products/Kitchen/kitchen2/2.jpg",
-                "assets/images/Products/Kitchen/kitchen2/3.jpg"
-            ],
-            "title": "TILLREDA",
-            "price": "130",
-            "description": "Portable and functional kitchen appliance for small spaces.",
-            "SKU": "KIT234567",
-            "stock": 85
-        },
-        {
-            "id": 11,
-            "category": "Kitchen",
-            "mainImage": "assets/images/Products/Kitchen/kitchen3/1.png",
-            "images": [
-                "assets/images/Products/Kitchen/kitchen3/2.jpg",
-                "assets/images/Products/Kitchen/kitchen3/3.jpg"
-            ],
-            "title": "UTRUSTA",
-            "price": "100",
-            "description": "Durable kitchen unit with modern styling.",
-            "SKU": "KIT345678",
-            "stock": 90
-        },
-        {
-            "id": 12,
-            "category": "Kitchen",
-            "mainImage": "assets/images/Products/Kitchen/kitchen4/1.png",
-            "images": [
-                "assets/images/Products/Kitchen/kitchen4/2.jpg",
-                "assets/images/Products/Kitchen/kitchen4/3.jpg"
-            ],
-            "title": "POUHGEN",
-            "price": "19",
-            "description": "A practical addition to any kitchen, providing extra storage.",
-            "SKU": "KIT456789",
-            "stock": 60
-        },
-        {
-            "id": 13,
-            "category": "Storage",
-            "mainImage": "assets/images/Products/Storage/Storage1/1.png",
-            "images": [
-                "assets/images/Products/Storage/Storage1/2.jpg",
-                "assets/images/Products/Storage/Storage1/3.jpg"
-            ],
-            "title": "KALLAX",
-            "price": "150",
-            "description": "A storage solution that combines style with functionality.",
-            "SKU": "STO123456",
-            "stock": 70
-        },
-        {
-            "id": 14,
-            "category": "Storage",
-            "mainImage": "assets/images/Products/Storage/Storage2/1.png",
-            "images": [
-                "assets/images/Products/Storage/Storage2/2.jpg",
-                "assets/images/Products/Storage/Storage2/3.jpg"
-            ],
-            "title": "BILLY",
-            "price": "200",
-            "description": "Stylish shelving unit that adapts to any room.",
-            "SKU": "STO234567",
-            "stock": 55
-        },
-        {
-            "id": 15,
-            "category": "Storage",
-            "mainImage": "assets/images/Products/Storage/Storage3/1.png",
-            "images": [
-                "assets/images/Products/Storage/Storage3/2.jpg",
-                "assets/images/Products/Storage/Storage3/3.jpg"
-            ],
-            "title": "LACK",
-            "price": "180",
-            "description": "Compact storage unit that fits easily into small spaces.",
-            "SKU": "STO345678",
-            "stock": 45
-        },
-        {
-            "id": 16,
-            "category": "Storage",
-            "mainImage": "assets/images/Products/Storage/Storage4/1.png",
-            "images": [
-                "assets/images/Products/Storage/Storage4/2.jpg",
-                "assets/images/Products/Storage/Storage4/3.jpg"
-            ],
-            "title": "MOSSLANDA",
-            "price": "250",
-            "description": "A large and versatile storage solution for any room.",
-            "SKU": "STO456789",
-            "stock": 25
-        },
-        {
-            "id": 17,
-            "category": "Tables",
-            "mainImage": "assets/images/Products/Tables/table1/1.png",
-            "images": [
-                "assets/images/Products/Tables/table1/2.jpg",
-                "assets/images/Products/Tables/table1/3.jpg"
-            ],
-            "title": "LISABO",
-            "price": "300",
-            "description": "A modern and elegant table for dining or work.",
-            "SKU": "TAB123456",
-            "stock": 40
-        },{
-            "id": 18,
-            "category": "Tables",
-            "mainImage": "assets/images/Products/Tables/table2/1.png",
-            "images": [
-                "assets/images/Products/Tables/table2/2.jpg",
-                "assets/images/Products/Tables/table2/3.jpg"
-            ],
-            "title": "GLADOM",
-            "price": "45",
-            "description": "A compact, versatile side table that’s perfect for small spaces.",
-            "SKU": "TAB234567",
-            "stock": 60
-        },
-        {
-            "id": 19,
-            "category": "Tables",
-            "mainImage": "assets/images/Products/Tables/table3/1.png",
-            "images": [
-                "assets/images/Products/Tables/table3/2.jpg",
-                "assets/images/Products/Tables/table3/3.jpg"
-            ],
-            "title": "LACK",
-            "price": "25",
-            "description": "Affordable coffee table that blends well with any decor.",
-            "SKU": "TAB345678",
-            "stock": 100
-        }
-        
-    ]
-}   
+  "products": [
+    {
+      "id": 1,
+
+      "category": "Beds",
+
+      "mainImage": "assets/images/Products/Beds/bed1/1.png",
+
+      "images": ["assets/images/Products/Beds/bed1/2.jpg", "assets/images/Products/Beds/bed1/3.jpg"],
+
+      "title": "KLEPPSTAD",
+
+      "price": "250",
+
+      "description": "The KLEPPSTAD bed frame offers a combination of minimalist design and quality craftsmanship, making it the ideal choice for modern and traditional bedrooms alike. Its sturdy frame is built to last, while the sleek finish adds a touch of elegance to any room. This bed is perfect for anyone looking to create a cozy, stylish atmosphere in their home. It's not only beautiful but also practical, with a design that allows for easy assembly and stability, providing you with years of comfortable rest.",
+
+      "SKU": "BED123456",
+
+      "stock": 100
+    },
+
+    {
+      "id": 2,
+
+      "category": "Beds",
+
+      "mainImage": "assets/images/Products/Beds/bed2/1.png",
+
+      "images": ["assets/images/Products/Beds/bed2/2.jpg", "assets/images/Products/Beds/bed2/3.jpg"],
+
+      "title": "SONGESAND",
+
+      "price": "350",
+
+      "description": "The SONGESAND bed frame combines elegance and functionality with a durable design crafted from high-quality materials. Its thoughtful structure includes ample storage space underneath, providing a perfect solution for organizing extra linens, clothes, or personal items without cluttering your room. With a sophisticated finish and a design that harmonizes with various decor styles, this bed adds both luxury and practicality to your space, giving you a peaceful and comfortable place to unwind each day.",
+
+      "SKU": "BED234567",
+
+      "stock": 35
+    },
+
+    {
+      "id": 3,
+
+      "category": "Beds",
+
+      "mainImage": "assets/images/Products/Beds/bed3/1.png",
+
+      "images": ["assets/images/Products/Beds/bed3/2.jpg", "assets/images/Products/Beds/bed3/3.jpg"],
+
+      "title": "GLAMBERGET",
+
+      "price": "150",
+
+      "description": "Ideal for compact spaces, the GLAMBERGET bed frame brings charm and coziness to any room. Its small, space-efficient design is perfect for apartments, guest rooms, or any area where space is at a premium. Despite its compact nature, this bed offers exceptional comfort and support. With a durable frame and timeless aesthetics, it's an excellent choice for those seeking simplicity without sacrificing quality or style.",
+
+      "SKU": "BED345678",
+
+      "stock": 20
+    },
+
+    {
+      "id": 4,
+
+      "category": "Beds",
+
+      "mainImage": "assets/images/Products/Beds/bed4/1.png",
+
+      "images": ["assets/images/Products/Beds/bed4/2.jpg", "assets/images/Products/Beds/bed4/3.jpg"],
+
+      "title": "RAMNEFJÄLL",
+
+      "price": "450",
+
+      "description": "The RAMNEFJÄLL bed frame is a luxurious addition to any modern bedroom, with a sleek, contemporary design and a soft-touch finish that enhances its sophisticated appeal. This bed is crafted for those who appreciate quality and comfort, featuring an innovative frame that supports restful, undisturbed sleep. The design’s attention to detail, along with premium materials, makes it a standout piece in any decor while providing a lavish look and feel.",
+
+      "SKU": "BED456789",
+
+      "stock": 15
+    },
+
+    {
+      "id": 5,
+
+      "category": "Decoration",
+
+      "mainImage": "assets/images/Products/Decoration/Decoration1/1.png",
+
+      "images": [
+        "assets/images/Products/Decoration/Decoration1/2.jpg",
+
+        "assets/images/Products/Decoration/Decoration1/3.jpg"
+      ],
+
+      "title": "TORARED",
+
+      "price": "30",
+
+      "description": "TORARED is a beautifully crafted decor piece that brings warmth and charm to any room. With its rustic finish and unique design, this item complements both contemporary and vintage-inspired interiors. It’s an ideal choice for those looking to add a personal touch to their space, offering both aesthetic value and versatility. Whether placed on a shelf, table, or mantelpiece, TORARED enhances the atmosphere of any setting with its inviting and homey feel.",
+
+      "SKU": "DEC123456",
+
+      "stock": 100
+    },
+
+    {
+      "id": 6,
+
+      "category": "Decoration",
+
+      "mainImage": "assets/images/Products/Decoration/Decoration2/1.png",
+
+      "images": [
+        "assets/images/Products/Decoration/Decoration2/2.jpg",
+
+        "assets/images/Products/Decoration/Decoration2/3.jpg"
+      ],
+
+      "title": "SVALLET",
+
+      "price": "70",
+
+      "description": "SVALLET is a modern decorative piece that combines simplicity with elegance, perfect for those who prefer a minimalist approach to interior design. Its clean lines and contemporary design make it a versatile addition to any room, adding a touch of sophistication without overpowering the space. This piece is not only visually appealing but also a testament to high-quality craftsmanship, ideal for creating a sleek, cohesive look.",
+
+      "SKU": "DEC234567",
+
+      "stock": 80
+    },
+
+    {
+      "id": 7,
+
+      "category": "Decoration",
+
+      "mainImage": "assets/images/Products/Decoration/Decoration3/1.png",
+
+      "images": [
+        "assets/images/Products/Decoration/Decoration3/2.jpg",
+
+        "assets/images/Products/Decoration/Decoration3/3.jpg"
+      ],
+
+      "title": "LAMPAN",
+
+      "price": "49",
+
+      "description": "LAMPAN is an exquisite decorative lamp that adds a gentle ambiance to any room, enhancing the overall atmosphere with its soft and warm glow. It seamlessly fits into various interior styles, making it a versatile piece that brings beauty and functionality to your space. This lamp is designed to be both decorative and practical, with a sturdy construction that ensures longevity and style.",
+
+      "SKU": "DEC345678",
+
+      "stock": 45
+    },
+
+    {
+      "id": 8,
+
+      "category": "Decoration",
+
+      "mainImage": "assets/images/Products/Decoration/Decoration4/1.png",
+
+      "images": [
+        "assets/images/Products/Decoration/Decoration4/2.jpg",
+
+        "assets/images/Products/Decoration/Decoration4/3.jpg"
+      ],
+
+      "title": "VINDKAST",
+
+      "price": "65",
+
+      "description": "VINDKAST brings a touch of nature indoors with its rustic design, perfect for creating a cozy, earthy vibe in your home. Crafted to resemble organic materials, it’s a wonderful choice for those who appreciate an eco-inspired aesthetic. This decor piece is not only stylish but also versatile, easily enhancing living rooms, bedrooms, or office spaces, adding a natural element to any decor theme.",
+
+      "SKU": "DEC456789",
+
+      "stock": 60
+    },
+    {
+      "id": 9,
+
+      "category": "Kitchen",
+
+      "mainImage": "assets/images/Products/Kitchen/kitchen1/1.png",
+
+      "images": ["assets/images/Products/Kitchen/kitchen1/2.jpg", "assets/images/Products/Kitchen/kitchen1/3.jpg"],
+
+      "title": "ENHET",
+
+      "price": "20",
+
+      "description": "Compact and versatile kitchen accessory for any home. This stylish kitchen accessory is perfect for those looking to optimize their cooking space with a minimalist design. Its modular construction allows for easy customization, making it ideal for small kitchens or apartments. The ENHET series combines simplicity with function, making it the go-to choice for modern kitchens.",
+
+      "SKU": "KIT123456",
+
+      "stock": 150
+    },
+
+    {
+      "id": 10,
+
+      "category": "Kitchen",
+
+      "mainImage": "assets/images/Products/Kitchen/kitchen2/1.png",
+
+      "images": ["assets/images/Products/Kitchen/kitchen2/2.jpg", "assets/images/Products/Kitchen/kitchen2/3.jpg"],
+
+      "title": "TILLREDA",
+
+      "price": "130",
+
+      "description": "Portable and functional kitchen appliance for small spaces. The TILLREDA series is perfect for urban dwellers and those with limited space. This practical kitchen appliance offers great functionality with its compact size and simple controls. Whether you're cooking in a cramped apartment or need an extra appliance for your kitchen, TILLREDA delivers on both versatility and efficiency.",
+
+      "SKU": "KIT234567",
+
+      "stock": 85
+    },
+
+    {
+      "id": 11,
+
+      "category": "Kitchen",
+
+      "mainImage": "assets/images/Products/Kitchen/kitchen3/1.png",
+
+      "images": ["assets/images/Products/Kitchen/kitchen3/2.jpg", "assets/images/Products/Kitchen/kitchen3/3.jpg"],
+
+      "title": "UTRUSTA",
+
+      "price": "100",
+
+      "description": "Durable kitchen unit with modern styling. The UTRUSTA kitchen unit brings a modern touch to your culinary space, combining both durability and practicality. Designed to withstand the demands of everyday use, it features ample storage space for all your kitchen essentials. Perfect for families or anyone looking to upgrade their kitchen storage while maintaining a clean and sleek aesthetic.",
+
+      "SKU": "KIT345678",
+
+      "stock": 90
+    },
+
+    {
+      "id": 12,
+
+      "category": "Kitchen",
+
+      "mainImage": "assets/images/Products/Kitchen/kitchen4/1.png",
+
+      "images": ["assets/images/Products/Kitchen/kitchen4/2.jpg", "assets/images/Products/Kitchen/kitchen4/3.jpg"],
+
+      "title": "POUHGEN",
+
+      "price": "19",
+
+      "description": "A practical addition to any kitchen, providing extra storage. This compact storage solution is perfect for small kitchens or for those who need extra space for organizing kitchenware. With its functional design and minimalist look, the POUHGEN adds both style and utility to your home, ensuring your kitchen stays neat and organized.",
+
+      "SKU": "KIT456789",
+
+      "stock": 60
+    },
+
+    {
+      "id": 13,
+
+      "category": "Storage",
+
+      "mainImage": "assets/images/Products/Storage/Storage1/1.png",
+
+      "images": ["assets/images/Products/Storage/Storage1/2.jpg", "assets/images/Products/Storage/Storage1/3.jpg"],
+
+      "title": "KALLAX",
+
+      "price": "150",
+
+      "description": "A storage solution that combines style with functionality. The KALLAX storage unit is perfect for any room in your home, offering both open and closed storage spaces. Its clean, modern design complements any decor, while providing ample room for books, electronics, and other essentials. This versatile unit can be used vertically or horizontally to fit your space needs.",
+
+      "SKU": "STO123456",
+
+      "stock": 70
+    },
+
+    {
+      "id": 14,
+
+      "category": "Storage",
+
+      "mainImage": "assets/images/Products/Storage/Storage2/1.png",
+
+      "images": ["assets/images/Products/Storage/Storage2/2.jpg", "assets/images/Products/Storage/Storage2/3.jpg"],
+
+      "title": "BILLY",
+
+      "price": "200",
+
+      "description": "Stylish shelving unit that adapts to any room. The BILLY shelving unit is a classic design that offers both style and versatility. With its adjustable shelves, it can be customized to suit a variety of storage needs, from books and decorative items to office supplies and electronics. The BILLY shelf blends seamlessly into any room, making it a timeless piece in your home.",
+
+      "SKU": "STO234567",
+
+      "stock": 55
+    },
+
+    {
+      "id": 15,
+
+      "category": "Storage",
+
+      "mainImage": "assets/images/Products/Storage/Storage3/1.png",
+
+      "images": ["assets/images/Products/Storage/Storage3/2.jpg", "assets/images/Products/Storage/Storage3/3.jpg"],
+
+      "title": "LACK",
+
+      "price": "180",
+
+      "description": "Compact storage unit that fits easily into small spaces. The LACK storage unit is perfect for tight spaces where extra storage is needed. Its simple design fits with virtually any room decor, while its sturdy construction ensures that it can hold your belongings safely. Ideal for small apartments, this unit serves both as a functional storage solution and as a stylish addition to your home.",
+
+      "SKU": "STO345678",
+
+      "stock": 45
+    },
+
+    {
+      "id": 16,
+
+      "category": "Storage",
+
+      "mainImage": "assets/images/Products/Storage/Storage4/1.png",
+
+      "images": ["assets/images/Products/Storage/Storage4/2.jpg", "assets/images/Products/Storage/Storage4/3.jpg"],
+
+      "title": "MOSSLANDA",
+
+      "price": "250",
+
+      "description": "A large and versatile storage solution for any room. The MOSSLANDA unit is a multifunctional storage solution that can be used in any room of your home. Its large size and sturdy design provide plenty of space for storing everything from books to decorative items, making it perfect for living rooms, offices, or bedrooms. The MOSSLANDA is built to last and features a sleek, contemporary look.",
+
+      "SKU": "STO456789",
+
+      "stock": 25
+    },
+
+    {
+      "id": 17,
+
+      "category": "Tables",
+
+      "mainImage": "assets/images/Products/Tables/table1/1.png",
+
+      "images": ["assets/images/Products/Tables/table1/2.jpg", "assets/images/Products/Tables/table1/3.jpg"],
+
+      "title": "LISABO",
+
+      "price": "300",
+
+      "description": "A modern and elegant table for dining or work. The LISABO table combines minimalism with functionality, making it perfect for both work and dining. Its simple design allows it to complement a wide variety of interior styles, and its sturdy build ensures that it will be a reliable piece of furniture for years to come. Whether you're hosting a dinner or working from home, the LISABO table is a great addition to any space.",
+
+      "SKU": "TAB123456",
+
+      "stock": 40
+    },
+
+    {
+      "id": 18,
+
+      "category": "Tables",
+
+      "mainImage": "assets/images/Products/Tables/table2/1.png",
+
+      "images": ["assets/images/Products/Tables/table2/2.jpg", "assets/images/Products/Tables/table2/3.jpg"],
+
+      "title": "GLADOM",
+
+      "price": "45",
+
+      "description": "A compact, versatile side table that’s perfect for small spaces. The GLADOM table is a small yet functional piece that serves as both a side table and a storage solution. Its versatile design makes it suitable for living rooms, bedrooms, or even offices. This table is ideal for those looking to maximize functionality in limited space.",
+
+      "SKU": "TAB234567",
+
+      "stock": 60
+    },
+
+    {
+      "id": 19,
+
+      "category": "Tables",
+
+      "mainImage": "assets/images/Products/Tables/table3/1.png",
+
+      "images": ["assets/images/Products/Tables/table3/2.jpg", "assets/images/Products/Tables/table3/3.jpg"],
+
+      "title": "LACK",
+
+      "price": "25",
+
+      "description": "Affordable coffee table that blends well with any decor. The LACK coffee table is a simple yet elegant piece of furniture that complements any room decor. Its affordable price makes it an excellent option for budget-conscious shoppers, while its durable construction ensures that it will stand the test of time. Perfect for small spaces, the LACK table is a practical and stylish addition to your home.",
+
+      "SKU": "TAB345678",
+
+      "stock": 100
+    },
+
+    {
+      "id": 20,
+
+      "category": "Tables",
+
+      "mainImage": "assets/images/Products/Tables/table4/1.png",
+
+      "images": ["assets/images/Products/Tables/table4/2.jpg", "assets/images/Products/Tables/table4/3.jpg"],
+
+      "title": "BRUSALI",
+
+      "price": "75",
+
+      "description": "A durable, stylish table with a practical storage shelf underneath. The BRUSALI table is a multi-purpose piece that can be used as a coffee table or a side table. Its sturdy construction and stylish design make it a great addition to any living room, while the convenient storage shelf underneath adds extra functionality for keeping your space organized.",
+
+      "SKU": "TAB456789",
+
+      "stock": 30
+    }
+  ]
+}

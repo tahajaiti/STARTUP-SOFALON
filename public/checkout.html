@@ -1,116 +1,312 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Checkout Page</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <div class="flex justify-center flex-col lg:flex-row lg:space-x-8 items-center mx-4 space-y-8 lg:space-y-0">
-    
-    
-    <div class="bg-white shadow-lg rounded-lg p-6 md:p-8 w-full max-w-lg">
-      <h2 class="text-2xl   text-yellow-600 font-semibold font-Mont text-center">PERSONAL INFORMATION</h2>
-      <p class="text-center text-gray-500 font-Mont mb-6">Fill out the form with your details</p>
-      
-      <form action="#">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <input type="text" placeholder="First Name" class="border border-black  p-2 w-full focus:outline-none focus:border-gray-500">
-          <input type="text" placeholder="Last name" class="border  border-black  p-2 w-full focus:outline-none focus:border-gray-500">
-          <input type="text" placeholder="Country" class="border  border-black  p-2 w-full focus:outline-none focus:border-gray-500">
-          <input type="text" placeholder="State" class="border  border-black p-2 w-full focus:outline-none focus:border-gray-500">
-          <input type="text" placeholder="City" class="border  border-black p-2 w-full focus:outline-none focus:border-gray-500">
-          <input type="text" placeholder="Address" class="border  border-black  p-2 w-full focus:outline-none focus:border-gray-500">
-          <input type="text" placeholder="Phone" class="border  border-black  p-2 w-full focus:outline-none focus:border-gray-500">
-          <input type="email" placeholder="Email" class="border  border-black  p-2 w-full focus:outline-none focus:border-gray-500">
+    <!-- Meta Description -->
+    <meta
+      name="description"
+      content="Discover Sofalo, your one-stop online shop for stylish and affordable furniture, home decor, and storage solutions. 
+  Shop quality beds, tables, kitchenware, and more with convenient delivery options. Find inspiration for every room in your home with Sofalo." />
+
+    <!-- Keywords -->
+    <meta
+      name="keywords"
+      content="furniture, home decor, Sofalo, affordable furniture, beds, tables, kitchenware, storage, IKEA alternative, online shopping, stylish furniture" />
+
+    <!-- Open Graph Metadata (for social media) -->
+    <meta property="og:title" content="Sofalo - Stylish & Affordable Home Furniture and Decor" />
+    <meta
+      property="og:description"
+      content="Transform your home with Sofalo's quality furniture and decor at affordable prices. From beds and tables
+   to kitchenware and decoration, find everything you need for your living space." />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Metadata -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sofalo - Stylish & Affordable Furniture" />
+    <meta
+      name="twitter:description"
+      content="Shop Sofalo for affordable and stylish furniture for every room. Your space, your style, made easy." />
+    <!-- Author -->
+    <meta name="author" content="DOTEXE TEAM" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="/node_modules/animejs/lib/anime.min.js"></script>
+
+    <title>Sofalo - Checkout</title>
+  </head>
+
+  <body class="font-Mont">
+    <!-- Nav -->
+    <header class="w-full pt-1 h-fit relative z-50">
+      <nav
+        id="mobileNav"
+        class="fixed z-[100] mt-[-10px] w-full hidden h-full bg-white/50 backdrop-filter backdrop-blur-lg">
+        <ul class="items-center flex-col justify-between flex gap-8 p-10 text-lg h-2/3">
+          <span id="closeNav" class="icon-[line-md--close] text-4xl self-end cursor-pointer hover:text-lBrown"></span>
+          <li><a class="navItem p-2" href="index.html">HOME</a></li>
+          <li><a class="navItem p-2" href="AllProducts.html">PRODUCTS</a></li>
+          <li><a class="navItem p-2" href="about.html">ABOUT</a></li>
+          <li><a class="navItem p-2" href="#">FAQ</a></li>
+          <li><a class="navItem p-2" href="#">CONTACT</a></li>
+        </ul>
+      </nav>
+
+      <nav class="flex flex-row items-center justify-between px-2 py-2 pt-2 lg:px-12">
+        <img class="pl-2 w-36" src="assets/images/logo.png" alt="COMPANY LOGO" />
+        <ul class="items-center justify-between hidden gap-8 pr-20 text-lg lg:flex">
+          <li><a class="navItem" href="index.html">HOME</a></li>
+          <li><a class="navItem" href="AllProducts.html">PRODUCTS</a></li>
+          <li><a class="navItem" href="about.html">ABOUT</a></li>
+          <li><a class="navItem" href="#">FAQ</a></li>
+          <li><a class="navItem" href="#">CONTACT</a></li>
+        </ul>
+
+        <div class="flex justify-between gap-10">
+          <div class="relative flex items-center cursor-pointer">
+            <span
+              id="openCart"
+              class="icon-[iconoir--bag] text-black text-3xl hover:text-lBrown active:text-dBrown transition-all"></span>
+            <div
+              id="cartNum"
+              class="absolute right-0 flex items-center justify-center w-5 h-5 rounded-full top-3 bg-lBrown font-Mont">
+              0
+            </div>
+          </div>
+          <span
+            id="openNav"
+            class="icon-[iconamoon--menu-burger-horizontal] cursor-pointer text-black text-3xl lg:hidden hover:text-lBrown active:text-dBrown"></span>
         </div>
-        <div class="flex items-center mt-4">
-          <input type="checkbox" class="mr-2">
-          <span class="text-gray-500 text-sm ">I accept the terms of privacy and policy</span>
+      </nav>
+
+      <nav
+        id="cartMain"
+        class="fixed hidden top-0 flex justify-end bg-black/10 backdrop-blur-md h-screen w-full z-[1000]">
+        <div id="cartReal" class="lg:w-1/3 md:w-1/2 w-full flex flex-col bg-white h-full">
+          <!-- heading -->
+          <div class="drop-shadow-lg flex justify-between p-2 items-center flex-row h-[5%] bg-lBrown w-full">
+            <p id="cartMenuNum" class="ont-medium text-2xl">0 ITEMS</p>
+            <span id="closeCart" class="icon-[line-md--close] text-4xl cursor-pointer text-black"></span>
+          </div>
+          <!-- container -->
+          <div id="cartContainer" class="h-4/5 w-full bg-gray-200 p-2 gap-2 flex flex-col overflow-y-auto">
+            <!-- card -->
+            <div class="bg-white w-full h-1/5 flex flex-row">
+              <img class="w-1/3 object-cover h-full bg-white" src="assets/images/Products/Beds/bed1/1.png" alt="" />
+              <div class="w-full h-full flex flex-col justify-start p-2">
+                <div class="flex justify-between">
+                  <p class="text-xl">TITLE</p>
+                  <span
+                    class="icon-[iconamoon--trash-light] text-2xl cursor-pointer hover:bg-red-500 transition-all"></span>
+                </div>
+                <p class="text-gray-500 h-full text-lg">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <div class="flex justify-between flex-wrap">
+                  <p class="font-bold">QTY: 1</p>
+                  <p class="text-lBrown font-medium">250$</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- info -->
+          <div class="flex flex-col p-2 h-[15%] justify-center">
+            <p id="cartTotal" class="text-2xl font-bold">TOTAL: 555$</p>
+            <p id="cartSum" class="text-gray-400">SUMMARY: 400$</p>
+            <p id="cartTax" class="text-gray-400">TAX: 23$</p>
+            <a
+              class="w-full h-full pt-2 text-center text-xl font-bold text-white bg-lBrown hover:bg-dBrown transition-all"
+              href="#"
+              >CHECKOUT</a
+            >
+          </div>
         </div>
-        <button type="submit" class="bg-lBrown hover:bg-dBrown text-white font-semibold py-2 w-full rounded mt-6">CHECK OUT</button>
-        
-        
-      </form>
+      </nav>
+    </header>
+
+    <main class="w-full h-full">
+
+      <div
+        class="flex justify-center flex-col gap-6 lg:flex-row my-32 lg:space-x-8 items-center space-y-8 lg:space-y-0">
+
+        <div class="bg-white shadow-lg p-6 md:p-8 w-full max-w-lg">
+          <h2 class="text-2xl text-yellow-600 font-semibold font-Mont text-center">PERSONAL INFORMATION</h2>
+          <p class="text-center text-gray-500 font-Mont mb-6">Fill out the form with your details</p>
+
+          <form action="#">
+            <div class="flex w-full">
+              <div class="space-y-4 mx-auto max-w-lg">
+                <div class="flex space-x-4">
+                  <input type="text" placeholder="First Name" class="border p-2 w-full" />
+                  <input type="text" placeholder="Last Name" class="border p-2 w-full" />
+                </div>
+
+                <div class="flex space-x-4">
+                  <input type="text" placeholder="Country" class="border p-2 w-full" />
+                  <input type="text" placeholder="State" class="border p-2 w-full" />
+                  <input type="text" placeholder="City" class="border p-2 w-full" />
+                </div>
+
+                <input type="text" placeholder="Address" class="border p-2 w-full" />
+
+                <div class="flex space-x-4">
+                  <input type="text" placeholder="Phone" class="border p-2 w-full" />
+                  <input type="text" placeholder="Email" class="border p-2 w-full" />
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center mt-4">
+              <input type="checkbox" required class="mr-2" />
+              <span class="text-gray-500 text-sm">I accept the terms of privacy and policy</span>
+            </div>
+            <button type="submit" class="bg-lBrown hover:bg-dBrown text-white font-semibold py-2 w-full mt-6">
+              CHECK OUT
+            </button>
+          </form>
+        </div>
+
+        <div id="cartReal" class="lg:w-1/4 w-full flex flex-col shadow-lg lg:order-1 -order-1 bg-white h-full">
+          <!-- heading -->
+          <div class="drop-shadow-lg flex justify-center p-2 items-center flex-row h-[5%] bg-lBrown w-full">
+            <p id="cartMenuNum" class="ont-medium font-Mont text-white text-2xl">0 ITEMS</p>
+          </div>
+          <!-- container -->
+          <div id="cartContainer" class="h-[260px] w-full bg-gray-200 p-2 gap-2 flex flex-col overflow-y-auto">
+            <!-- card -->
+            <div class="bg-white w-full flex flex-row">
+              <img
+                class="w-1/3 object-cover h-full bg-white"
+                src="./assets/images/Products/Beds/bed 2/1.png"
+                alt="image" />
+              <div class="w-full h-full flex flex-col justify-start p-2">
+                <div class="flex justify-between">
+                  <p class="text-2xl font-Mont">TITLE</p>
+                  <span
+                    class="icon-[iconamoon--trash-light] text-2xl cursor-pointer hover:bg-red-500 transition-all"></span>
+                </div>
+                <p class="text-gray-500 h-full font-Mont">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <div class="flex justify-between flex-wrap">
+                  <p class="font-bold font-Mont">QTY: 1</p>
+                  <p class="text-lBrown font-medium">250$</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- card -->
+            <div class="bg-white w-full flex flex-row">
+              <img
+                class="w-1/3 object-cover h-full bg-white"
+                src="./assets/images/Products/Beds/bed 1/1.png"
+                alt="image" />
+              <div class="w-full h-full flex flex-col justify-start p-2">
+                <div class="flex justify-between">
+                  <p class="text-2xl font-Mont">TITLE</p>
+                  <span
+                    class="icon-[iconamoon--trash-light] text-2xl cursor-pointer hover:bg-red-500 transition-all"></span>
+                </div>
+                <p class="text-gray-500 h-full font-Mont">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <div class="flex justify-between flex-wrap">
+                  <p class="font-bold font-Mont">QTY: 1</p>
+                  <p class="text-lBrown font-medium">250$</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- card -->
+            <div class="bg-white w-full flex flex-row">
+              <img
+                class="w-1/3 object-cover h-full bg-white"
+                src="./assets/images/Products/Beds/bed 1/1.png"
+                alt="image" />
+              <div class="w-full h-full flex flex-col justify-start p-2">
+                <div class="flex justify-between">
+                  <p class="text-2xl font-Mont">TITLE</p>
+                  <span
+                    class="icon-[iconamoon--trash-light] text-2xl cursor-pointer hover:bg-red-500 transition-all"></span>
+                </div>
+                <p class="text-gray-500 h-full font-Mont">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <div class="flex justify-between flex-wrap">
+                  <p class="font-bold font-Mont">QTY: 1</p>
+                  <p class="text-lBrown font-medium">250$</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-4 space-y-1 bg-white text-gray-700">
+            <p>SUM: <span class="float-right">$500</span></p>
+            <p>DEELIVERY FEE: <span class="float-right">$12.75</span></p>
+            <p>TAX: <span class="float-right">$30</span></p>
+            <p class="font-bold text-lg">TOTAL: <span class="float-right text-black">$542.75</span></p>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- footer -->
+  <footer
+  class="text-dark flex flex-col justify-between items-center w-full border-t-2 border-lBrown m-auto pt-10 px-12">
+
+  <div class="flex flex-col justify-center items-center lg:items-baseline lg:flex-row gap-12 w-full">
+    <!-- home -->
+    <div class="flex flex-col text-gray-400 gap-2 w-1/3">
+      <h2 class="text-2xl text-black border-b-2 border-black font-bold text-left">HOME</h2>
+      <a class="footerHover">Assembly Guides</a>
+      <a class="footerHover">Furniture Packages</a>
+      <a class="footerHover">Hot Products</a>
+      <a class="footerHover">New Designs</a>
     </div>
- 
 
-<div id="cartReal" class="lg:w-1/3 md:w-1/2 w-full flex flex-col shadow-lg  rounded-lg bg-white h-full ">
-        <!-- heading -->
-        <div class="drop-shadow-lg flex justify-between p-2 items-center  flex-row h-[5%] bg-lBrown w-full">
-          <p id="cartMenuNum" class=" ont-medium  font-Mont ml-40 text-white text-2xl">0 ITEMS</p>
-          <span id="closeCart" class="icon-[line-md--close] text-4xl cursor-pointer text-black"></span>
-        </div>
-        <!-- container -->
-        <div id="cartContainer"  class="h-[260px]  w-full bg-gray-200 p-2 gap-2 flex flex-col overflow-y-auto">
+    <!-- about -->
+    <div class="flex flex-col text-gray-400 gap-2 w-1/3">
+      <h2 class="text-2xl text-black border-b-2 border-black font-bold text-left">
+        ABOUT</h2>
+      <a class="footerHover">Trade Program</a>
+      <a class="footerHover">Gift Cards</a>
+      <a class="footerHover">About us</a>
+      <a class="footerHover">Who Are We</a>
+    </div>
 
-          <!-- card -->
-          <div class="bg-white w-full flex rounded-lg flex-row">
-            <img class="w-1/3 object-cover h-full  bg-white" src="./assets/images/Products/Beds/bed 2/1.png" alt="image">
-            <div class="w-full h-full flex flex-col justify-start p-2">
-              <div class="flex justify-between">
-                <p class="text-2xl font-Mont">TITLE</p>
-                <span
-                  class="icon-[iconamoon--trash-light] text-2xl cursor-pointer hover:bg-red-500 transition-all"></span>
-              </div>
-              <p class="text-gray-500 h-full font-Mont ">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              </p>
-              <div class="flex justify-between flex-wrap">
-                <p class="font-bold font-Mont">QTY: 1</p>
-                <p class="text-lBrown font-medium">250$</p>
-              </div>
-            </div>
-          </div>
+    <!-- socials -->
+    <div class="-order-1 lg:order-[0] flex flex-col gap-4 w-fit justify-center items-center">
+      <img class="w-2/3" src="assets/images/logo.png" alt="">
+      <div class="flex justify-center gap-6 pt-5 flex-wrap w-2/3 text-5xl">
+        <span class="icon-[mdi--facebook] footerHover"></span>
+        <span class="icon-[ri--instagram-fill] footerHover"></span>
+        <span class="icon-[formkit--twitter] footerHover"></span>
+        <span class="icon-[formkit--whatsapp] footerHover"></span>
+      </div>
+    </div>
 
-          <!-- card -->
-          <div class="bg-white w-full  rounded-lg flex flex-row">
-            <img class="w-1/3 object-cover h-full bg-white" src="./assets/images/Products/Beds/bed 1/1.png" alt="image">
-            <div class="w-full h-full flex flex-col justify-start p-2">
-              <div class="flex justify-between">
-                <p class="text-2xl font-Mont">TITLE</p>
-                <span
-                  class="icon-[iconamoon--trash-light] text-2xl cursor-pointer hover:bg-red-500 transition-all"></span>
-              </div>
-              <p class="text-gray-500 h-full font-Mont">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              </p>
-              <div class="flex justify-between flex-wrap">
-                <p class="font-bold font-Mont">QTY: 1</p>
-                <p class="text-lBrown font-medium">250$</p>
-              </div>
-            </div>
-          </div>
+    <!-- help -->
+    <div class="flex flex-col text-gray-400 gap-2 w-1/3">
+      <h2 class="text-2xl text-black border-b-2 border-black font-bold text-left">
+        HELP</h2>
+      <a class="footerHover">Contact</a>
+      <a class="footerHover">Orders</a>
+      <a class="footerHover">Shipping & Delivery</a>
+      <a class="footerHover">Refund</a>
+    </div>
 
-          <!-- card -->
-          <div class="bg-white w-full rounded-lg flex flex-row">
-            <img class="w-1/3 object-cover h-full bg-white" src="./assets/images/Products/Beds/bed 1/1.png" alt="image">
-            <div class="w-full h-full flex flex-col justify-start p-2">
-              <div class="flex justify-between">
-                <p class="text-2xl font-Mont">TITLE</p>
-                <span
-                  class="icon-[iconamoon--trash-light] text-2xl cursor-pointer hover:bg-red-500 transition-all"></span>
-              </div>
-              <p class="text-gray-500 h-full font-Mont">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              </p>
-              <div class="flex justify-between flex-wrap">
-                <p class="font-bold font-Mont">QTY: 1</p>
-                <p class="text-lBrown font-medium">250$</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="p-4 space-y-1 bg-white text-gray-700">
-          <p>SUM: <span class="float-right">$500</span></p>
-          <p>DEELIVERY FEE: <span class="float-right">$12.75</span></p>
-          <p>TAX: <span class="float-right">$30</span></p>
-          <p class="font-bold text-lg">TOTAL: <span class="float-right text-black">$542.75</span></p>
-        </div>
-
+    <!-- FAQ -->
+    <div class="flex flex-col text-gray-400 gap-2 w-1/3">
+      <h2 class="text-2xl text-black border-b-2 border-black font-bold text-left">
+        FAQ</h2>
+      <a class="footerHover">Most Asked Questions</a>
+      <a class="footerHover">How We Take Orders</a>
+      <a class="footerHover">Delivery Policy</a>
+      <a class="footerHover">Trust</ش>
+    </div>
   </div>
 
-</body>
-</html> 
+  <!-- copyright -->
+  <h2 class="flex justify-center py-6 text-2xl text-center font-bold">© 2024 SOFALO. ALL RIGHTS RESERVED.</h2>
+
+  </footer>
+
+  <script src="./assets/js/navbar.js"></script>
+  </body>
+</html>
