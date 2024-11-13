@@ -10,12 +10,12 @@ const container = document.getElementById("container");
 const pages = document.getElementById('pages');
 
 async function fetchProducts() {
-    
+
     if (data.length === 0 && !localStorage.getItem("products_loaded")) {
         try {
             const response = await fetch('../../../products.json');
             dataLocal = await response.json();
-            
+
             if (dataLocal && dataLocal.products) {
                 data = dataLocal.products;
                 localStorage.setItem("products", JSON.stringify(data));
@@ -33,18 +33,16 @@ async function fetchProducts() {
     azArray = data;
 }
 
-fetchProducts();
-
 function GFG(array, currentPage, pageSize) {
     const startIndex = (currentPage - 1) * pageSize;
     const endIndex = startIndex + pageSize;
     return array.slice(startIndex, endIndex);
 }
 
-addProduct.addEventListener("click", function(){
+addProduct.addEventListener("click", function () {
     container.style.display = 'block';
 })
-closePop.addEventListener('click',function(){
+closePop.addEventListener('click', function () {
     container.style.display = 'none';
 })
 
@@ -82,20 +80,20 @@ function ActivePage(activeBtn) {
 
 function DisplayCards(products) {
     table.innerHTML = '';
-     let statusColor;
-     let status;
+    let statusColor;
+    let status;
     products.forEach(product => {
 
-          if(product.stock === 0){
+        if (product.stock === 0) {
             statusColor = 'bg-red-200 text-red-600';
             status = 'out stock';
-          }else{
+        } else {
             statusColor = 'bg-green-200 text-green-600';
             status = 'in stock';
-          }
+        }
 
         table.innerHTML += `
-            <tr class="border-b hover:bg-gray-50">
+            <tr id="" class="border-b hover:bg-gray-50">
                     <td class="py-4 px-6 flex items-center space-x-2">
                         <img src="${product.mainImage}" alt="Cherry Delight" class="h-8 w-8 rounded-full">
                         <span>${product.title}</span>
@@ -108,10 +106,14 @@ function DisplayCards(products) {
                         <span class=" ${statusColor} px-3 py-1 rounded-full text-xs">${status}</span>
                     </td>
                     <td class="py-4 px-6 flex gap-2">
-                        <span class="icon-[material-symbols--delete-outline] text-red-500 text-2xl"></span>
+                        <span id="deleteItem" class="icon-[material-symbols--delete-outline] text-red-500 text-2xl"></span>
                         <span class="icon-[lucide--edit] text-[20px] text-blue-500"></span>
                     </td>
                     </tr>
                  `
+        
     });
 }
+
+
+document.addEventListener("DOMContentLoaded", fetchProducts);
