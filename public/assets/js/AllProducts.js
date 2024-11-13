@@ -42,7 +42,7 @@ async function fetchProducts() {
 
     DisplayCards(GFG(data, 1, 12));
     addPagination();
-    azArray = [...data];
+    azArray = data;
 
     AZ.addEventListener('click', () => handleSort(azArray, 1));
     ZA.addEventListener('click', () => handleSort(azArray, 2));
@@ -155,9 +155,9 @@ searchInput.addEventListener("keyup", (e) => {
 
     const searchData = e.target.value.toLowerCase();
 
-    const fileterdData = data.products.filter(o => o.title.toLowerCase().startsWith(searchData));
+    const filtered = data.filter(o => o.title.toLowerCase().startsWith(searchData));
 
-    DisplayCards(fileterdData);
+    DisplayCards(filtered);
 });
 
 // Sort Function
@@ -183,7 +183,7 @@ function handleSort(arr, type) {
 
 // Filter function
 function handleFilter(category) {
-    const filteredData = data.products.filter(product => product.category === category);
+    const filteredData = data.filter(product => product.category === category);
     DisplayCards(filteredData);
     hideOptions();
 }
