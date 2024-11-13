@@ -2186,6 +2186,10 @@ video {
   border-color: rgb(221 161 94 / var(--tw-border-opacity));
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9e9aa94a55321ad9f5027c881e79532ff9f08605
 .hover\:bg-\[\#cc8b4e\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(204 139 78 / var(--tw-bg-opacity));
@@ -2217,6 +2221,12 @@ video {
 }
 
 .hover\:bg-white:hover {
+<<<<<<< HEAD
+=======
+
+.hover\:bg-red-500:hover {
+
+>>>>>>> 9e9aa94a55321ad9f5027c881e79532ff9f08605
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
