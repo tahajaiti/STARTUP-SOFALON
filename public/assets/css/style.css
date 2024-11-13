@@ -124,7 +124,7 @@
   /* 2 */
   border-style: solid;
   /* 2 */
-  border-color: currentColor;
+  border-color: #e5e7eb;
   /* 2 */
 }
 
@@ -1589,12 +1589,16 @@ video {
   border-color: rgb(221 161 94 / var(--tw-border-opacity));
 }
 
+
 .hover\:bg-\[\#cc8b4e\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(204 139 78 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-white:hover {
+
+.hover\:bg-red-500:hover {
+
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }

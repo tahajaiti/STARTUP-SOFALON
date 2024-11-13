@@ -6,20 +6,15 @@ module.exports = {
     extend: {
       colors: {
         dark: "#232020",
-        gray: "#363537",
+        whittt: "#F6F6F6",
         mustard: "#FEFAE0",
         lBrown: "#DDA15E",
         dBrown: "#AA6122",
-        SoftGray :'#878787',
-        whiteGrey : '#F6F6F6',
+        SoftGray: '#878787',
+        whiteGrey: '#F6F6F6',
       },
-      fontFamily: {
-        Mont: ["Montserrat", "sans-serif"], 
-        
-      },
+      fontFamily: { Mont: ["Montserrat", "sans-serif"] },
     },
   },
-  plugins: [
-    addDynamicIconSelectors(), 
-  ],
+  plugins: [addDynamicIconSelectors()],
 };
