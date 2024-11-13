@@ -112,17 +112,24 @@ function DisplayCards(products) {
                     </td>
                     <td class="py-4 px-6 flex gap-2">
                         <span id="deleteItem" class="icon-[material-symbols--delete-outline] text-red-500 text-2xl"></span>
-                        <span class="icon-[lucide--edit] text-[20px] text-blue-500"></span>
+                        <span id="editItem" class="icon-[lucide--edit] text-[20px] text-blue-500"></span>
                     </td>
                     </tr>
                  `
         table.appendChild(newRow);
 
         const deleteItem = newRow.querySelector("#deleteItem");
+        const editItem = newRow.querySelector("#editItem");
 
-        deleteItem.addEventListener("click", function (e) {
+        deleteItem.addEventListener("click", function(e) {
             e.preventDefault();
             removeItem(product.title);
+        });
+        editItem.addEventListener("click", function(e) {
+            e.preventDefault();
+
+            
+            editItemm(product);
         });
 
     });
@@ -139,5 +146,49 @@ const removeItem = (title) => {
         addPagination();
     }
 };
+
+let title = document.getElementById('title');
+let price = document.getElementById('price');
+let description = document.getElementById('description');
+let stock = document.getElementById('stock');
+let sku = document.getElementById('sku');
+let category = document.getElementById('category');
+let editBtn = document.getElementById('editBtn');
+
+let currentProduct = null; 
+
+function editItemm(product) {
+    currentProduct = product;
+
+
+    container.style.display = 'block';
+    title.value = product.title;
+    price.value = product.price;
+    description.value = product.description;
+    stock.value = product.stock;
+    sku.value = product.SKU;
+    category.value = product.category;
+}
+
+
+editBtn.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    if (currentProduct) {
+        currentProduct.title = title.value;
+        currentProduct.price = price.value;
+        currentProduct.description = description.value;
+        currentProduct.stock = stock.value;
+        currentProduct.SKU = sku.value;
+        currentProduct.category = category.value;
+
+        localStorage.setItem("products", JSON.stringify(data));
+        DisplayCards(GFG(data, 1, 12));
+        addPagination();
+
+        container.style.display = 'none';
+        currentProduct = null;
+    }
+});
 
 document.addEventListener("DOMContentLoaded", fetchProducts);
