@@ -48,6 +48,9 @@ closePop.addEventListener('click', function () {
 
 
 const addPagination = () => {
+    pages.innerHTML = "";
+    currentPageN = Math.ceil(data.length / 12);
+
     if (currentPageN > 0) {
         for (let i = 1; i <= currentPageN; i++) {
             const newPage = document.createElement('div');
