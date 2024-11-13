@@ -92,8 +92,10 @@ function DisplayCards(products) {
             status = 'in stock';
         }
 
-        table.innerHTML += `
-            <tr id="" class="border-b hover:bg-gray-50">
+        const newRow = document.createElement('tr');
+        newRow.id = product.id;
+        newRow.className = "border-b hover:bg-gray-50"
+        newRow.innerHTML += `
                     <td class="py-4 px-6 flex items-center space-x-2">
                         <img src="${product.mainImage}" alt="Cherry Delight" class="h-8 w-8 rounded-full">
                         <span>${product.title}</span>
@@ -111,9 +113,27 @@ function DisplayCards(products) {
                     </td>
                     </tr>
                  `
-        
+        table.appendChild(newRow);
+
+        const deleteItem = newRow.querySelector("#deleteItem");
+
+        deleteItem.addEventListener("click", function (e) {
+            e.preventDefault();
+            removeItem(product.title);
+        });
+
     });
 }
 
+
+const removeItem = (title) => {
+    const itemIndex = data.findIndex(item => item.title === title);
+    if (itemIndex > -1) {
+        data.splice(itemIndex, 1);
+        localStorage.setItem("products", JSON.stringify(data));
+
+        DisplayCards(GFG(data, 1, 12));
+    }
+};
 
 document.addEventListener("DOMContentLoaded", fetchProducts);
