@@ -1,22 +1,38 @@
-let table = document.getElementById('table');
-let data = null;
-const addproduct = document.getElementById("addproduct");
-const closee = document.getElementById("close");
-const container = document.getElementById("container");
-let pages = document.getElementById('pages');
-
+let data = JSON.parse(localStorage.getItem("products") || "[]");
+let dataLocal = null;
 let azArray;
-async function fetchProducts(){
-    const response = await fetch('../../../products.json');
-    data = await response.json();
-   
-    console.log("DATA : ",data);
-    azArray = [...data.products];
-    currentPageN = Math.ceil(data.products.length / 12);
-    DisplayCards(GFG(data.products, 1, 12));
-    addPagination();
+let currentPageN;
 
+const table = document.getElementById('table');
+const addProduct = document.getElementById("addProduct");
+const closePop = document.getElementById("close");
+const container = document.getElementById("container");
+const pages = document.getElementById('pages');
+
+async function fetchProducts() {
+    
+    if (data.length === 0 && !localStorage.getItem("products_loaded")) {
+        try {
+            const response = await fetch('../../../products.json');
+            dataLocal = await response.json();
+            
+            if (dataLocal && dataLocal.products) {
+                data = dataLocal.products;
+                localStorage.setItem("products", JSON.stringify(data));
+                localStorage.setItem("products_loaded", "true");
+            }
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        }
+    }
+
+    currentPageN = Math.ceil(data.length / 12);
+
+    DisplayCards(GFG(data, 1, 12));
+    addPagination();
+    azArray = data;
 }
+
 fetchProducts();
 
 function GFG(array, currentPage, pageSize) {
@@ -25,10 +41,10 @@ function GFG(array, currentPage, pageSize) {
     return array.slice(startIndex, endIndex);
 }
 
-addproduct.addEventListener("click", function(){
+addProduct.addEventListener("click", function(){
     container.style.display = 'block';
 })
-closee.addEventListener('click',function(){
+closePop.addEventListener('click',function(){
     container.style.display = 'none';
 })
 
@@ -53,15 +69,15 @@ const addPagination = () => {
     };
 };
 
-function ActivePage(activebtn) {
+function ActivePage(activeBtn) {
     const AllPage = document.querySelectorAll('#page');
 
     AllPage.forEach((page) => {
         page.classList.add('bg-white', 'border', 'border-SoftGray', 'text-gray');
         page.classList.remove('bg-lBrown', 'text-white');
     });
-    activebtn.classList.add('bg-lBrown', 'text-white');
-    activebtn.classList.remove('bg-white', 'border', 'border-SoftGray', 'text-gray');
+    activeBtn.classList.add('bg-lBrown', 'text-white');
+    activeBtn.classList.remove('bg-white', 'border', 'border-SoftGray', 'text-gray');
 }
 
 function DisplayCards(products) {
