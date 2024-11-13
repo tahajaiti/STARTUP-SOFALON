@@ -31,52 +31,84 @@
           <input type="checkbox" class="mr-2">
           <span class="text-gray-500 text-sm ">I accept the terms of privacy and policy</span>
         </div>
-        <button type="submit" class="bg-yellow-600 hover:bg-dBrown text-white font-semibold py-2 w-full rounded mt-6">CHECK OUT</button>
+        <button type="submit" class="bg-lBrown hover:bg-dBrown text-white font-semibold py-2 w-full rounded mt-6">CHECK OUT</button>
         
         
       </form>
     </div>
  
 
-
-    
-    <div class="bg-white shadow-lg rounded-lg p-6 md:p-8 w-full max-w-md">
-      <h2 class="text-lg font-semibold text-center bg-yellow-600 text-black py-2 rounded-t-lg">1 ITEM</h2>
-      <div class="p-4 border-b border-gray-300 flex items-center">
-        <img src="./assets/images/Products/Beds/bed 3/1.png" alt="Product Image" class="w-20 h-20 mr-4">
-        <div>
-          <h3 class="font-semibold">LOREM IPSUM 1</h3>
-          <p class="text-gray-500 text-sm">Lorem ipsum description item name title desc order</p>
-          <p class="mt-2 font-bold">QTY: 3 <span class="font-bold text-yellow-600  float-right">$250</span></p>
+<div id="cartReal" class="lg:w-1/3 md:w-1/2 w-full flex flex-col bg-white h-full">
+        <!-- heading -->
+        <div class="drop-shadow-lg flex justify-between p-2 items-center flex-row h-[5%] bg-yellow-600 w-full">
+          <p id="cartMenuNum" class=" ont-medium text-2xl">0 ITEMS</p>
+          <span id="closeCart" class="icon-[line-md--close] text-4xl cursor-pointer text-black"></span>
         </div>
-      </div>
+        <!-- container -->
+        <div id="cartContainer" class="h-[260px] w-full bg-gray-200 p-2 gap-2 flex flex-col overflow-y-auto">
 
-      <div class="p-4 border-b border-gray-300 flex items-center">
-        <img src="./assets/images/Products/Beds/bed 3/1.png" alt="Product Image" class="w-20 h-20 mr-4">
-        <div>
-          <h3 class="font-semibold">LOREM IPSUM 2</h3>
-          <p class="text-gray-500 text-sm">Lorem ipsum description item name title desc order</p>
-          <p class="mt-2 font-bold">QTY: 2 <span class="font-bold text-yellow-600  float-right">$800</span></p>
+          <!-- card -->
+          <div class="bg-white w-full flex flex-row">
+            <img class="w-1/3 object-cover h-full bg-white" src="./assets/images/Products/Beds/bed 1/1.png" alt="image">
+            <div class="w-full h-full flex flex-col justify-start p-2">
+              <div class="flex justify-between">
+                <p class="text-2xl">TITLE</p>
+                <span
+                  class="icon-[iconamoon--trash-light] text-2xl cursor-pointer hover:bg-red-500 transition-all"></span>
+              </div>
+              <p class="text-gray-500 h-full">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
+              <div class="flex justify-between flex-wrap">
+                <p class="font-bold">QTY: 1</p>
+                <p class="text-lBrown font-medium">250$</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- card -->
+          <div class="bg-white w-full flex flex-row">
+            <img class="w-1/3 object-cover h-full bg-white" src="./assets/images/Products/Beds/bed 1/1.png" alt="image">
+            <div class="w-full h-full flex flex-col justify-start p-2">
+              <div class="flex justify-between">
+                <p class="text-2xl">TITLE</p>
+                <span
+                  class="icon-[iconamoon--trash-light] text-2xl cursor-pointer hover:bg-red-500 transition-all"></span>
+              </div>
+              <p class="text-gray-500 h-full">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
+              <div class="flex justify-between flex-wrap">
+                <p class="font-bold">QTY: 1</p>
+                <p class="text-lBrown font-medium">250$</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- card -->
+          <div class="bg-white w-full flex flex-row">
+            <img class="w-1/3 object-cover h-full bg-white" src="./assets/images/Products/Beds/bed 1/1.png" alt="image">
+            <div class="w-full h-full flex flex-col justify-start p-2">
+              <div class="flex justify-between">
+                <p class="text-2xl">TITLE</p>
+                <span
+                  class="icon-[iconamoon--trash-light] text-2xl cursor-pointer hover:bg-red-500 transition-all"></span>
+              </div>
+              <p class="text-gray-500 h-full">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
+              <div class="flex justify-between flex-wrap">
+                <p class="font-bold">QTY: 1</p>
+                <p class="text-lBrown font-medium">250$</p>
+              </div>
+            </div>
+          </div>
+
         </div>
-      </div>
 
-      <div class="p-4 border-b border-gray-300 flex items-center">
-        <img src="./assets/images/Products/Beds/bed 3/1.png" alt="Product Image" class="w-20 h-20 mr-4">
-        <div>
-          <h3 class="font-semibold">LOREM IPSUM 3</h3>
-          <p class="text-gray-500 text-sm">Lorem ipsum description item name title desc order</p>
-          <p class="mt-2 font-bold">QTY: 1 <span class="font-bold text-yellow-600  float-right">$550</span></p>
+        <div class="p-4 space-y-1 bg-white text-gray-700">
+          <p>SUM: <span class="float-right">$500</span></p>
+          <p>DEELIVERY FEE: <span class="float-right">$12.75</span></p>
+          <p>TAX: <span class="float-right">$30</span></p>
+          <p class="font-bold text-lg">TOTAL: <span class="float-right text-black">$542.75</span></p>
         </div>
-      </div>
-
-
-      <div class="p-4 space-y-1 text-gray-700">
-        <p>SUM: <span class="float-right">$500</span></p>
-        <p>DEELIVERY FEE: <span class="float-right">$12.75</span></p>
-        <p>TAX: <span class="float-right">$30</span></p>
-        <p class="font-bold text-lg">TOTAL: <span class="float-right text-black">$542.75</span></p>
-      </div>
-    </div>
 
   </div>
 
