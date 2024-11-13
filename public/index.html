@@ -1,14 +1,386 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>Document</title>
-</head>
-<body>
-    <p class="bg-black">aaaaa</p>
-    <span class="icon-[line-md--search-filled] text-black text-4xl"></span>
+    <!-- Meta Description -->
+    <meta name="description"
+        content="Discover Sofalo, your one-stop online shop for stylish and affordable furniture, home decor, and storage solutions. 
+        Shop quality beds, tables, kitchenware, and more with convenient delivery options. Find inspiration for every room in your home with Sofalo.">
 
+    <!-- Keywords -->
+    <meta name="keywords"
+        content="furniture, home decor, Sofalo, affordable furniture, beds, tables, kitchenware, storage, IKEA alternative, online shopping, stylish furniture">
+
+    <!-- Open Graph Metadata (for social media) -->
+    <meta property="og:title" content="Sofalo - Stylish & Affordable Home Furniture and Decor">
+    <meta property="og:description" content="Transform your home with Sofalo's quality furniture and decor at affordable prices. From beds and tables
+         to kitchenware and decoration, find everything you need for your living space.">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Metadata -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sofalo - Stylish & Affordable Furniture">
+    <meta name="twitter:description"
+        content="Shop Sofalo for affordable and stylish furniture for every room. Your space, your style, made easy.">
+    <!-- Author -->
+    <meta name="author" content="DOTEXE TEAM">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="/node_modules/animejs/lib/anime.min.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <title>Sofalo - Stylish & Affordable Home Furniture and Decor</title>
+</head>
+
+<body class="font-Mont">
+
+    <header class="w-full pt-1 h-fit relative z-50">
+        <nav id="mobileNav"
+            class="fixed z-[100] mt-[-10px] w-full hidden h-full bg-white/50 backdrop-filter backdrop-blur-lg">
+            <ul class="items-center flex-col justify-between flex gap-8 p-10 text-lg h-2/3">
+                <span id="closeNav"
+                    class="icon-[line-md--close] text-4xl self-end cursor-pointer hover:text-lBrown"></span>
+                <li><a class="navItem p-2" href="index.html">HOME</a></li>
+                <li><a class="navItem p-2" href="AllProducts.html">PRODUCTS</a></li>
+                <li><a class="navItem p-2" href="about.html">ABOUT</a></li>
+                <li><a class="navItem p-2" href="#">FAQ</a></li>
+                <li><a class="navItem p-2" href="#">CONTACT</a></li>
+            </ul>
+        </nav>
+
+        <nav class="flex flex-row items-center justify-between px-2 py-2 pt-2 lg:px-12">
+            <img class="pl-2 w-36" src="assets/images/logo.png" alt="COMPANY LOGO">
+            <ul class="items-center justify-between hidden gap-8 pr-20 text-lg lg:flex">
+                <li><a class="navItem" href="index.html">HOME</a></li>
+                <li><a class="navItem" href="AllProducts.html">PRODUCTS</a></li>
+                <li><a class="navItem" href="about.html">ABOUT</a></li>
+                <li><a class="navItem" href="#">FAQ</a></li>
+                <li><a class="navItem" href="#">CONTACT</a></li>
+            </ul>
+
+            <div class="flex justify-between gap-10 ">
+                <div class="relative flex items-center cursor-pointer">
+                    <span id="openCart"
+                        class="icon-[iconoir--bag] text-black text-3xl hover:text-lBrown active:text-dBrown transition-all"></span>
+                    <div id="cartNum"
+                        class="absolute right-0 flex items-center justify-center w-5 h-5 rounded-full top-3 bg-lBrown font-Mont">
+                        0</div>
+                </div>
+                <span id="openNav"
+                    class="icon-[iconamoon--menu-burger-horizontal] cursor-pointer text-black text-3xl lg:hidden hover:text-lBrown active:text-dBrown"></span>
+            </div>
+        </nav>
+
+        <nav id="cartMain"
+            class="fixed hidden top-0 flex justify-end bg-black/10 backdrop-blur-md h-screen w-full z-[1000] ">
+            <div id="cartReal" class="lg:w-1/3 md:w-1/2 w-full flex flex-col bg-white h-full">
+                <!-- heading -->
+                <div class="drop-shadow-lg flex justify-between p-2 items-center flex-row h-[5%] bg-lBrown w-full">
+                    <p id="cartMenuNum" class=" ont-medium text-2xl">0 ITEMS</p>
+                    <span id="closeCart" class="icon-[line-md--close] text-4xl cursor-pointer text-black"></span>
+                </div>
+                <!-- container -->
+                <div id="cartContainer" class="h-4/5 w-full bg-gray-200 p-2 gap-2 flex flex-col overflow-y-auto">
+
+                    <!-- card -->
+                    <div class="bg-white w-full h-1/5 flex flex-row">
+                        <img class="w-1/3 object-cover h-full bg-white" src="assets/images/Products/Beds/bed1/1.png"
+                            alt="">
+                        <div class="w-full h-full flex flex-col justify-start p-2">
+                            <div class="flex justify-between">
+                                <p class="text-2xl">TITLE</p>
+                                <span
+                                    class="icon-[iconamoon--trash-light] text-2xl cursor-pointer hover:bg-red-500 transition-all"></span>
+                            </div>
+                            <p class="text-gray-500 h-full">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                            </p>
+                            <div class="flex justify-between flex-wrap">
+                                <p class="font-bold">QTY: 1</p>
+                                <p class="text-lBrown font-medium">250$</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- info -->
+                <div class="flex flex-col p-2 h-[15%] justify-center">
+                    <p id="cartTotal" class="text-2xl font-bold">TOTAL: 555$</p>
+                    <p id="cartSum" class="text-gray-400">SUMMARY: 400$</p>
+                    <p id="cartTax" class="text-gray-400">TAX: 23$</p>
+                    <a class="w-full h-full pt-2 text-center text-xl font-bold text-white bg-lBrown hover:bg-dBrown transition-all"
+                        href="#">CHECKOUT</a>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex flex-col gap-5">
+
+        <!-- carousel -->
+        <section class="h-screen mt-[-50px] relative">
+            <div class="list">
+                <div class="listItem active">
+                    <img class="w-full h-full object-cover" src="assets/images/homeslides/slide1.jpg" alt="">
+                    <div class="itemContent">
+                        <h2 class="mb-4 tracking-[10px] font-light border-l-lBrown border-l-4">SOFALO</h2>
+                        <h3 class="mb-2 text-dBrown text-4xl md:text-8xl font-extrabold italic tracking-widest">NEW
+                            COLLECTION</h3>
+                        <a class="carBtn bg-lBrown" href="AllProducts.html">SHOP NOW</a>
+                    </div>
+                </div>
+                <div class="listItem">
+                    <img class="w-full h-full object-cover" src="assets/images/homeslides/slide2.jpg" alt="">
+                    <div class="itemContent">
+                        <h2 class="mb-4 tracking-[10px] font-light border-cyan-600 border-l-4">SOFALO</h2>
+                        <h3 class="mb-2 text-cyan-600 text-4xl md:text-8xl font-extrabold italic tracking-widest">HOT
+                            PRODUCTS</h3>
+                        <a class="carBtn bg-cyan-400" href="AllProducts.html">SHOP NOW</a>
+                    </div>
+                </div>
+                <div class="listItem">
+                    <img class="w-full h-full object-cover" src="assets/images/homeslides/slide3.jpg" alt="">
+                    <div class="itemContent">
+                        <h2 class="mb-4 tracking-[10px] font-light border-green-600  border-l-4">SOFALO</h2>
+                        <h3 class="mb-2 text-green-600 text-4xl md:text-8xl font-extrabold italic tracking-widest">
+                            AUTUMN
+                            COLLECTION</h3>
+                        <a class="carBtn bg-green-400" href="AllProducts.html">SHOP NOW</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--  -->
+
+        <!-- hot products -->
+        <section class="flex flex-col justify-center m-auto mt-[-30px] items-center">
+            <h2 class="productHeading">HOT PRODUCTS</h2>
+            <!-- container -->
+            <div class="flex flex-col md:flex-row justify-evenly items-center w-full my-10">
+
+                <!-- card -->
+                <div class="homeCard">
+                    <img class="w-full self-center" src="assets/images/Products/Beds/bed 3/1.png" alt="">
+                    <p id="productName" class="flex justify-center text-2xl font-normal tracking-widest">Lorem ipsum</p>
+                    <div class="flex justify-between w-full">
+                        <div class="flex justify-start items-center">
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <p class="text-slate-400 pl-2">(reviews)</p>
+                        </div>
+                        <p id="productPrice" class="text-lBrown pr-2 text-2xl">$99</p>
+                    </div>
+                </div>
+
+                <!-- card -->
+                <div class="homeCard">
+                    <img class="w-full self-center" src="assets/images/Products/Beds/bed 3/1.png" alt="">
+                    <p id="productName" class="flex justify-center text-2xl font-normal tracking-widest">Lorem ipsum</p>
+                    <div class="flex justify-between w-full">
+                        <div class="flex justify-start items-center">
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <p class="text-slate-400 pl-2">(reviews)</p>
+                        </div>
+                        <p id="productPrice" class="text-lBrown pr-2 text-2xl">$99</p>
+                    </div>
+                </div>
+
+                <!-- card -->
+                <div class="homeCard">
+                    <img class="w-full self-center" src="assets/images/Products/Beds/bed 3/1.png" alt="">
+                    <p id="productName" class="flex justify-center text-2xl font-normal tracking-widest">Lorem ipsum</p>
+                    <div class="flex justify-between w-full">
+                        <div class="flex justify-start items-center">
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <p class="text-slate-400 pl-2">(reviews)</p>
+                        </div>
+                        <p id="productPrice" class="text-lBrown pr-2 text-2xl">$99</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- new products -->
+        <section class="flex flex-col justify-center m-auto items-center">
+            <h2 class="productHeading">NEW PRODUCTS</h2>
+
+            <!-- container -->
+            <div class="flex flex-col md:flex-row justify-evenly items-center w-full my-10">
+
+                <!-- card -->
+                <div class="homeCard">
+                    <img class="w-full self-center" src="assets/images/Products/Beds/bed 3/1.png" alt="">
+                    <p id="productName" class="flex justify-center text-2xl font-normal tracking-widest">Lorem ipsum</p>
+                    <div class="flex justify-between w-full">
+                        <div class="flex justify-start items-center">
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <p class="text-slate-400 pl-2">(reviews)</p>
+                        </div>
+                        <p id="productPrice" class="text-lBrown pr-2 text-2xl">$99</p>
+                    </div>
+                </div>
+
+                <!-- card -->
+                <div class="homeCard">
+                    <img class="w-full self-center" src="assets/images/Products/Beds/bed 3/1.png" alt="">
+                    <p id="productName" class="flex justify-center text-2xl font-normal tracking-widest">Lorem ipsum</p>
+                    <div class="flex justify-between w-full">
+                        <div class="flex justify-start items-center">
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <p class="text-slate-400 pl-2">(reviews)</p>
+                        </div>
+                        <p id="productPrice" class="text-lBrown pr-2 text-2xl">$99</p>
+                    </div>
+                </div>
+
+                <!-- card -->
+                <div class="homeCard">
+                    <img class="w-full self-center" src="assets/images/Products/Beds/bed 3/1.png" alt="">
+                    <p id="productName" class="flex justify-center text-2xl font-normal tracking-widest">Lorem ipsum</p>
+                    <div class="flex justify-between w-full">
+                        <div class="flex justify-start items-center">
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <span class="icon-[material-symbols--star] text-orange-500 text-xl"></span>
+                            <p class="text-slate-400 pl-2">(reviews)</p>
+                        </div>
+                        <p id="productPrice" class="text-lBrown pr-2 text-2xl">$99</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- category -->
+        <section class="text-3xl m-auto flex justify-center flex-col">
+            <h2>SHOP BY <span class="text-lBrown">CATEGORY</span></h2>
+            <h3 class="text-xl border-b-2 border-lBrown w-fit"><span class="text-lBrown">5 </span>CATEGORIES</h3>
+
+            <!-- container -->
+            <div class="flex flex-wrap flex-col md:flex-row gap-16 md:gap-32 justify-evenly items-center w-full my-10">
+
+                <!-- card -->
+                <div class="catCard" category="BEDS">
+                    <span class="icon-[material-symbols-light--bed-outline] text-[10rem]"></span>
+                    <h4 class="text-xl text-center text-gray-400">BEDS</h4>
+                </div>
+
+                <!--card  -->
+                <div class="catCard" category="STORAGE">
+                    <span class="icon-[material-symbols-light--data-table-outline] text-[10rem]"></span>
+                    <h4 class="text-xl text-center text-gray-400">STORAGE</h4>
+                </div>
+
+                <!--card  -->
+                <div class="catCard" category="KITCHEN">
+                    <span class="icon-[material-symbols-light--kitchen-outline] text-[10rem]"></span>
+                    <h4 class="text-xl text-center text-gray-400">KITCHENWARE</h4>
+                </div>
+
+                <!--card  -->
+                <div class="catCard" category="TABLES">
+                    <span class="icon-[material-symbols-light--table-bar-outline] text-[10rem]"></span>
+                    <h4 class="text-xl text-center text-gray-400">TABLES</h4>
+                </div>
+
+                <!--card  -->
+                <div class="catCard" category="DECORATION">
+                    <span class="icon-[material-symbols-light--potted-plant-outline] text-[10rem]"></span>
+                    <h4 class="text-xl text-center text-gray-400">DECORATION</h4>
+                </div>
+            </div>
+        </section>
+
+        <!-- footer -->
+        <footer class="flex flex-col justify-between items-center w-full border-t-2 border-lBrown m-auto pt-10 px-12">
+
+            <div class="flex flex-col justify-center items-center lg:items-baseline lg:flex-row gap-12">
+                <!-- home -->
+                <div class="flex flex-col text-gray-400 gap-2 w-1/3">
+                    <h2 class="text-2xl text-black border-b-2 border-black font-bold text-left">HOME</h2>
+                    <a class="footerHover">Assembly Guides</a>
+                    <a class="footerHover">Furniture Packages</a>
+                    <a class="footerHover">Hot Products</a>
+                    <a class="footerHover">New Designs</a>
+                </div>
+
+                <!-- about -->
+                <div class="flex flex-col text-gray-400 gap-2 w-1/3">
+                    <h2 class="text-2xl text-black border-b-2 border-black font-bold text-left">
+                        ABOUT</h2>
+                    <a class="footerHover">Trade Program</a>
+                    <a class="footerHover">Gift Cards</a>
+                    <a class="footerHover">About us</a>
+                    <a class="footerHover">Who Are We</a>
+                </div>
+
+                <!-- socials -->
+                <div class="-order-1 lg:order-[0] flex flex-col gap-4 w-fit justify-center items-center">
+                    <img class="w-2/3" src="assets/images/logo.png" alt="">
+                    <div class="flex justify-center gap-6 pt-5 flex-wrap w-2/3 text-5xl">
+                        <span class="icon-[mdi--facebook] footerHover"></span>
+                        <span class="icon-[ri--instagram-fill] footerHover"></span>
+                        <span class="icon-[formkit--twitter] footerHover"></span>
+                        <span class="icon-[formkit--whatsapp] footerHover"></span>
+                    </div>
+                </div>
+
+                <!-- help -->
+                <div class="flex flex-col text-gray-400 gap-2 w-1/3">
+                    <h2 class="text-2xl text-black border-b-2 border-black font-bold text-left">
+                        HELP</h2>
+                    <a class="footerHover">Contact</a>
+                    <a class="footerHover">Orders</a>
+                    <a class="footerHover">Shipping & Delivery</a>
+                    <a class="footerHover">Refund</a>
+                </div>
+
+                <!-- FAQ -->
+                <div class="flex flex-col text-gray-400 gap-2 w-1/3">
+                    <h2 class="text-2xl text-black border-b-2 border-black font-bold text-left">
+                        FAQ</h2>
+                    <a class="footerHover">Most Asked Questions</a>
+                    <a class="footerHover">How We Take Orders</a>
+                    <a class="footerHover">Delivery Policy</a>
+                    <a class="footerHover">Trust</ش>
+                </div>
+            </div>
+
+            <!-- copyright -->
+            <h2 class="flex justify-center py-6 text-2xl text-center font-bold">© 2024 SOFALO. ALL RIGHTS RESERVED.</h2>
+
+        </footer>
+    </main>
+
+    <script src="assets/js/home/handler.js"></script>
+    <script src="assets/js/home/carousel.js"></script>
+    <script src="assets/js/navbar.js"></script>
 </body>
+
 </html>

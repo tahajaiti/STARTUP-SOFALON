@@ -1,102 +1,67 @@
-let card = document.getElementById('card');
+const card = document.getElementById('card');
 const pagination = document.getElementById('pagination');
-let pagination1 = document.getElementById('pagination1');
-let pagination2 = document.getElementById('pagination2');
-
 
 const sortButton = document.getElementById('sortButton');
 const filterButton = document.getElementById('filterButton');
 const sortOptions = document.getElementById('sortOptions');
 const filterOptions = document.getElementById('filterOptions');
 
-let AZ = document.getElementById('AZ');
-let ZA = document.getElementById('ZA');
-let HTL = document.getElementById('HTL');
-let LTH = document.getElementById('LTH');
+const AZ = document.getElementById('AZ');
+const ZA = document.getElementById('ZA');
+const HTL = document.getElementById('HTL');
+const LTH = document.getElementById('LTH');
 
-let Beds = document.getElementById('Beds');
-let Decoration = document.getElementById('Decoration');
-let Kitchen = document.getElementById('Kitchen');
-let Storagee = document.getElementById('Storage');
-let Tables = document.getElementById('Tables');
+const Beds = document.getElementById('Beds');
+const Decoration = document.getElementById('Decoration');
+const Kitchen = document.getElementById('Kitchen');
+const storage = document.getElementById('Storage');
+const Tables = document.getElementById('Tables');
 
-let data = null;
-let InitialProducts;
+let data = JSON.parse(localStorage.getItem("products") || "[]");
+let dataLocal = null;
 let azArray;
-
 let currentPageN;
 async function fetchProducts() {
-    const response = await fetch('../../../products.json');
-    data = await response.json();
+    
+    if (data.length === 0 && !localStorage.getItem("products_loaded")) {
+        try {
+            const response = await fetch('../../../products.json');
+            dataLocal = await response.json();
+            
+            if (dataLocal && dataLocal.products) {
+                data = dataLocal.products;
+                localStorage.setItem("products", JSON.stringify(data));
+                localStorage.setItem("products_loaded", "true");
+            }
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        }
+    }
 
-    currentPageN = Math.ceil(data.products.length / 12);
-    // console.log(currentPageN);
+    currentPageN = Math.ceil(data.length / 12);
 
-    DisplayCards(GFG(data.products, 1, 12));
+    DisplayCards(GFG(data, 1, 12));
     addPagination();
-    azArray = [...data.products];
-    let arrrr = [...data.products];
+    azArray = data;
 
-    AZ.addEventListener('click',function () {
-        Sort(azArray,1);
-        DisplayCards(GFG(azArray, 1, 12));
-        sortOptions.style.display = 'none';
-        filterOptions.style.display = 'none';
-    });
+    AZ.addEventListener('click', () => handleSort(azArray, 1));
+    ZA.addEventListener('click', () => handleSort(azArray, 2));
+    HTL.addEventListener('click', () => handleSort(azArray, 3));
+    LTH.addEventListener('click', () => handleSort(azArray, 4));
 
-    ZA.addEventListener('click',function () {
-        Sort(azArray,2);
-        DisplayCards(GFG(azArray, 1, 12));
-        sortOptions.style.display = 'none';
-        filterOptions.style.display = 'none';
-    });
-    HTL.addEventListener('click',function () {
-        Sort(azArray,3);
-        DisplayCards(GFG(azArray, 1, 12));
-        sortOptions.style.display = 'none';
-        filterOptions.style.display = 'none';
-    });
-    LTH.addEventListener('click',function () {
-        Sort(azArray,4);
-        DisplayCards(GFG(azArray, 1, 12));
-        sortOptions.style.display = 'none';
-        filterOptions.style.display = 'none';
-    });
-   
-    Beds.addEventListener('click', function(){
-         DisplayCards(Filtre(arrrr,1));
-         filterOptions.style.display = 'none';
-         sortOptions.style.display = 'none';
-    })
-    Decoration.addEventListener('click', function(){
-         DisplayCards(Filtre(arrrr,2));
-         filterOptions.style.display = 'none';
-         sortOptions.style.display = 'none';
-    })
-    Kitchen.addEventListener('click', function(){
-         DisplayCards(Filtre(arrrr,3));
-         filterOptions.style.display = 'none';
-         sortOptions.style.display = 'none';
-    })
-    Storagee.addEventListener('click', function(){
-         DisplayCards(Filtre(arrrr,4));
-         filterOptions.style.display = 'none';
-         sortOptions.style.display = 'none';
-    })
-    Tables.addEventListener('click', function(){
-         DisplayCards(Filtre(arrrr,5));
-         filterOptions.style.display = 'none';
-         sortOptions.style.display = 'none';
-    })
+    Beds.addEventListener('click', () => handleFilter('Beds'));
+    Decoration.addEventListener('click', () => handleFilter('Decoration'));
+    Kitchen.addEventListener('click', () => handleFilter('Kitchen'));
+    storage.addEventListener('click', () => handleFilter('Storage'));
+    Tables.addEventListener('click', () => handleFilter('Tables'));
+
 }
-
 
 function GFG(array, currentPage, pageSize) {
     const startIndex = (currentPage - 1) * pageSize;
     const endIndex = startIndex + pageSize;
     return array.slice(startIndex, endIndex);
 }
-
 
 function DisplayCards(products) {
     card.innerHTML = '';
@@ -124,14 +89,14 @@ function DisplayCards(products) {
             </div>`;
     });
 
-    let details = document.querySelectorAll('#details');
+    const details = document.querySelectorAll('#details');
     details.forEach((button, index) => {
         button.addEventListener('click', () => {
             const productId = products[index].id;
             window.location.href = `ProductDetails.html?id=${productId}`;
         });
     });
-    
+
 }
 
 const addPagination = () => {
@@ -154,28 +119,21 @@ const addPagination = () => {
     };
 };
 
-
-
-function ActivePage(activebtn) {
+function ActivePage(activeBtn) {
     const AllPage = document.querySelectorAll('#page');
 
     AllPage.forEach((page) => {
         page.classList.add('bg-white', 'border', 'border-SoftGray', 'text-gray');
         page.classList.remove('bg-lBrown', 'text-white');
     });
-    activebtn.classList.add('bg-lBrown', 'text-white');
-    activebtn.classList.remove('bg-white', 'border', 'border-SoftGray', 'text-gray');
+    activeBtn.classList.add('bg-lBrown', 'text-white');
+    activeBtn.classList.remove('bg-white', 'border', 'border-SoftGray', 'text-gray');
 }
-
-
-fetchProducts();
-
-
-
 
 sortButton.addEventListener('click', () => {
     if (sortOptions.style.display === 'none') {
         sortOptions.style.display = 'block';
+        filterOptions.style.display = 'none';
     } else {
         sortOptions.style.display = 'none';
     }
@@ -184,118 +142,55 @@ sortButton.addEventListener('click', () => {
 filterButton.addEventListener('click', () => {
     if (filterOptions.style.display === 'none') {
         filterOptions.style.display = 'block';
+        sortOptions.style.display = 'none';
     } else {
         filterOptions.style.display = 'none';
     }
 });
 
-
 // Search Function 
 const searchInput = document.getElementById('searchInput');
-searchInput.addEventListener("keyup", (e)=> {
+searchInput.addEventListener("keyup", (e) => {
 
 
     const searchData = e.target.value.toLowerCase();
-    
-    const fileterdData = data.products.filter(o => o.title.toLowerCase().startsWith(searchData));
 
-    DisplayCards(fileterdData);
-}); 
+    const filtered = data.filter(o => o.title.toLowerCase().startsWith(searchData));
+
+    DisplayCards(filtered);
+});
 
 // Sort Function
-function Sort(arr,type){
-    if (type === 1) {
-        for (var i = 0; i < arr.length; i++) {
-            for (var j = 0; j < (arr.length - i - 1); j++) {
-                if (arr[j].title > arr[j + 1].title) {
-                    var temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
-                }
-            }
-        }
-
-    }else if(type === 2){
-        for (var i = 0; i < arr.length; i++) {
-            for (var j = 0; j < (arr.length - i - 1); j++) {
-                if (arr[j].title < arr[j + 1].title) {
-                    var temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
-                }
-            }
-        }  
-    }else if(type === 3){
-
-        for (var i = 0; i < arr.length; i++) {
-            for (var j = 0; j < (arr.length - i - 1); j++) {
-                if (Number(arr[j].price )  < Number(arr[j + 1].price)) {
-                    var temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
-                }
-            }
-        }
-    } else if(type === 4){
-        for (var i = 0; i < arr.length; i++) {
-            for (var j = 0; j < (arr.length - i - 1); j++) {
-                if (Number(arr[j].price )  > Number(arr[j + 1].price)) {
-                    var temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
-                }
-            }
-        }
+function handleSort(arr, type) {
+    let sortedArr;
+    switch (type) {
+        case 1:
+            sortedArr = arr.sort((a, b) => a.title.localeCompare(b.title));
+            break;
+        case 2:
+            sortedArr = arr.sort((a, b) => b.title.localeCompare(a.title));
+            break;
+        case 3:
+            sortedArr = arr.sort((a, b) => b.price - a.price);
+            break;
+        case 4:
+            sortedArr = arr.sort((a, b) => a.price - b.price);
+            break;
     }
+    DisplayCards(GFG(sortedArr, 1, 12));
+    hideOptions();
 }
 
-// Filtre function
-
-function Filtre(obj,type){
-    let newarray = [];
-    pagination.style.display = 'none';
-    if(type === 1){
-
-        for (let key in obj) {
-            if (obj[key].category === 'Beds') {
-                newarray.push(obj[key]);
-            }
-        }
-        return newarray;
-    }else if(type === 2){
-
-        for (let key in obj) {
-            if (obj[key].category === 'Decoration') {
-                newarray.push(obj[key]);
-            }
-        }
-        return newarray;
-        
-    }else if(type === 3){
-
-        for (let key in obj) {
-            if (obj[key].category === 'Kitchen') {
-                newarray.push(obj[key]);
-            }
-        }
-        return newarray;
-        
-    }else if(type === 4){
-
-        for (let key in obj) {
-            if (obj[key].category === 'Storage') {
-                newarray.push(obj[key]);
-            }
-        }
-        return newarray;
-        
-    }else if(type === 5){
-
-        for (let key in obj) {
-            if (obj[key].category === 'Tables') {
-                newarray.push(obj[key]);
-            }
-        }
-        return newarray;
-    }
+// Filter function
+function handleFilter(category) {
+    const filteredData = data.filter(product => product.category === category);
+    DisplayCards(filteredData);
+    hideOptions();
 }
+
+function hideOptions() {
+    sortOptions.style.display = 'none';
+    filterOptions.style.display = 'none';
+}
+
+document.addEventListener('DOMContentLoaded', fetchProducts);
