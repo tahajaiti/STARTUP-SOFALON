@@ -3,11 +3,22 @@ let dataLocal = null;
 let azArray;
 let currentPageN;
 
+let nextId = 21;
+
 const table = document.getElementById('table');
+const addContainer = document.getElementById("addContainer");
 const addProduct = document.getElementById("addProduct");
-const closePop = document.getElementById("close");
-const container = document.getElementById("container");
+const closePop = addContainer.querySelector("#close");
 const pages = document.getElementById('pages');
+
+const addForm = document.querySelector("#add-product-form");
+const formTitle = addForm.querySelector("#title");
+const formPrice = addForm.querySelector("#price");
+const formDescription = addForm.querySelector("#description");
+const formStock = addForm.querySelector("#stock");
+const formSKU = addForm.querySelector("#sku");
+const formCategory = addForm.querySelector("#category");
+const applyForm = addForm.querySelector("#applyBtn");
 
 async function fetchProducts() {
 
@@ -40,12 +51,11 @@ function GFG(array, currentPage, pageSize) {
 }
 
 addProduct.addEventListener("click", function () {
-    container.style.display = 'block';
+    addContainer.style.display = 'block';
 })
 closePop.addEventListener('click', function () {
-    container.style.display = 'none';
+    addContainer.style.display = 'none';
 })
-
 
 const addPagination = () => {
     pages.innerHTML = "";
@@ -122,15 +132,13 @@ function DisplayCards(products) {
 
         deleteItem.addEventListener("click", function (e) {
             e.preventDefault();
-            removeItem(product.title);
+            removeItem(product.id);
         });
-
     });
 }
 
-
-const removeItem = (title) => {
-    const itemIndex = data.findIndex(item => item.title === title);
+const removeItem = (id) => {
+    const itemIndex = data.findIndex(item => item.id === id);
     if (itemIndex > -1) {
         data.splice(itemIndex, 1);
         localStorage.setItem("products", JSON.stringify(data));
@@ -138,6 +146,18 @@ const removeItem = (title) => {
         DisplayCards(GFG(data, 1, 12));
         addPagination();
     }
-};
+}
+
+applyForm.addEventListener('click', () => {
+    const newProduct = {
+        id: Date.now(),
+        title: formTitle.value,
+        price: formPrice.value,
+        stock: formStock.value,
+        sku: formSKU.value,
+        category: formCategory.value,
+        mainImage: 'https://via.placeholder.com/150'
+    }
+})
 
 document.addEventListener("DOMContentLoaded", fetchProducts);
