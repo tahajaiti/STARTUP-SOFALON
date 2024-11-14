@@ -3,7 +3,7 @@ let dataLocal = null;
 let azArray;
 let currentPageN;
 
-let nextId;
+let nextId = 21;
 
 const table = document.getElementById('table');
 const addContainer = document.getElementById("addContainer");
@@ -39,7 +39,6 @@ async function fetchProducts() {
     DisplayCards(GFG(data, 1, 12));
     addPagination();
     azArray = data;
-    nextId = data.length;
 }
 
 function GFG(array, currentPage, pageSize) {
@@ -147,7 +146,6 @@ const removeItem = (id) => {
     if (itemIndex > -1) {
         data.splice(itemIndex, 1);
         localStorage.setItem("products", JSON.stringify(data));
-        nextId = data.length+1;
 
         DisplayCards(GFG(data, 1, 12));
         addPagination();
