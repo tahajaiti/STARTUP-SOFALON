@@ -5,15 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/assets/css/style.css">
-    <title>Document</title>
-    <!-- <style>
-        * {
-            border: solid 1px red;
-        }
-    </style> -->
+    <title>Sofalo - Frequently Asked Questions</title>
 </head>
 
-<body class=" h-svh  ">
+<body>
     <header class="pt-1 h-fit mb-9 w-full">
         <nav class=" flex flex-row items-center justify-between px-2 py-2 pt-2 lg:px-12">
             <img class="pl-2 w-36" src="/public/assets/images/homeslides/company logo .png" alt="COMPANY LOGO">
@@ -41,7 +36,7 @@
 
     <main class="sm:w-fit w-full ">
 
-        <div class=" grid lg:grid-cols-2  gap-10  ">
+        <div class=" grid lg:grid-cols-2  gap-5  ">
             <div>
                 <div
                     class=" sm:h-[100%]  lg:rounded-e-full border-dBrown sm:border-4 border-y-4 sm:shadow-md sm:shadow-dark  flex sm:justify-center sm:items-center justify-center h-16 w-full">
@@ -64,7 +59,7 @@
 
                     </div>
                 </div>
-                <div class="pt-10 w-full sm:hidden flex flex-col  justify-center items-center block">
+                <div class="pt-10 w-full sm:hidden flex flex-col  justify-center items-center">
                     <span class="sm:hidden font-Mont font-extrabold text-[19px] text-gray block">FREQUENTLY ASKED
                         QUESTIONS.</span>
                     <span class="sm:hidden font-Mont  text-[19px] text-gray block "> Here are some common questions
@@ -73,11 +68,11 @@
                     <span class="sm:hidden font-Mont font-extrabold text-[19px] text-gray block">SOFALO</span>
                 </div>
             </div>
-            <div class=" flex justify-between items-center pl-16">
+            <div class=" flex justify-between items-center pl-8">
                 <div class="w-[2%] h-[90%] bg-lBrown rounded-full  sm:block hidden "></div>
-                <div class="w-[90%] h-[95%]  sm:grid grid-cols-2 sm:gap-9 ">
+                <div class="m-auto sm:grid grid-cols-2 sm:gap-20 ">
                     <div
-                        class="flex justify-center items-center sm:mb-0 mb-5 flex-col gap-2 transition ease-in-out delay-150 hover:translate-y-1 hover:scale-105 duration-75">
+                        class="flex justify-center items-center sm:mb-0 mb-5 flex-col gap-2 transition-all hover:translate-y-1 hover:scale-105 duration-75">
                         <div class=" w-40 h-40 flex justify-center items-center border-lBrown border-2 rounded-md  hover:border-dBrown"
                             onclick="UserRights()">
                             <img src="/public/assets/images/FAQs/support.png" class="w-36 h-36" alt="">
@@ -85,7 +80,7 @@
                         <p class="font-Mont text-2xl text-gray w-1/2 text-center  ">USER RIGHTS</p>
                     </div>
                     <div
-                        class="flex justify-center items-center sm:mb-0 mb-5 flex-col gap-2 transition ease-in-out delay-150 hover:translate-y-1 hover:scale-105 duration-75">
+                        class="flex justify-center items-center sm:mb-0 mb-5 flex-col gap-2 transition-all delay-150 hover:translate-y-1 hover:scale-105 duration-75">
                         <div class=" w-40 h-40 flex justify-center items-center border-lBrown border-2 rounded-md  hover:border-dBrown"
                             onclick="REFUNDPOLICY()">
                             <img src="/public/assets/images/FAQs/return-box.png" class="w-36 h-36" alt="">
@@ -93,7 +88,7 @@
                         <p class="font-Mont text-2xl text-gray w-1/2 text-center  ">REFUND POLICY</p>
                     </div>
                     <div
-                        class="flex justify-center items-center sm:mb-0 mb-5 flex-col gap-2 transition ease-in-out delay-150 hover:translate-y-1 hover:scale-105 duration-75">
+                        class="flex justify-center items-center sm:mb-0 mb-5 flex-col gap-2 transition-all delay-150 hover:translate-y-1 hover:scale-105 duration-75">
                         <div class=" w-40 h-40 flex justify-center items-center border-lBrown border-2 rounded-md  hover:border-dBrown "
                             onclick="Trust()">
                             <img src="/public/assets/images/FAQs/trust.png" class="w-36 h-36" alt="">
@@ -101,7 +96,7 @@
                         <p class="font-Mont text-2xl text-gray w-1/2 text-center  ">Trust</p>
                     </div>
                     <div
-                        class="flex justify-center items-center sm:mb-0 mb-5 flex-col gap-2 transition ease-in-out delay-150 hover:translate-y-1 hover:scale-105 duration-75">
+                        class="flex justify-center items-center sm:mb-0 mb-5 flex-col gap-2 transition-all delay-150 hover:translate-y-1 hover:scale-105 duration-75">
                         <div class=" w-40 h-40 flex justify-center items-center border-lBrown border-2 rounded-md  hover:border-dBrown "
                             onclick="PAYMENT()">
                             <img src="/public/assets/images/FAQs/payement.png" class="w-36 h-36" alt="">
@@ -113,195 +108,203 @@
 
         </div>
         <div id="UserRights"
-        class=" hidden  w-[90%] my-20 justify-self-center border border-lBrown rounded-sm shadow-sm shadow-gray flex  items-center flex-col gap-6 pt-5 ">
-       <div class=" w-32 h-32 flex justify-center items-center border-lBrown border-2 rounded-full  ">
-           <img src="/public/assets/images/FAQs/support.png" class="w-24 h-24" alt="">
-       </div>
-       <p class="font-Mont text-4xl text-gray w-1/2 text-center ">USER RIGHTS</p>
-       <div class="w-[80%] h-[70%] flex flex-col justify-between  gap-4 mb-10 ">
-           <div class="list_user_rights">
-               <div onclick="ouvrir_qustion(1)"
-                   class="bg-lBrown rounded-sm flex justify-between  items-center transition ease-in-out delay-75 hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown transition-all">
-                   <p class=" pl-3 sm:text-3xl font-Mont">What is the estimated delivery time for my order?</p>
-                   <img class="opacity-60 sm:w-14 sm:h-14 h-8 w-8 hover:opacity-100"
-                       src="/public/assets/images/FAQs/ouvrir .png" alt="open">
-               </div>
-               <div id="Q1" class="  hidden ">
-                   <p class="m-9 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam vero vel
-                       dignissimos quod aliquid, deleniti molestiae doloremque laboriosam. Quam accusantium cumque
-                       et repudiandae minus odio autem quo blanditiis. Dolore, tempore? Lorem ipsum dolor, sit
-                       amet consectetur adipisicing elit. Maxime doloremque modi, quo, architecto veritatis,
-                       inventore consectetur magnam dolores ipsam enim iure velit nesciunt earum id? Voluptates
-                       tempore sed necessitatibus omnis.</p>
-               </div>
-           </div>
-           <div class="list_user_rights">
-               <div onclick="ouvrir_qustion(2)"
-                   class="bg-lBrown rounded-sm flex justify-between  items-center transition ease-in-out delay-75 hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown transition-all">
-                   <p class=" pl-3 sm:text-3xl font-Mont">What payment methods do you accept?</p>
-                   <img class="opacity-60 sm:w-14 sm:h-14 h-8 w-8 hover:opacity-100"
-                       src="/public/assets/images/FAQs/ouvrir .png" alt="open">
-               </div>
-               <div id="Q2" class="  hidden ">
-                   <p class="m-9 ">We accept various payment methods: credit cards (Visa, MasterCard,
-                       American Express), PayPal, and bank transfers. For additional options, please contact our
-                       customer service.
-                   </p>
-               </div>
-           </div>
-           <div class="list_user_rights">
-               <div onclick="ouvrir_qustion(3)"
-                   class="bg-lBrown rounded-sm flex justify-between  items-center transition ease-in-out delay-75 hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown transition-all">
-                   <p class=" pl-3 sm:text-3xl font-Mont">What is the delivery time for my order?</p>
-                   <img class="opacity-60 sm:w-14 sm:h-14 h-8 w-8 hover:opacity-100"
-                       src="/public/assets/images/FAQs/ouvrir .png" alt="open">
-               </div>
-               <div id="Q3" class="  hidden ">
-                   <p class="m-9 ">Delivery times vary depending on your location. Generally, orders are delivered
-                       within 3 to 7 business days. You will receive a tracking number once your order has shipped.
-                   </p>
-               </div>
-           </div>
-           <div class="list_user_rights">
-               <div onclick="ouvrir_qustion(4)"
-                   class="bg-lBrown rounded-sm flex justify-between  items-center transition ease-in-out delay-75 hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown transition-all">
-                   <p class=" pl-3 sm:text-3xl font-Mont">Can I modify or cancel my order after placing it?</p>
-                   <img class="opacity-60 sm:w-14 sm:h-14 h-8 w-8 hover:opacity-100"
-                       src="/public/assets/images/FAQs/ouvrir .png" alt="open">
-               </div>
-               <div id="Q4" class="  hidden ">
-                   <p class="m-9 ">Yes, within 24 hours of purchase. After this period, the order will be in
-                       preparation and cannot be modified. Contact our customer service as soon as possible for
-                       any requests.
-                   </p>
-               </div>
-           </div>
-           <div class="list_user_rights">
-               <div onclick="ouvrir_qustion(5)"
-                   class="bg-lBrown rounded-sm flex justify-between  items-center transition ease-in-out delay-75 hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown transition-all">
-                   <p class=" pl-3 sm:text-3xl font-Mont">What should I do if I receive a damaged or defective product?</p>
-                   <img class="opacity-60 sm:w-14 sm:h-14 h-8 w-8 hover:opacity-100"
-                       src="/public/assets/images/FAQs/ouvrir .png" alt="open">
-               </div>
-               <div id="Q5" class="  hidden ">
-                   <p class="m-9 ">We apologize for the inconvenience! Please contact us within 48 hours of receiving
-                       your order, and we will arrange a replacement or refund according to your preference.
-                   </p>
-               </div>
-           </div>
-           <div class="list_user_rights">
-               <div onclick="ouvrir_qustion(6)"
-                   class="bg-lBrown rounded-sm flex justify-between  items-center transition ease-in-out delay-75 hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown transition-all">
-                   <p class=" pl-3 sm:text-3xl font-Mont">How can I return a product?</p>
-                   <img class="opacity-60 sm:w-14 sm:h-14 h-8 w-8 hover:opacity-100"
-                       src="/public/assets/images/FAQs/ouvrir .png" alt="open">
-               </div>
-               <div id="Q6" class="  hidden ">
-                   <p class="m-9 ">Returns are accepted within 30 days of receipt. Products must be in their original
-                       condition and packaging. Contact our customer service to obtain a return label and the necessary
-                       instructions.
-                   </p>
-               </div>
-           </div>
-       </div>
-   </div>
-   
-   <div id="Trust"
-   class=" hidden  w-[90%] my-20 justify-self-center border border-lBrown rounded-sm shadow-sm shadow-gray flex  items-center flex-col gap-6 pt-5 ">
-  <div class=" w-32 h-32 flex justify-center items-center border-lBrown border-2 rounded-full  ">
-      <img src="/public/assets/images/FAQs/trust.png" class="w-24 h-24" alt="">
-  </div> 
-  <p class="font-Mont text-4xl text-gray w-1/2 text-center ">Trust</p>
-  <div class="w-[80%] h-[70%] flex flex-col justify-between  gap-4 mb-10 ">
-      <div class="list_user_rights">
-          <div onclick="ouvrir_qustion_Trust(1)"
-              class="bg-lBrown rounded-sm flex justify-between  items-center transition ease-in-out delay-75 hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown transition-all">
-              <p class=" pl-3 sm:text-3xl font-Mont">Why can I trust in our company?</p>
-              <img class="opacity-60 sm:w-14 sm:h-14 h-8 w-8 hover:opacity-100"
-                  src="/public/assets/images/FAQs/ouvrir .png" alt="open">
-          </div>
-          <div id="Q1_Trust" class="  hidden ">
-              <p class="m-9 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam vero vel
-                  dignissimos quod aliquid, deleniti molestiae doloremque laboriosam. Quam accusantium cumque
-                  et repudiandae minus odio autem quo blanditiis. Dolore, tempore? Lorem ipsum dolor, sit
-                  amet consectetur adipisicing elit. Maxime doloremque modi, quo, architecto veritatis,
-                  inventore consectetur magnam dolores ipsam enim iure velit nesciunt earum id? Voluptates
-                  tempore sed necessitatibus omnis.</p>
-          </div>
-      </div>
-      <div class="list_user_rights">
-          <div onclick="ouvrir_qustion_Trust(2)"
-              class="bg-lBrown rounded-sm flex justify-between  items-center transition ease-in-out delay-75 hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown transition-all">
-              <p class=" pl-3 sm:text-3xl font-Mont">What payment methods do you accept?</p>
-              <img class="opacity-60 sm:w-14 sm:h-14 h-8 w-8 hover:opacity-100"
-                  src="/public/assets/images/FAQs/ouvrir .png" alt="open">
-          </div>
-          <div id="Q2_Trust" class="  hidden ">
-              <p class="m-9 ">We accept several payment methods: credit cards (Visa, MasterCard,
-                  American Express), PayPal, and bank transfers. For additional options, please contact our
-                  customer service.
-              </p>
-          </div>
-      </div>
-      <div class="list_user_rights">
-          <div onclick="ouvrir_qustion_Trust(3)"
-              class="bg-lBrown rounded-sm flex justify-between  items-center transition ease-in-out delay-75 hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown transition-all">
-              <p class=" pl-3 sm:text-3xl font-Mont">What is the delivery time for my order?</p>
-              <img class="opacity-60 sm:w-14 sm:h-14 h-8 w-8 hover:opacity-100"
-                  src="/public/assets/images/FAQs/ouvrir .png" alt="open">
-          </div>
-          <div id="Q3_Trust" class="  hidden ">
-              <p class="m-9 ">Delivery times vary depending on your location. Generally, orders are delivered
-                  within 3 to 7 business days. You will receive a tracking number once your order has shipped.
-              </p>
-          </div>
-      </div>
-      <div class="list_user_rights">
-          <div onclick="ouvrir_qustion_Trust(4)"
-              class="bg-lBrown rounded-sm flex justify-between  items-center transition ease-in-out delay-75 hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown transition-all">
-              <p class=" pl-3 sm:text-3xl font-Mont">Can I modify or cancel my order after placing it?</p>
-              <img class="opacity-60 sm:w-14 sm:h-14 h-8 w-8 hover:opacity-100"
-                  src="/public/assets/images/FAQs/ouvrir .png" alt="open">
-          </div>
-          <div id="Q4_Trust" class="  hidden ">
-              <p class="m-9 ">Yes, within 24 hours of purchase. After this period, the order will be in
-                  preparation and cannot be modified. Contact our customer service as soon as possible for
-                  any requests.
-              </p>
-          </div>
-      </div>
-      <div class="list_user_rights">
-          <div onclick="ouvrir_qustion_Trust(5)"
-              class="bg-lBrown rounded-sm flex justify-between  items-center transition ease-in-out delay-75 hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown transition-all">
-              <p class=" pl-3 sm:text-3xl font-Mont">What should I do if I receive a damaged or defective product?</p>
-              <img class="opacity-60 sm:w-14 sm:h-14 h-8 w-8 hover:opacity-100"
-                  src="/public/assets/images/FAQs/ouvrir .png" alt="open">
-          </div>
-          <div id="Q5_Trust" class="  hidden ">
-              <p class="m-9 ">We apologize for the inconvenience! Please contact us within 48 hours of receiving
-                  your order, and we will arrange a replacement or refund according to your preference.
-              </p>
-          </div>
-      </div>
-      <div class="list_user_rights">
-          <div onclick="ouvrir_qustion_Trust(6)"
-              class="bg-lBrown rounded-sm flex justify-between  items-center transition ease-in-out delay-75 hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown transition-all">
-              <p class=" pl-3 sm:text-3xl font-Mont">How can I return a product?</p>
-              <img class="opacity-60 sm:w-14 sm:h-14 h-8 w-8 hover:opacity-100"
-                  src="/public/assets/images/FAQs/ouvrir .png" alt="open">
-          </div>
-          <div id="Q6_Trust" class="  hidden ">
-              <p class="m-9 ">Returns are accepted within 30 days of receipt. Products must be in their original
-                  condition and packaging. Contact our customer service to obtain a return label and the necessary
-                  instructions.
-              </p>
-          </div>
-      </div>
-  </div>
-</div>
+            class=" hidden  m-auto w-[90%] my-20 justify-self-center border border-lBrown rounded-sm shadow-sm shadow-gray flex  items-center flex-col gap-6 pt-5 ">
+            <div class=" w-32 h-32 flex justify-center items-center border-lBrown border-2 rounded-full  ">
+                <img src="/public/assets/images/FAQs/support.png" class="w-24 h-24" alt="">
+            </div>
+            <p class="font-Mont text-4xl text-gray w-1/2 text-center ">USER RIGHTS</p>
+            <div class="w-[80%] h-[70%] flex flex-col justify-between  gap-4 mb-10 ">
+                <div class="list_user_rights">
+                    <div onclick="ouvrir_qustion(1)"
+                        class="bg-lBrown rounded-sm flex justify-between  items-center transition-all  hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown">
+                        <p class=" pl-3 sm:text-3xl font-Mont">What is the estimated delivery time for my order?</p>
+                        <img class="opacity-60 sm:w-14 sm:h-14 h-8 w-8 hover:opacity-100"
+                            src="/public/assets/images/FAQs/ouvrir .png" alt="open">
+                    </div>
+                    <div id="Q1" class="  hidden ">
+                        <p class="m-9 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam vero vel
+                            dignissimos quod aliquid, deleniti molestiae doloremque laboriosam. Quam accusantium cumque
+                            et repudiandae minus odio autem quo blanditiis. Dolore, tempore? Lorem ipsum dolor, sit
+                            amet consectetur adipisicing elit. Maxime doloremque modi, quo, architecto veritatis,
+                            inventore consectetur magnam dolores ipsam enim iure velit nesciunt earum id? Voluptates
+                            tempore sed necessitatibus omnis.</p>
+                    </div>
+                </div>
+                <div class="list_user_rights">
+                    <div onclick="ouvrir_qustion(2)"
+                        class="bg-lBrown rounded-sm flex justify-between  items-center transition-all  hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown ">
+                        <p class=" pl-3 sm:text-3xl font-Mont">What payment methods do you accept?</p>
+                        <img class="opacity-60 sm:w-14 sm:h-14 h-8 w-8 hover:opacity-100"
+                            src="/public/assets/images/FAQs/ouvrir .png" alt="open">
+                    </div>
+                    <div id="Q2" class="  hidden ">
+                        <p class="m-9 ">We accept various payment methods: credit cards (Visa, MasterCard,
+                            American Express), PayPal, and bank transfers. For additional options, please contact our
+                            customer service.
+                        </p>
+                    </div>
+                </div>
+                <div class="list_user_rights">
+                    <div onclick="ouvrir_qustion(3)"
+                        class="bg-lBrown rounded-sm flex justify-between  items-center transition-all  hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown ">
+                        <p class=" pl-3 sm:text-3xl font-Mont">What is the delivery time for my order?</p>
+                        <img class="opacity-60 sm:w-14 sm:h-14 h-8 w-8 hover:opacity-100"
+                            src="/public/assets/images/FAQs/ouvrir .png" alt="open">
+                    </div>
+                    <div id="Q3" class="  hidden ">
+                        <p class="m-9 ">Delivery times vary depending on your location. Generally, orders are delivered
+                            within 3 to 7 business days. You will receive a tracking number once your order has shipped.
+                        </p>
+                    </div>
+                </div>
+                <div class="list_user_rights">
+                    <div onclick="ouvrir_qustion(4)"
+                        class="bg-lBrown rounded-sm flex justify-between  items-center transition-all  hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown ">
+                        <p class=" pl-3 sm:text-3xl font-Mont">Can I modify or cancel my order after placing it?</p>
+                        <img class="opacity-60 sm:w-14 sm:h-14 h-8 w-8 hover:opacity-100"
+                            src="/public/assets/images/FAQs/ouvrir .png" alt="open">
+                    </div>
+                    <div id="Q4" class="  hidden ">
+                        <p class="m-9 ">Yes, within 24 hours of purchase. After this period, the order will be in
+                            preparation and cannot be modified. Contact our customer service as soon as possible for
+                            any requests.
+                        </p>
+                    </div>
+                </div>
+                <div class="list_user_rights">
+                    <div onclick="ouvrir_qustion(5)"
+                        class="bg-lBrown rounded-sm flex justify-between  items-center transition-all  hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown ">
+                        <p class=" pl-3 sm:text-3xl font-Mont">What should I do if I receive a damaged or defective
+                            product?</p>
+                        <img class="opacity-60 sm:w-14 sm:h-14 h-8 w-8 hover:opacity-100"
+                            src="/public/assets/images/FAQs/ouvrir .png" alt="open">
+                    </div>
+                    <div id="Q5" class="  hidden ">
+                        <p class="m-9 ">We apologize for the inconvenience! Please contact us within 48 hours of
+                            receiving
+                            your order, and we will arrange a replacement or refund according to your preference.
+                        </p>
+                    </div>
+                </div>
+                <div class="list_user_rights">
+                    <div onclick="ouvrir_qustion(6)"
+                        class="bg-lBrown rounded-sm flex justify-between  items-center transition-all  hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown">
+                        <p class=" pl-3 sm:text-3xl font-Mont">How can I return a product?</p>
+                        <img class="opacity-60 sm:w-14 sm:h-14 h-8 w-8 hover:opacity-100"
+                            src="/public/assets/images/FAQs/ouvrir .png" alt="open">
+                    </div>
+                    <div id="Q6" class="  hidden ">
+                        <p class="m-9 ">Returns are accepted within 30 days of receipt. Products must be in their
+                            original
+                            condition and packaging. Contact our customer service to obtain a return label and the
+                            necessary
+                            instructions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="Trust"
+            class=" hidden m-auto w-[90%] my-20 justify-self-center border border-lBrown rounded-sm shadow-sm shadow-gray flex  items-center flex-col gap-6 pt-5 ">
+            <div class=" w-32 h-32 flex justify-center items-center border-lBrown border-2 rounded-full  ">
+                <img src="/public/assets/images/FAQs/trust.png" class="w-24 h-24" alt="">
+            </div>
+            <p class="font-Mont text-4xl text-gray w-1/2 text-center ">Trust</p>
+            <div class="w-[80%] h-[70%] flex flex-col justify-between  gap-4 mb-10 ">
+                <div class="list_user_rights">
+                    <div onclick="ouvrir_qustion_Trust(1)"
+                        class="bg-lBrown rounded-sm flex justify-between  items-center transition-all  hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown ">
+                        <p class=" pl-3 sm:text-3xl font-Mont">Why can I trust in our company?</p>
+                        <img class="opacity-60 sm:w-14 sm:h-14 h-8 w-8 hover:opacity-100"
+                            src="/public/assets/images/FAQs/ouvrir .png" alt="open">
+                    </div>
+                    <div id="Q1_Trust" class="  hidden ">
+                        <p class="m-9 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam vero vel
+                            dignissimos quod aliquid, deleniti molestiae doloremque laboriosam. Quam accusantium cumque
+                            et repudiandae minus odio autem quo blanditiis. Dolore, tempore? Lorem ipsum dolor, sit
+                            amet consectetur adipisicing elit. Maxime doloremque modi, quo, architecto veritatis,
+                            inventore consectetur magnam dolores ipsam enim iure velit nesciunt earum id? Voluptates
+                            tempore sed necessitatibus omnis.</p>
+                    </div>
+                </div>
+                <div class="list_user_rights">
+                    <div onclick="ouvrir_qustion_Trust(2)"
+                        class="bg-lBrown rounded-sm flex justify-between  items-center transition-all  hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown ">
+                        <p class=" pl-3 sm:text-3xl font-Mont">What payment methods do you accept?</p>
+                        <img class="opacity-60 sm:w-14 sm:h-14 h-8 w-8 hover:opacity-100"
+                            src="/public/assets/images/FAQs/ouvrir .png" alt="open">
+                    </div>
+                    <div id="Q2_Trust" class="  hidden ">
+                        <p class="m-9 ">We accept several payment methods: credit cards (Visa, MasterCard,
+                            American Express), PayPal, and bank transfers. For additional options, please contact our
+                            customer service.
+                        </p>
+                    </div>
+                </div>
+                <div class="list_user_rights">
+                    <div onclick="ouvrir_qustion_Trust(3)"
+                        class="bg-lBrown rounded-sm flex justify-between  items-center transition-all  hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown">
+                        <p class=" pl-3 sm:text-3xl font-Mont">What is the delivery time for my order?</p>
+                        <img class="opacity-60 sm:w-14 sm:h-14 h-8 w-8 hover:opacity-100"
+                            src="/public/assets/images/FAQs/ouvrir .png" alt="open">
+                    </div>
+                    <div id="Q3_Trust" class="  hidden ">
+                        <p class="m-9 ">Delivery times vary depending on your location. Generally, orders are delivered
+                            within 3 to 7 business days. You will receive a tracking number once your order has shipped.
+                        </p>
+                    </div>
+                </div>
+                <div class="list_user_rights">
+                    <div onclick="ouvrir_qustion_Trust(4)"
+                        class="bg-lBrown rounded-sm flex justify-between  items-center transition-all  hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown ">
+                        <p class=" pl-3 sm:text-3xl font-Mont">Can I modify or cancel my order after placing it?</p>
+                        <img class="opacity-60 sm:w-14 sm:h-14 h-8 w-8 hover:opacity-100"
+                            src="/public/assets/images/FAQs/ouvrir .png" alt="open">
+                    </div>
+                    <div id="Q4_Trust" class="  hidden ">
+                        <p class="m-9 ">Yes, within 24 hours of purchase. After this period, the order will be in
+                            preparation and cannot be modified. Contact our customer service as soon as possible for
+                            any requests.
+                        </p>
+                    </div>
+                </div>
+                <div class="list_user_rights">
+                    <div onclick="ouvrir_qustion_Trust(5)"
+                        class="bg-lBrown rounded-sm flex justify-between  items-center transition-all  hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown">
+                        <p class=" pl-3 sm:text-3xl font-Mont">What should I do if I receive a damaged or defective
+                            product?</p>
+                        <img class="opacity-60 sm:w-14 sm:h-14 h-8 w-8 hover:opacity-100"
+                            src="/public/assets/images/FAQs/ouvrir .png" alt="open">
+                    </div>
+                    <div id="Q5_Trust" class="  hidden ">
+                        <p class="m-9 ">We apologize for the inconvenience! Please contact us within 48 hours of
+                            receiving
+                            your order, and we will arrange a replacement or refund according to your preference.
+                        </p>
+                    </div>
+                </div>
+                <div class="list_user_rights">
+                    <div onclick="ouvrir_qustion_Trust(6)"
+                        class="bg-lBrown rounded-sm flex justify-between  items-center transition-all  hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown">
+                        <p class=" pl-3 sm:text-3xl font-Mont">How can I return a product?</p>
+                        <img class="opacity-60 sm:w-14 sm:h-14 h-8 w-8 hover:opacity-100"
+                            src="/public/assets/images/FAQs/ouvrir .png" alt="open">
+                    </div>
+                    <div id="Q6_Trust" class="  hidden ">
+                        <p class="m-9 ">Returns are accepted within 30 days of receipt. Products must be in their
+                            original
+                            condition and packaging. Contact our customer service to obtain a return label and the
+                            necessary
+                            instructions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div id="REFUNDPOLICY"
-            class=" hidden  w-[90%] my-20 justify-self-center border-4 border-lBrown rounded-sm shadow-sm shadow-gray flex  items-center flex-col gap-6 pt-5 ">
+            class=" hidden m-auto  w-[90%] my-20 justify-self-center border-4 border-lBrown rounded-sm shadow-sm shadow-gray flex  items-center flex-col gap-6 pt-5 ">
             <div class=" w-32 h-32 flex justify-center items-center border-lBrown border-2 rounded-full  ">
                 <img src="/public/assets/images/FAQs/return-box.png" class="w-24 h-24" alt="">
             </div>
@@ -309,7 +312,7 @@
             <div class="w-[80%] h-[70%] flex flex-col justify-between  gap-4 mb-10 ">
                 <div class="list_user_rights">
                     <div onclick="ouvrir_qustion_box(1)"
-                        class="bg-lBrown rounded-sm flex justify-between  items-center transition ease-in-out delay-75 hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown transition-all">
+                        class="bg-lBrown rounded-sm flex justify-between  items-center transition-all  hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown ">
                         <p class=" pl-3 sm:text-3xl font-Mont">why i can trust in our company ?</p>
                         <img class="opacity-60 sm:w-14 sm:h-14 h-8 w-8 hover:opacity-100"
                             src="/public/assets/images/FAQs/ouvrir .png" alt="ouvrir">
@@ -325,7 +328,7 @@
                 </div>
                 <div class="list_user_rights">
                     <div onclick="ouvrir_qustion_box(2)"
-                        class="bg-lBrown rounded-sm flex justify-between  items-center transition ease-in-out delay-75 hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown transition-all">
+                        class="bg-lBrown rounded-sm flex justify-between  items-center transition-all  hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown transition-all">
                         <p class=" pl-3 sm:text-3xl font-Mont">Quels modes de paiement acceptez-vous ?</p>
                         <img class="opacity-60 sm:w-14 sm:h-14 h-8 w-8 hover:opacity-100"
                             src="/public/assets/images/FAQs/ouvrir .png" alt="ouvrir">
@@ -339,7 +342,7 @@
                 </div>
                 <div class="list_user_rights">
                     <div onclick="ouvrir_qustion_box(3)"
-                        class="bg-lBrown rounded-sm flex justify-between  items-center transition ease-in-out delay-75 hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown transition-all">
+                        class="bg-lBrown rounded-sm flex justify-between  items-center transition-all  hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown transition-all">
                         <p class=" pl-3 sm:text-3xl font-Mont">Quel est le délai de livraison pour ma commande ?</p>
                         <img class="opacity-60 sm:w-14 sm:h-14 h-8 w-8 hover:opacity-100"
                             src="/public/assets/images/FAQs/ouvrir .png" alt="ouvrir">
@@ -353,7 +356,7 @@
                 </div>
                 <div class="list_user_rights">
                     <div onclick="ouvrir_qustion_box(4)"
-                        class="bg-lBrown rounded-md flex justify-between  items-center transition ease-in-out delay-75 hover:translate-y-1 hover:scale-110 duration-75 hover:bg-dBrown transition-all">
+                        class="bg-lBrown rounded-md flex justify-between  items-center transition-all  hover:translate-y-1 hover:scale-110 duration-75 hover:bg-dBrown transition-all">
                         <p class=" pl-3 sm:text-3xl font-Mont">Puis-je modifier ou annuler ma commande après l'avoir
                             passée ?</p>
                         <img class="opacity-60 sm:w-14 sm:h-14 h-8 w-8 hover:opacity-100"
@@ -368,7 +371,7 @@
                 </div>
                 <div class="list_user_rights">
                     <div onclick="ouvrir_qustion_box(5)"
-                        class="bg-lBrown rounded-sm flex justify-between  items-center transition ease-in-out delay-75 hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown transition-all">
+                        class="bg-lBrown rounded-sm flex justify-between  items-center transition-all  hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown transition-all">
                         <p class=" pl-3 sm:text-3xl font-Mont"> Que faire si je reçois un produit endommagé ou
                             défectueux ?</p>
                         <img class="opacity-60 sm:w-14 sm:h-14 h-8 w-8 hover:opacity-100"
@@ -383,7 +386,7 @@
                 </div>
                 <div class="list_user_rights">
                     <div onclick="ouvrir_qustion_box(6)"
-                        class="bg-lBrown rounded-sm flex justify-between  items-center transition ease-in-out delay-75 hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown transition-all">
+                        class="bg-lBrown rounded-sm flex justify-between  items-center transition-all  hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown transition-all">
                         <p class=" pl-3 sm:text-3xl font-Mont"> Comment puis-je retourner un produit ?</p>
                         <img class="opacity-60 sm:w-14 sm:h-14 h-8 w-8 hover:opacity-100"
                             src="/public/assets/images/FAQs/ouvrir .png" alt="ouvrir">
@@ -399,7 +402,7 @@
             </div>
         </div>
         <div id="pay"
-            class=" hidden  w-[90%] my-20 justify-self-center border border-lBrown rounded-sm shadow-sm shadow-gray flex  items-center flex-col gap-6 pt-5 ">
+            class=" hidden m-auto w-[90%] my-20 justify-self-center border border-lBrown rounded-sm shadow-sm shadow-gray flex  items-center flex-col gap-6 pt-5 ">
             <div class=" w-32 h-32 flex justify-center items-center border-lBrown border-2 rounded-full  ">
                 <img src="/public/assets/images/FAQs/payement.png" class="w-24 h-24" alt="">
             </div>
@@ -407,7 +410,7 @@
             <div class="w-[80%] h-[70%] flex flex-col justify-between  gap-4 mb-10 ">
                 <div class="list_user_rights">
                     <div onclick="ouvrir_qustion_pay(1)"
-                        class="bg-lBrown rounded-sm flex justify-between  items-center transition ease-in-out delay-75 hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown transition-all">
+                        class="bg-lBrown rounded-sm flex justify-between  items-center transition-all  hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown ">
                         <p class=" pl-3 sm:text-3xl font-Mont">What is the estimated delivery time for my order?</p>
                         <img class="opacity-60 sm:w-14 sm:h-14 h-8 w-8 hover:opacity-100"
                             src="/public/assets/images/FAQs/ouvrir .png" alt="ouvrir">
@@ -419,7 +422,7 @@
                 </div>
                 <div class="list_user_rights">
                     <div onclick="ouvrir_qustion_pay(2)"
-                        class="bg-lBrown rounded-sm flex justify-between  items-center transition ease-in-out delay-75 hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown transition-all">
+                        class="bg-lBrown rounded-sm flex justify-between  items-center transition-all  hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown">
                         <p class=" pl-3 sm:text-3xl font-Mont">Quels modes de paiement acceptez-vous ?</p>
                         <img class="opacity-60 sm:w-14 sm:h-14 h-8 w-8 hover:opacity-100"
                             src="/public/assets/images/FAQs/ouvrir .png" alt="ouvrir">
@@ -433,7 +436,7 @@
                 </div>
                 <div class="list_user_rights">
                     <div onclick="ouvrir_qustion_pay(3)"
-                        class="bg-lBrown rounded-sm flex justify-between  items-center transition ease-in-out delay-75 hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown transition-all">
+                        class="bg-lBrown rounded-sm flex justify-between  items-center transition-all  hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown">
                         <p class=" pl-3 sm:text-3xl font-Mont">Quel est le délai de livraison pour ma commande ?</p>
                         <img class="opacity-60 sm:w-14 sm:h-14 h-8 w-8 hover:opacity-100"
                             src="/public/assets/images/FAQs/ouvrir .png" alt="ouvrir">
@@ -447,7 +450,7 @@
                 </div>
                 <div class="list_user_rights">
                     <div onclick="ouvrir_qustion_pay(4)"
-                        class="bg-lBrown rounded-sm flex justify-between  items-center transition ease-in-out delay-75 hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown transition-all">
+                        class="bg-lBrown rounded-sm flex justify-between  items-center transition-all  hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown ">
                         <p class=" pl-3 sm:text-3xl font-Mont">Puis-je modifier ou annuler ma commande après l'avoir
                             passée ?</p>
                         <img class="opacity-60 sm:w-14 sm:h-14 h-8 w-8 hover:opacity-100"
@@ -462,7 +465,7 @@
                 </div>
                 <div class="list_user_rights">
                     <div onclick="ouvrir_qustion_pay(5)"
-                        class="bg-lBrown rounded-sm flex justify-between  items-center transition ease-in-out delay-75 hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown transition-all">
+                        class="bg-lBrown rounded-sm flex justify-between  items-center transition-all  hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown">
                         <p class=" pl-3 sm:text-3xl font-Mont"> Que faire si je reçois un produit endommagé ou
                             défectueux ?</p>
                         <img class="opacity-60 sm:w-14 sm:h-14 h-8 w-8 hover:opacity-100"
@@ -477,7 +480,7 @@
                 </div>
                 <div class="list_user_rights">
                     <div onclick="ouvrir_qustion_pay(6)"
-                        class="bg-lBrown rounded-sm flex justify-between  items-center transition ease-in-out delay-75 hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown transition-all">
+                        class="bg-lBrown rounded-sm flex justify-between  items-center transition-all  hover:translate-y-1 hover:scale-105 duration-75 hover:bg-dBrown ">
                         <p class=" pl-3 sm:text-3xl font-Mont"> Comment puis-je retourner un produit ?</p>
                         <img class="opacity-60 sm:w-14 sm:h-14 h-8 w-8 hover:opacity-100"
                             src="/public/assets/images/FAQs/ouvrir .png" alt="ouvrir">
@@ -493,10 +496,8 @@
             </div>
         </div>
     </main>
-    <footer class="h-36">
-
-    </footer>
-    <script src="/public/assets/js/script.js"></script>
+    
+    <script src="/public/assets/js/FAQ/FAQ.js"></script>
 </body>
 
 </html>
