@@ -1,141 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-        <script src="/node_modules/animejs/lib/anime.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
-      
-        <script src="https://cdn.tailwindcss.com"></script>
-        <title>Document</title>
-      </head>
-      <body class="bg-gray-100">
 
-        <div class="flex flex-col md:flex-row min-h-screen relative">
-        
-          <aside class="w-full md:w-64 bg-white shadow-lg hidden md:block">
-            <div class="p-4 flex items-center space-x-2">
-              <img src="./assets/images/logo.png" alt="Logo" class="h-8 w-32">
-            </div>
-            <nav class="mt-8">
-              <ul>
-                <li><a href="#" class="flex items-center p-4 hover:bg-gray-100"><span class="mr-2"><span class="icon-[fluent-mdl2--b-i-dashboard]" style="color: #DDA15E;"></span></span>Dashboard</a></li>
-                <li><a href="#" class="flex items-center p-4 hover:bg-gray-100 text-lBrown"><span class="mr-2"><span class="icon-[fluent-mdl2--product]" style="color: #DDA15E;"></span></span>Product</a></li>
-                <li><a href="#" class="flex items-center p-4 hover:bg-gray-100"><span class="mr-2"><span class="icon-[mdi--user]" style="color: #DDA15E;"></span></span>Customer</a></li>
-              </ul>
-            </nav>
-          </aside>
-      
-          
-          <div class="flex-1 p-4 sm:p-6">
-           
-            <div class="flex flex-col sm:flex-row justify-between items-center mb-6 space-y-4 sm:space-y-0">
-              <h1 class="text-2xl font-semibold">Products</h1>
-              <div id="addProduct" class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4">
-                <button class="bg-lBrown text-white px-4 py-2 rounded-md w-full sm:w-auto">Add New Product</button>
-                <div class="relative w-full sm:w-auto">
-                  <input type="text" class="w-full sm:w-auto border border-gray-300 rounded-md pl-8 pr-4 py-2" placeholder="Search">
-                  <span class="absolute left-2 top-2 text-gray-500"><span class="icon-[ic--sharp-search] text-2xl" style="color: #878787;"></span></span>
-                </div>
-                <img src="./assets/images/reviews/Alex-Foord-e1644436249973.jpg" alt="User Avatar" class="h-8 w-8 rounded-full">
-              </div>
-            </div>
-      
-          
-            <div class="bg-white rounded-lg shadow overflow-x-auto">
-              <table class="min-w-full text-left table-fixed">
-                <thead>
-                  <tr class="border-b">
-                    <th class="py-4 px-6">Product Name</th>
-                    <th class="py-4 px-6 hidden sm:table-cell">Product ID</th>
-                    <th class="py-4 px-6 hidden sm:table-cell">Price</th>
-                    <th class="py-4 px-6">Stock</th>
-                    <th class="py-4 px-6 hidden sm:table-cell">Category</th>
-                    <th class="py-4 px-6">Status</th>
-                    <th class="py-4 px-6">Action</th>
-                  </tr>
-                </thead>
-                <tbody id="table">
-                
-                </tbody>
-              </table>
-            </div>
-            <div id="pages" class="flex  gap-2 justify-center mt-4">
-                
-            </div>
-        
-            </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <script src="/node_modules/animejs/lib/anime.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Dashboard</title>
+
+</head>
+
+<body class="bg-gray-100">
+
+  <div class="flex flex-col md:flex-row min-h-screen relative">
+
+    <aside class="w-full md:w-64 bg-white shadow-lg hidden md:block">
+      <div class="p-4 flex items-center space-x-2">
+        <img src="./assets/images/logo.png" alt="Logo" class="h-8 w-32">
+      </div>
+      <nav class="mt-8">
+        <ul>
+          <li><a href="#" class="flex items-center p-4 hover:bg-gray-100"><span class="mr-2"><span
+                  class="icon-[fluent-mdl2--b-i-dashboard]" style="color: #DDA15E;"></span></span>Dashboard</a></li>
+          <li><a href="#" class="flex items-center p-4 hover:bg-gray-100 text-lBrown"><span class="mr-2"><span
+                  class="icon-[fluent-mdl2--product]" style="color: #DDA15E;"></span></span>Product</a></li>
+          <li><a href="#" class="flex items-center p-4 hover:bg-gray-100"><span class="mr-2"><span
+                  class="icon-[mdi--user]" style="color: #DDA15E;"></span></span>Customer</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+
+    <div class="flex-1 p-4 sm:p-6">
+
+      <div class="flex flex-col sm:flex-row justify-between items-center mb-6 space-y-4 sm:space-y-0">
+        <h1 class="text-2xl font-semibold">Products</h1>
+        <div id="addProduct" class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4">
+          <button class="bg-lBrown text-white px-4 py-2 rounded-md w-full sm:w-auto">Add New Product</button>
+          <div class="relative w-full sm:w-auto">
+            <input type="text" class="w-full sm:w-auto border border-gray-300 rounded-md pl-8 pr-4 py-2"
+              placeholder="Search">
+            <span class="absolute left-2 top-2 text-gray-500"><span class="icon-[ic--sharp-search] text-2xl"
+                style="color: #878787;"></span></span>
           </div>
+          <img src="./assets/images/reviews/Alex-Foord-e1644436249973.jpg" alt="User Avatar"
+            class="h-8 w-8 rounded-full">
+        </div>
+      </div>
+
+
+      <div class="bg-white rounded-lg shadow overflow-x-auto">
+        <table class="min-w-full text-left table-fixed">
+          <thead>
+            <tr class="border-b">
+              <th class="py-4 px-6">Product Name</th>
+              <th class="py-4 px-6 hidden sm:table-cell">Product ID</th>
+              <th class="py-4 px-6 hidden sm:table-cell">Price</th>
+              <th class="py-4 px-6">Stock</th>
+              <th class="py-4 px-6 hidden sm:table-cell">Category</th>
+              <th class="py-4 px-6">Status</th>
+              <th class="py-4 px-6">Action</th>
+            </tr>
+          </thead>
+          <tbody id="table">
+
+          </tbody>
+        </table>
+      </div>
+      <div id="pages" class="flex  gap-2 justify-center mt-4">
+
+      </div>
+
+    </div>
+  </div>
+
+  <div id="container" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-10 hidden">
+
+    <div class="relative bg-white p-10 sm:p-4 rounded-lg shadow-lg w-full max-w-sm mx-auto z-20 my-8">
+      <button id="close" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <h2 class="text-lg sm:text-xl font-semibold text-center mb-3 text-[#DDA15E]">Add New Product</h2>
+      <form id="add-product-form">
+        <div class="mb-2">
+          <label for="title" class="block text-gray-700 font-medium mb-1">Product Title</label>
+          <input type="text" id="title" name="title"
+            class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:border-[#DDA15E]"
+            placeholder="Enter product title" required>
         </div>
 
-         <div id="container" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-10 hidden">
-                
-            <div class="relative bg-white p-10 sm:p-4 rounded-lg shadow-lg w-full max-w-sm mx-auto z-20 my-8">
-                <button id="close" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-                <h2 class="text-lg sm:text-xl font-semibold text-center mb-3 text-[#DDA15E]">Add New Product</h2>
-                <form id="add-product-form" action="#" method="POST">
-                    <div class="mb-2">
-                    <label for="title" class="block text-gray-700 font-medium mb-1">Product Title</label>
-                    <input type="text" id="title" name="title" class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:border-[#DDA15E]" placeholder="Enter product title" required>
-                    </div>
-                    
-                    <div class="mb-2">
-                    <label for="price" class="block text-gray-700 font-medium mb-1">Price ($)</label>
-                    <input type="number" id="price" name="price" class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:border-[#DDA15E]" placeholder="Enter price" required step="0.01" min="0">
-                    </div>
-                    
-                
-                    <div class="mb-2">
-                    <label for="description" class="block text-gray-700 font-medium mb-1">Description</label>
-                    <textarea id="description" name="description" class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:border-[#DDA15E]" placeholder="Enter product description" rows="2" required></textarea>
-                    </div>
-                    
-                
-                    <div class="mb-2">
-                    <label for="stock" class="block text-gray-700 font-medium mb-1">Stock</label>
-                    <input type="number" id="stock" name="stock" class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:border-[#DDA15E]" placeholder="Enter stock quantity" required min="0">
-                    </div>
-                    
-                
-                    <div class="mb-2">
-                    <label for="sku" class="block text-gray-700 font-medium mb-1">SKU</label>
-                    <input type="text" id="sku" name="sku" class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:border-[#DDA15E]" placeholder="Enter SKU" required>
-                    </div>
-                    
-                 
-                    <div class="mb-3">
-                    <label for="category" class="block text-gray-700 font-medium mb-1">Category</label>
-                    <select  name="category" class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:border-[#DDA15E]" required>
-                        <option id="category" value="">Select category</option>
-                        <option value="beds">Beds</option>
-                        <option value="decoration">Decoration</option>
-                        <option value="kitchen">Kitchen</option>
-                        <option value="storage">Storage</option>
-                        <option value="tables">Tables</option>
-                    </select>
-                    </div>
-                    
-                
-                    <div class="text-center">
-                    <button id="editBtn" type="submit" class="w-full bg-[#DDA15E] hover:bg-[#cc8b4e] text-white font-semibold py-2 rounded focus:outline-none">Add Product</button>
-                    </div>
-                </form>
-                </div>
-            </div>
-  
-  
-            </div>
-            
+        <div class="mb-2">
+          <label for="price" class="block text-gray-700 font-medium mb-1">Price ($)</label>
+          <input type="number" id="price" name="price"
+            class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:border-[#DDA15E]"
+            placeholder="Enter price" required step="1" min="0">
+        </div>
 
-       
-  
-      <script src="./assets/js/Dashboard.js"></script>
-      </body>
+
+        <div class="mb-2">
+          <label for="description" class="block text-gray-700 font-medium mb-1">Description</label>
+          <textarea id="description" name="description"
+            class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:border-[#DDA15E]"
+            placeholder="Enter product description" rows="2" required></textarea>
+        </div>
+
+
+        <div class="mb-2">
+          <label for="stock" class="block text-gray-700 font-medium mb-1">Stock</label>
+          <input type="number" id="stock" name="stock"
+            class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:border-[#DDA15E]"
+            placeholder="Enter stock quantity" required min="0">
+        </div>
+
+
+        <div class="mb-2">
+          <label for="sku" class="block text-gray-700 font-medium mb-1">SKU</label>
+          <input type="text" id="sku" name="sku"
+            class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:border-[#DDA15E]"
+            placeholder="Enter SKU" required>
+        </div>
+
+
+        <div class="mb-3">
+          <label for="category" class="block text-gray-700 font-medium mb-1">Category</label>
+          <select  name="category"
+            class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:border-[#DDA15E]" required>
+            <option id="category" value="">Select category</option>
+            <option value="beds">Beds</option>
+            <option value="decoration">Decoration</option>
+            <option value="kitchen">Kitchen</option>
+            <option value="storage">Storage</option>
+            <option value="tables">Tables</option>
+          </select>
+        </div>
+
+
+        <div class="text-center">
+          <button id="editBtn" id="editBtn"
+            class="w-full bg-[#DDA15E] hover:bg-[#cc8b4e] text-white font-semibold py-2 rounded focus:outline-none">Add
+            Product</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <div id="addContainer" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-10 hidden">
+
+    <div class="relative bg-white p-10 sm:p-4 rounded-lg shadow-lg w-full max-w-sm mx-auto z-20 my-8">
+      <button id="close" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <h2 class="text-lg sm:text-xl font-semibold text-center mb-3 text-[#DDA15E]">Add New Product</h2>
+      <div id="addForm">
+        <div class="mb-2">
+          <label for="title" class="block text-gray-700 font-medium mb-1">Product Title</label>
+          <input type="text" id="title" name="title"
+            class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:border-[#DDA15E]"
+            placeholder="Enter product title" required>
+        </div>
+
+        <div class="mb-2">
+          <label for="price" class="block text-gray-700 font-medium mb-1">Price ($)</label>
+          <input type="number" id="price" name="price"
+            class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:border-[#DDA15E]"
+            placeholder="Enter price" required step="1" min="0">
+        </div>
+
+
+        <div class="mb-2">
+          <label for="description" class="block text-gray-700 font-medium mb-1">Description</label>
+          <textarea id="description" name="description"
+            class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:border-[#DDA15E]"
+            placeholder="Enter product description" rows="2" required></textarea>
+        </div>
+
+
+        <div class="mb-2">
+          <label for="stock" class="block text-gray-700 font-medium mb-1">Stock</label>
+          <input type="number" id="stock" name="stock"
+            class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:border-[#DDA15E]"
+            placeholder="Enter stock quantity" required min="0">
+        </div>
+
+
+        <div class="mb-2">
+          <label for="sku" class="block text-gray-700 font-medium mb-1">SKU</label>
+          <input type="text" id="sku" name="sku"
+            class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:border-[#DDA15E]"
+            placeholder="Enter SKU" required>
+        </div>
+
+
+        <div class="mb-3">
+          <label for="category" class="block text-gray-700 font-medium mb-1">Category</label>
+          <select id="category" name="category"
+            class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:border-[#DDA15E]" required>
+            <option value="">Select category</option>
+            <option value="beds">Beds</option>
+            <option value="decoration">Decoration</option>
+            <option value="kitchen">Kitchen</option>
+            <option value="storage">Storage</option>
+            <option value="tables">Tables</option>
+          </select>
+        </div>
+
+        <div class="mb-2">
+          <label for="mainImage" class="block text-gray-700 font-medium mb-1">Main Image</label>
+          <input type="file" id="mainImage" accept="image/*" name="mainImage"
+            class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:border-[#DDA15E]" required>
+        </div>
+
+        <div class="mb-2">
+          <label for="image1" class="block text-gray-700 font-medium mb-1">Extra Image</label>
+          <input type="file" id="image1" accept="image/*" name="image1"
+            class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:border-[#DDA15E]" required>
+        </div>
+
+        <div class="mb-2">
+          <label for="image2" class="block text-gray-700 font-medium mb-1">Extra Image 2</label>
+          <input type="file" id="image2" accept="image/*" name="image2"
+            class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:border-[#DDA15E]" required>
+        </div>
+
+        <div class="text-center">
+          <button id="applyBtn"
+            class="w-full bg-[#DDA15E] hover:bg-[#cc8b4e] text-white font-semibold py-2 rounded focus:outline-none">Add
+            Product</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="./assets/js/Dashboard.js"></script>
+</body>
+
 </html>

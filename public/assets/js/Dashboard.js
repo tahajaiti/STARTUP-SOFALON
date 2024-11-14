@@ -3,11 +3,19 @@ let dataLocal = null;
 let azArray;
 let currentPageN;
 
+let nextId;
+
 const table = document.getElementById('table');
+const addContainer = document.getElementById("addContainer");
 const addProduct = document.getElementById("addProduct");
-const closePop = document.getElementById("close");
 const container = document.getElementById("container");
+const closePop = addContainer.querySelector("#close");
 const pages = document.getElementById('pages');
+
+const addForm = document.querySelector("#addForm");
+
+const applyBtn = document.querySelector("#applyBtn");
+console.log(applyBtn);
 
 async function fetchProducts() {
 
@@ -31,6 +39,7 @@ async function fetchProducts() {
     DisplayCards(GFG(data, 1, 12));
     addPagination();
     azArray = data;
+    nextId = data.length;
 }
 
 function GFG(array, currentPage, pageSize) {
@@ -40,12 +49,11 @@ function GFG(array, currentPage, pageSize) {
 }
 
 addProduct.addEventListener("click", function () {
-    container.style.display = 'block';
+    addContainer.style.display = 'block';
 })
 closePop.addEventListener('click', function () {
-    container.style.display = 'none';
+    addContainer.style.display = 'none';
 })
-
 
 const addPagination = () => {
     pages.innerHTML = "";
@@ -123,7 +131,7 @@ function DisplayCards(products) {
 
         deleteItem.addEventListener("click", function(e) {
             e.preventDefault();
-            removeItem(product.title);
+            removeItem(product.id);
         });
         editItem.addEventListener("click", function(e) {
             e.preventDefault();
@@ -131,21 +139,83 @@ function DisplayCards(products) {
             
             editItemm(product);
         });
-
     });
 }
 
-
-const removeItem = (title) => {
-    const itemIndex = data.findIndex(item => item.title === title);
+const removeItem = (id) => {
+    const itemIndex = data.findIndex(item => item.id === id);
     if (itemIndex > -1) {
         data.splice(itemIndex, 1);
         localStorage.setItem("products", JSON.stringify(data));
+        nextId = data.length+1;
 
         DisplayCards(GFG(data, 1, 12));
         addPagination();
     }
-};
+}
+
+applyBtn.addEventListener('click', async (e) => {
+    e.preventDefault();
+    
+    const formTitle = addForm.querySelector("#title");
+    const formPrice = addForm.querySelector("#price");
+    const formDescription = addForm.querySelector("#description");
+    const formStock = addForm.querySelector("#stock");
+    const formSKU = addForm.querySelector("#sku");
+    const formCategory = addForm.querySelector("#category");
+    const formImage = addForm.querySelector("#mainImage");
+    const formImage1 = addForm.querySelector("#image1");
+    const formImage2 = addForm.querySelector("#image2");
+
+    console.log(formImage);
+
+    const mainImageBase64 = await convertToBase64(formImage.files[0]);
+    const image1Base64 = await convertToBase64(formImage1.files[0]);
+    const image2Base64 = await convertToBase64(formImage2.files[0]);
+
+    const newProduct = {
+        id: nextId++,
+        title: formTitle.value,
+        price: parseFloat(formPrice.value),
+        description: formDescription.value,
+        stock: parseInt(formStock.value),
+        category: formCategory.value,
+        mainImage: mainImageBase64,
+        SKU: formSKU.value,
+        images: [
+            image1Base64,
+            image2Base64,
+        ]
+    };
+
+    data.push(newProduct);
+    localStorage.setItem("products", JSON.stringify(data));
+
+    DisplayCards(GFG(data, 1, 12));
+    addPagination();
+
+    addContainer.style.display = 'none';
+    formTitle.value = '';
+    formPrice.value = '';
+    formDescription.value = '';
+    formStock.value = '';
+    formSKU.value = '';
+    formCategory.value = '';
+    formImage.value = '';
+    formImage1.value = '';
+    formImage2.value = '';
+
+    
+});
+
+function convertToBase64(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onloadend = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+    });
+}
 
 let title = document.getElementById('title');
 let price = document.getElementById('price');
