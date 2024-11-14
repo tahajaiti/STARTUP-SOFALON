@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+    
     <!-- Meta Description -->
     <meta
       name="description"
@@ -35,6 +36,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="/node_modules/animejs/lib/anime.min.js"></script>
+
 
     <title>Sofalo - Checkout</title>
   </head>
@@ -139,8 +141,8 @@
             <div class="flex w-full">
               <div class="space-y-4 mx-auto max-w-lg">
                 <div class="flex space-x-4">
-                  <input type="text" placeholder="First Name" class="border p-2 w-full" required/>
-                  <input type="text" placeholder="Last Name" class="border p-2 w-full" />
+                  <input id="firstName" type="text" placeholder="First Name" class="border p-2 w-full" required/>
+                  <input id="lastName" type="text" placeholder="Last Name" class="border p-2 w-full" />
                 </div>
 
                 <div class="flex space-x-4">
@@ -152,7 +154,7 @@
                 <input type="text" placeholder="Address" class="border p-2 w-full" required/>
 
                 <div class="flex space-x-4">
-                  <input type="text" placeholder="Phone" class="border p-2 w-full" required/>
+                  <input id="phone" type="text" placeholder="Phone" class="border p-2 w-full" required/>
                   <input type="text" placeholder="Email" class="border p-2 w-full" required/>
                 </div>
               </div>

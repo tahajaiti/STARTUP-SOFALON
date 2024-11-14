@@ -13,7 +13,6 @@ const loadStats = () => {
     const sum = document.querySelector("#sumItems");
     const tax = document.querySelector("#taxFee");
 
-
     numberItems.textContent = `${count} ITEMS`;
 
     const totalPrice = cartItems.reduce((total, item) => {
@@ -30,7 +29,6 @@ const loadStats = () => {
 
     loadItems();
 };
-
 
 const loadItems = () => {
     const container = document.querySelector("#itemsContainer");
@@ -83,10 +81,113 @@ const removeItem = (title) => {
     }
 };
 
+let firstName = document.getElementById('firstName');
+let lastName = document.getElementById('lastName');
+let phone = document.getElementById('phone');
+
+let costumerInfo = new Object();
+
 btn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    costumerInfo = {
+        Fname: firstName.value,
+        Lname: lastName.value,
+        Cphone: phone.value
+    };
+
+
+    const totalPrice = cartItems.reduce((total, item) => {
+        const price = parseFloat(item.price.replace(/[^0-9.-]+/g, ""));
+        return total + (price * item.quantity);
+    }, 0);
 
     
+    const purchaseData = {
+        costumerInfo,
+        items: cartItems,
+        totalPrice: `TOTAL: ${totalPrice.toFixed(2)}$`
+    };
 
-})
+    let purchaseHistory = JSON.parse(localStorage.getItem("purchaseHistory")) || [];
+    purchaseHistory.push(purchaseData);
+    localStorage.setItem("purchaseHistory", JSON.stringify(purchaseHistory));
+
+
+    generatePDF(costumerInfo, cartItems, totalPrice);
+
+    cartItems = [];
+    localStorage.setItem("cart", JSON.stringify(cartItems));
+    count = 0;
+    loadStats();
+});
 
 document.addEventListener('DOMContentLoaded', loadStats);
+
+
+function generatePDF(customer, items, totalPrice) {
+    const invoiceContent = `
+        <div class="max-w-lg mx-auto bg-white shadow-md rounded-lg p-6">
+            <div class="flex justify-between items-center border-b pb-4">
+                <div>
+                    <img class="pl-2 w-36" src="assets/images/logo.png" alt="COMPANY LOGO"/>
+                </div>
+            </div>
+            
+            <div class="flex justify-between mt-4">
+                <div>
+                    <p class="font-bold">SOFALO TO:</p>
+                    <p class="text-gray-800 font-semibold">${customer.Fname} ${customer.Lname}</p>
+                    <p class="text-gray-600">${customer.Cphone}</p>
+                </div>
+            </div>
+
+            <div class="mt-6">
+                <table class="w-full border-collapse">
+                    <thead>
+                        <tr class="bg-lBrown text-white">
+                            <th class="p-2 text-left">Description</th>
+                            <th class="p-2 text-left">Qty</th>
+                            <th class="p-2 text-left">Price</th>
+                            <th class="p-2 text-left">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-700">
+                        ${items.map(item => {
+                            const price = parseFloat(item.price.replace(/[^0-9.-]+/g, ""));
+                            const itemTotal = price * item.quantity;
+                            return `
+                                <tr class="border-b">
+                                    <td class="p-2">${item.title}</td>
+                                    <td class="p-2">${item.quantity}</td>
+                                    <td class="p-2">${price.toFixed(2)}$</td>
+                                    <td class="p-2">${itemTotal.toFixed(2)}$</td>
+                                </tr>
+                            `;
+                        }).join('')}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="flex justify-between items-center mt-6 border-t pt-4">
+                <div>
+                    <p class="font-semibold text-lBrown">Thank you for your purchase!</p>
+                </div>
+                <div class="text-right">
+                    <p class="text-gray-700">Total: <span class="font-bold">${totalPrice.toFixed(2)}$</span></p>
+                </div>
+            </div>
+        </div>
+    `;
+
+    const element = document.createElement("div");
+    element.innerHTML = invoiceContent;
+    document.body.appendChild(element);
+
+    html2pdf()
+        .from(element)
+        .save()
+        .then(() => {
+            document.body.removeChild(element);
+        });
+}
