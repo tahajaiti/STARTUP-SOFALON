@@ -128,14 +128,14 @@ function DisplayCards(products) {
         const deleteItem = newRow.querySelector("#deleteItem");
         const editItem = newRow.querySelector("#editItem");
 
-        deleteItem.addEventListener("click", function(e) {
+        deleteItem.addEventListener("click", function (e) {
             e.preventDefault();
             removeItem(product.id);
         });
-        editItem.addEventListener("click", function(e) {
+        editItem.addEventListener("click", function (e) {
             e.preventDefault();
 
-            
+
             editItemm(product);
         });
     });
@@ -154,7 +154,7 @@ const removeItem = (id) => {
 
 applyBtn.addEventListener('click', async (e) => {
     e.preventDefault();
-    
+
     const formTitle = addForm.querySelector("#title");
     const formPrice = addForm.querySelector("#price");
     const formDescription = addForm.querySelector("#description");
@@ -164,6 +164,40 @@ applyBtn.addEventListener('click', async (e) => {
     const formImage = addForm.querySelector("#mainImage");
     const formImage1 = addForm.querySelector("#image1");
     const formImage2 = addForm.querySelector("#image2");
+
+
+    const priceRegex = /^\d+(\.\d{1,2})?$/;
+    const stockRegex = /^\d+$/;
+
+    if (
+        !formTitle.value || !formPrice.value || !formDescription.value || !formStock.value ||
+        !formSKU.value || !formCategory.value || !formImage.value || !formSKU.value
+    ) {
+        alert("Fill the form correctly");
+        return;
+    }
+
+    if (!priceRegex.test(formPrice.value)) {
+        alert("Please enter a valid price (ex. 9,99).");
+        return;
+    }
+
+    if (!stockRegex.test(formStock.value)) {
+        alert("Stock must be a positive number");
+        return;
+    }
+
+
+    if (!formImage.value) {
+        alert("Please upload the main image");
+        return;
+    }
+
+    if (formImage1.value && formImage2.value && formImage1.value === formImage2.value) {
+        alert("Use different images");
+        return;
+    }
+
 
     console.log(formImage);
 
@@ -203,7 +237,7 @@ applyBtn.addEventListener('click', async (e) => {
     formImage1.value = '';
     formImage2.value = '';
 
-    
+
 });
 
 function convertToBase64(file) {
@@ -223,7 +257,7 @@ let sku = document.getElementById('sku');
 let category = document.getElementById('category');
 let editBtn = document.getElementById('editBtn');
 
-let currentProduct = null; 
+let currentProduct = null;
 
 function editItemm(product) {
     currentProduct = product;
@@ -239,7 +273,7 @@ function editItemm(product) {
 }
 
 
-editBtn.addEventListener('click', function(event) {
+editBtn.addEventListener('click', function (event) {
     event.preventDefault();
 
     if (currentProduct) {
