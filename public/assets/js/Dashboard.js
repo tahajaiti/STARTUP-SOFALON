@@ -162,8 +162,8 @@ applyBtn.addEventListener('click', async (e) => {
     console.log(formImage);
 
     const mainImageBase64 = await convertToBase64(formImage.files[0]);
-    const image1Base64 = formImage1.files.length ? await convertToBase64(formImage1.files[0]) : null;
-    const image2Base64 = formImage2.files.length ? await convertToBase64(formImage2.files[0]) : null;
+    const image1Base64 = await convertToBase64(formImage1.files[0]);
+    const image2Base64 = await convertToBase64(formImage2.files[0]);
 
     const newProduct = {
         id: nextId++,
