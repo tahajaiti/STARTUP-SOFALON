@@ -90,6 +90,11 @@ let costumerInfo = new Object();
 btn.addEventListener('click', (e) => {
     e.preventDefault();
 
+    if (cartItems.length === 0 ){
+      alert("no items in cart");
+      return;
+    }
+
     costumerInfo = {
         Fname: firstName.value,
         Lname: lastName.value,
@@ -113,9 +118,8 @@ btn.addEventListener('click', (e) => {
     purchaseHistory.push(purchaseData);
     localStorage.setItem("purchaseHistory", JSON.stringify(purchaseHistory));
 
-
     generatePDF(costumerInfo, cartItems, totalPrice);
-
+   
     cartItems = [];
     localStorage.setItem("cart", JSON.stringify(cartItems));
     count = 0;
