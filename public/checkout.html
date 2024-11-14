@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Meta Description -->
-  <meta name="description"
-    content="Discover Sofalo, your one-stop online shop for stylish and affordable furniture, home decor, and storage solutions. 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+    
+    <!-- Meta Description -->
+    <meta
+      name="description"
+      content="Discover Sofalo, your one-stop online shop for stylish and affordable furniture, home decor, and storage solutions. 
   Shop quality beds, tables, kitchenware, and more with convenient delivery options. Find inspiration for every room in your home with Sofalo." />
 
   <!-- Keywords -->
@@ -28,9 +29,10 @@
   <!-- Author -->
   <meta name="author" content="DOTEXE TEAM" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script src="/node_modules/animejs/lib/anime.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="/node_modules/animejs/lib/anime.min.js"></script>
+
 
   <title>Sofalo - Checkout</title>
 </head>
@@ -122,108 +124,58 @@
         <h2 class="text-2xl text-yellow-600 font-semibold font-Mont text-center">PERSONAL INFORMATION</h2>
         <p class="text-center text-gray-500 font-Mont mb-6">Fill out the form with your details</p>
 
-        <form action="#">
-          <div class="flex w-full">
-            <div class="space-y-4 mx-auto max-w-lg">
-              <div class="flex space-x-4">
-                <input type="text" placeholder="First Name" class="border p-2 w-full" />
-                <input type="text" placeholder="Last Name" class="border p-2 w-full" />
-              </div>
+          <form action="#">
+            <div class="flex w-full">
+              <div class="space-y-4 mx-auto max-w-lg">
+                <div class="flex space-x-4">
+                  <input id="firstName" type="text" placeholder="First Name" class="border p-2 w-full" required/>
+                  <input id="lastName" type="text" placeholder="Last Name" class="border p-2 w-full" />
+                </div>
 
-              <div class="flex space-x-4">
-                <input type="text" placeholder="Country" class="border p-2 w-full" />
-                <input type="text" placeholder="State" class="border p-2 w-full" />
-                <input type="text" placeholder="City" class="border p-2 w-full" />
-              </div>
+                <div class="flex space-x-4">
+                  <input type="text" placeholder="Country" class="border p-2 w-full"required />
+                  <input type="text" placeholder="State" class="border p-2 w-full" required/>
+                  <input type="text" placeholder="City" class="border p-2 w-full" required/>
+                </div>
 
-              <input type="text" placeholder="Address" class="border p-2 w-full" />
+                <input type="text" placeholder="Address" class="border p-2 w-full" required/>
 
-              <div class="flex space-x-4">
-                <input type="text" placeholder="Phone" class="border p-2 w-full" />
-                <input type="text" placeholder="Email" class="border p-2 w-full" />
+                <div class="flex space-x-4">
+                  <input id="phone" type="text" placeholder="Phone" class="border p-2 w-full" required/>
+                  <input type="text" placeholder="Email" class="border p-2 w-full" required/>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="flex items-center mt-4">
-            <input type="checkbox" required class="mr-2" />
-            <span class="text-gray-500 text-sm">I accept the terms of privacy and policy</span>
-          </div>
-          <button type="submit" class="bg-lBrown hover:bg-dBrown text-white font-semibold py-2 w-full mt-6">
-            CHECK OUT
-          </button>
-        </form>
-      </div>
-
-      <div id="cartReal" class="lg:w-1/4 w-full flex flex-col shadow-lg lg:order-1 -order-1 bg-white h-full">
-        <!-- heading -->
-        <div class="drop-shadow-lg flex justify-center p-2 items-center flex-row h-[5%] bg-lBrown w-full">
-          <p id="cartMenuNum" class="ont-medium font-Mont text-white text-2xl">0 ITEMS</p>
-        </div>
-        <!-- container -->
-        <div id="cartContainer" class="h-[260px] w-full bg-gray-200 p-2 gap-2 flex flex-col overflow-y-auto">
-          <!-- card -->
-          <div class="bg-white w-full flex flex-row">
-            <img class="w-1/3 object-cover h-full bg-white" src="./assets/images/Products/Beds/bed 2/1.png"
-              alt="image" />
-            <div class="w-full h-full flex flex-col justify-start p-2">
-              <div class="flex justify-between">
-                <p class="text-2xl font-Mont">TITLE</p>
-                <span
-                  class="icon-[iconamoon--trash-light] text-2xl cursor-pointer hover:bg-red-500 transition-all"></span>
-              </div>
-              <p class="text-gray-500 h-full font-Mont">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-              <div class="flex justify-between flex-wrap">
-                <p class="font-bold font-Mont">QTY: 1</p>
-                <p class="text-lBrown font-medium">250$</p>
-              </div>
+            <div class="flex items-center mt-4">
+              <input type="checkbox" required class="mr-2" required/>
+              <span class="text-gray-500 text-sm">I accept the terms of privacy and policy</span>
             </div>
-          </div>
-
-          <!-- card -->
-          <div class="bg-white w-full flex flex-row">
-            <img class="w-1/3 object-cover h-full bg-white" src="./assets/images/Products/Beds/bed 1/1.png"
-              alt="image" />
-            <div class="w-full h-full flex flex-col justify-start p-2">
-              <div class="flex justify-between">
-                <p class="text-2xl font-Mont">TITLE</p>
-                <span
-                  class="icon-[iconamoon--trash-light] text-2xl cursor-pointer hover:bg-red-500 transition-all"></span>
-              </div>
-              <p class="text-gray-500 h-full font-Mont">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-              <div class="flex justify-between flex-wrap">
-                <p class="font-bold font-Mont">QTY: 1</p>
-                <p class="text-lBrown font-medium">250$</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- card -->
-          <div class="bg-white w-full flex flex-row">
-            <img class="w-1/3 object-cover h-full bg-white" src="./assets/images/Products/Beds/bed 1/1.png"
-              alt="image" />
-            <div class="w-full h-full flex flex-col justify-start p-2">
-              <div class="flex justify-between">
-                <p class="text-2xl font-Mont">TITLE</p>
-                <span
-                  class="icon-[iconamoon--trash-light] text-2xl cursor-pointer hover:bg-red-500 transition-all"></span>
-              </div>
-              <p class="text-gray-500 h-full font-Mont">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-              <div class="flex justify-between flex-wrap">
-                <p class="font-bold font-Mont">QTY: 1</p>
-                <p class="text-lBrown font-medium">250$</p>
-              </div>
-            </div>
-          </div>
+            <button id="checkoutBtn" type="submit" class="bg-lBrown hover:bg-dBrown text-white font-semibold py-2 w-full mt-6">
+              CHECK OUT
+            </button>
+          </form>
         </div>
 
-        <div class="p-4 space-y-1 bg-white text-gray-700">
-          <p>SUM: <span class="float-right">$500</span></p>
-          <p>DEELIVERY FEE: <span class="float-right">$12.75</span></p>
-          <p>TAX: <span class="float-right">$30</span></p>
-          <p class="font-bold text-lg">TOTAL: <span class="float-right text-black">$542.75</span></p>
+
+        <div class="lg:w-1/4 w-full flex flex-col shadow-lg lg:order-1 -order-1 bg-white h-full">
+          <!-- heading -->
+          <div class="drop-shadow-lg flex justify-center p-2 items-center flex-row h-[5%] bg-lBrown w-full">
+            <p id="itemsNum" class="ont-medium font-Mont text-white text-2xl">0 ITEMS</p>
+          </div>
+          <!-- container -->
+          <div id="itemsContainer" class="h-[260px] w-full bg-gray-200 p-2 gap-2 flex flex-col overflow-y-auto">
+            
+           
+            
+          </div>
+
+          <div class="p-4 space-y-1 bg-white text-gray-700">
+            <p id="sumItems">SUM: <span class="float-right">$0</span></p>
+            <p id="taxFee">DELIVERY TAX: <span class="float-right">$0</span></p>
+            <p id="totalSum" class="font-bold text-lg">TOTAL: <span class="float-right text-black">$0</span></p>
+          </div>
         </div>
       </div>
-    </div>
 
   </main>
 
@@ -288,6 +240,8 @@
 
   </footer>
 
+
+  <script src="assets/js/checkout/checkout.js"></script>
   <script src="./assets/js/navbar.js"></script>
 </body>
 
