@@ -8,39 +8,39 @@ const btn = document.querySelector('#checkoutBtn');
 console.log(cartItems);
 
 const loadStats = () => {
-    const numberItems = document.querySelector("#itemsNum");
-    const total = document.querySelector("#totalSum");
-    const sum = document.querySelector("#sumItems");
-    const tax = document.querySelector("#taxFee");
+  const numberItems = document.querySelector("#itemsNum");
+  const total = document.querySelector("#totalSum");
+  const sum = document.querySelector("#sumItems");
+  const tax = document.querySelector("#taxFee");
 
-    numberItems.textContent = `${count} ITEMS`;
+  numberItems.textContent = `${count} ITEMS`;
 
-    const totalPrice = cartItems.reduce((total, item) => {
-        const price = parseFloat(item.price.replace(/[^0-9.-]+/g, ""));
-        return total + (price * item.quantity);
-    }, 0);
+  const totalPrice = cartItems.reduce((total, item) => {
+    const price = parseFloat(item.price.replace(/[^0-9.-]+/g, ""));
+    return total + (price * item.quantity);
+  }, 0);
 
-    const taxAmount = totalPrice * TAXFEE;
-    const subtotal = totalPrice - taxAmount;
+  const taxAmount = totalPrice * TAXFEE;
+  const subtotal = totalPrice - taxAmount;
 
-    sum.textContent = `SUMMARY: ${subtotal.toFixed(2)}$`;
-    tax.textContent = `DELIVERY TAX: ${taxAmount.toFixed(2)}$`;
-    total.textContent = `TOTAL: ${totalPrice.toFixed(2)}$`;
+  sum.textContent = `SUMMARY: ${subtotal.toFixed(2)}$`;
+  tax.textContent = `DELIVERY TAX: ${taxAmount.toFixed(2)}$`;
+  total.textContent = `TOTAL: ${totalPrice.toFixed(2)}$`;
 
-    loadItems();
+  loadItems();
 };
 
 const loadItems = () => {
-    const container = document.querySelector("#itemsContainer");
-    container.innerHTML = ""; 
+  const container = document.querySelector("#itemsContainer");
+  container.innerHTML = "";
 
-    cartItems.forEach(item => {
-        const description = item.description.split(" ").slice(0, 10).join(" ") + "...";
+  cartItems.forEach(item => {
+    const description = item.description.split(" ").slice(0, 10).join(" ") + "...";
 
-        const newItem = document.createElement("div");
-        newItem.className = "bg-white w-full flex flex-row";
+    const newItem = document.createElement("div");
+    newItem.className = "bg-white w-full flex flex-row";
 
-        newItem.innerHTML = `
+    newItem.innerHTML = `
               <img
                 class="w-1/3 object-cover h-full bg-white"
                 src="${item.image}"
@@ -59,78 +59,98 @@ const loadItems = () => {
               </div>
         `;
 
-        container.appendChild(newItem);
+    container.appendChild(newItem);
 
-        const removeBtn = newItem.querySelector("#removeItem");
-        removeBtn.addEventListener("click", (e) => {
-            e.preventDefault();
-            removeItem(item.title);
-        });
+    const removeBtn = newItem.querySelector("#removeItem");
+    removeBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      removeItem(item.title);
     });
+  });
 };
 
 const removeItem = (title) => {
-    const itemIndex = cartItems.findIndex(item => item.title === title);
-    if (itemIndex > -1) {
-        cartItems.splice(itemIndex, 1);
-        localStorage.setItem("cart", JSON.stringify(cartItems));
+  const itemIndex = cartItems.findIndex(item => item.title === title);
+  if (itemIndex > -1) {
+    cartItems.splice(itemIndex, 1);
+    localStorage.setItem("cart", JSON.stringify(cartItems));
 
-        count--;
-        loadStats();
-        loadItems(); 
-    }
+    count--;
+    loadStats();
+    loadItems();
+  }
 };
 
-let firstName = document.getElementById('firstName');
-let lastName = document.getElementById('lastName');
-let phone = document.getElementById('phone');
+const firstName = document.getElementById('firstName');
+const lastName = document.getElementById('lastName');
+const country = document.getElementById('Country');
+const state = document.getElementById('State');
+const city = document.getElementById('City');
+const address = document.getElementById('Adress');
+const email = document.getElementById('Email');
+const acceptPolicy = document.getElementById('acceptPolicy');
+
 
 let costumerInfo = new Object();
 
 btn.addEventListener('click', (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    if (cartItems.length === 0 ){
-      alert("no items in cart");
-      return;
-    }
+  if (cartItems.length === 0) {
+    alert("no items in cart");
+    return;
+  }
 
-    costumerInfo = {
-        Fname: firstName.value,
-        Lname: lastName.value,
-        Cphone: phone.value
-    };
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!firstName.value || !lastName.value || !country.value || !state.value ||
+    !city.value || !address.value || !acceptPolicy.checked) {
+
+    alert("Fill the form and accept our privacy policy");
+    return;
+  }
+
+  if (!emailRegex.test(email.value)) {
+    alert("Enter a valid email adress");
+    return;
+  }
+
+  costumerInfo = {
+    Fname: firstName.value,
+    Lname: lastName.value,
+    Cphone: phone.value
+  };
 
 
-    const totalPrice = cartItems.reduce((total, item) => {
-        const price = parseFloat(item.price.replace(/[^0-9.-]+/g, ""));
-        return total + (price * item.quantity);
-    }, 0);
+  const totalPrice = cartItems.reduce((total, item) => {
+    const price = parseFloat(item.price.replace(/[^0-9.-]+/g, ""));
+    return total + (price * item.quantity);
+  }, 0);
 
-    
-    const purchaseData = {
-        costumerInfo,
-        items: cartItems,
-        totalPrice: `TOTAL: ${totalPrice.toFixed(2)}$`
-    };
 
-    let purchaseHistory = JSON.parse(localStorage.getItem("purchaseHistory")) || [];
-    purchaseHistory.push(purchaseData);
-    localStorage.setItem("purchaseHistory", JSON.stringify(purchaseHistory));
+  const purchaseData = {
+    costumerInfo,
+    items: cartItems,
+    totalPrice: `TOTAL: ${totalPrice.toFixed(2)}$`
+  };
 
-    generatePDF(costumerInfo, cartItems, totalPrice);
-   
-    cartItems = [];
-    localStorage.setItem("cart", JSON.stringify(cartItems));
-    count = 0;
-    loadStats();
+  let purchaseHistory = JSON.parse(localStorage.getItem("purchaseHistory")) || [];
+  purchaseHistory.push(purchaseData);
+  localStorage.setItem("purchaseHistory", JSON.stringify(purchaseHistory));
+
+  generatePDF(costumerInfo, cartItems, totalPrice);
+
+  cartItems = [];
+  localStorage.setItem("cart", JSON.stringify(cartItems));
+  count = 0;
+  loadStats();
 });
 
 document.addEventListener('DOMContentLoaded', loadStats);
 
 
 function generatePDF(customer, items, totalPrice) {
-    const invoiceContent = `
+  const invoiceContent = `
         <div class="max-w-lg mx-auto bg-white shadow-md rounded-lg p-6">
             <div class="flex justify-between items-center border-b pb-4">
                 <div>
@@ -158,9 +178,9 @@ function generatePDF(customer, items, totalPrice) {
                     </thead>
                     <tbody class="text-gray-700">
                         ${items.map(item => {
-                            const price = parseFloat(item.price.replace(/[^0-9.-]+/g, ""));
-                            const itemTotal = price * item.quantity;
-                            return `
+    const price = parseFloat(item.price.replace(/[^0-9.-]+/g, ""));
+    const itemTotal = price * item.quantity;
+    return `
                                 <tr class="border-b">
                                     <td class="p-2">${item.title}</td>
                                     <td class="p-2">${item.quantity}</td>
@@ -168,7 +188,7 @@ function generatePDF(customer, items, totalPrice) {
                                     <td class="p-2">${itemTotal.toFixed(2)}$</td>
                                 </tr>
                             `;
-                        }).join('')}
+  }).join('')}
                     </tbody>
                 </table>
             </div>
@@ -184,14 +204,14 @@ function generatePDF(customer, items, totalPrice) {
         </div>
     `;
 
-    const element = document.createElement("div");
-    element.innerHTML = invoiceContent;
-    document.body.appendChild(element);
+  const element = document.createElement("div");
+  element.innerHTML = invoiceContent;
+  document.body.appendChild(element);
 
-    html2pdf()
-        .from(element)
-        .save()
-        .then(() => {
-            document.body.removeChild(element);
-        });
+  html2pdf()
+    .from(element)
+    .save()
+    .then(() => {
+      document.body.removeChild(element);
+    });
 }
