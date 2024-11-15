@@ -29,10 +29,8 @@ This project simulates an e-commerce website for a startup aiming to promote and
 ### Administrator Features
 - **Product Management**: Add, edit, and delete products in the catalog.
 - **Dashboard** (Bonus): Access a dashboard with KPIs for products and sales.
-- **Admin Authentication** (Bonus): Secure the admin dashboard with authentication.
 
 ### Additional Features
-- **User Profile** (Bonus): Users can view purchase history.
 - **Responsive Design**: Optimized for various screen sizes.
 - **Accessibility & SEO**: Site is optimized for accessibility and search engines.
 - **Data Persistence**: Product and cart data are stored in JSON and Local Storage.
@@ -45,9 +43,10 @@ This project simulates an e-commerce website for a startup aiming to promote and
 - **Local Storage**: To store persistent data on the client side
 - **JSON**: To hold initial data for products
 - **Libraries**:
-  - **PDF.js**: For generating downloadable PDF order summaries
   - **anime.js**: For implementing animations
-  - **Regex**: For input validation
+  - **GSAP.js**: For scroll trigger animations
+  - **html2pdf**: For converting the html into .pdf format
+  
 
 ## Installation
 
