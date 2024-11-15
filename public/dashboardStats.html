@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <title>Dashboard - Satistics</title>
+</head>
+
+<body>
+    <main class="w-full h-full bg-white flex justify-between">
+
+        <aside class="w-full h-screen drop-shadow-lg md:w-64 bg-white shadow-lg hidden md:block">
+            <div class="p-4 flex items-center space-x-2">
+                <img src="./assets/images/logo.png" alt="Logo" class="h-8 w-32">
+            </div>
+            <nav class="mt-8">
+                <ul>
+                    <li><a href="dashboardStats.html" class="flex items-center p-4 hover:bg-gray-100 text-lBrown"><span class="mr-2"><span
+                                    class="icon-[fluent-mdl2--b-i-dashboard]"
+                                    ></span></span>Dashboard</a></li>
+                    <li><a href="Dashboard.html" class="flex items-center p-4 hover:bg-gray-100"><span class="mr-2"><span
+                                    class="icon-[fluent-mdl2--product]"
+                                    ></span></span>Product</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <div class=" flex-row gap-5  mx-auto">
+            <!-- Header Section -->
+            <div class="p-6 text-gray-400 text-center">
+                <h1 class="text-6xl font-semibold">Welcome back,</h1><br>
+                <p class="text-4xl mt-2">Today's satistics are</p>
+            </div>
+
+            <div class="flex justify-between gap-4 flex-wrap">
+                <!-- Total Sales Card -->
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <div class="text-gray-400 flex items-center space-x-2">
+                        <span class="text-blue-500 text-xl">💰</span>
+                        <p id="valueTotal" class="text-3xl font-semibold mt-2"></p>
+                    </div>
+                    <p class="text-gray-500">Total sales</p>
+                </div>
+
+                <!-- Total Visitor Card -->
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <div class="text-gray-400 flex items-center space-x-2">
+                        <span class="text-blue-500 text-xl">👤</span>
+                        <p id="valueVisitor" class="text-3xl font-semibold mt-2"></p>
+                    </div>
+                    <p class="text-gray-500">Total visitor</p>
+                </div>
+
+                <!-- Total Order Card -->
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <div class="text-gray-400 flex items-center space-x-2">
+                        <span class="text-blue-500 text-xl">📦</span>
+                        <p id="valueOrders" class="text-3xl font-semibold mt-2"></p>
+                    </div>
+                    <p class="text-gray-500">Total order</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="assets/js/stats.js"></script>
+</body>
+
+
+
+
+<script></script>
+
+</html>

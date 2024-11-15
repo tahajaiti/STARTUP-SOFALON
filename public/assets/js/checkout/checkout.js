@@ -131,7 +131,8 @@ btn.addEventListener('click', (e) => {
   const purchaseData = {
     costumerInfo,
     items: cartItems,
-    totalPrice: `TOTAL: ${totalPrice.toFixed(2)}$`
+    totalPrice: `TOTAL: ${totalPrice.toFixed(2)}$`,
+    date: new Date().toLocaleDateString()
   };
 
   let purchaseHistory = JSON.parse(localStorage.getItem("purchaseHistory")) || [];
