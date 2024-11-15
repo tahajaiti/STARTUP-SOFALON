@@ -94,7 +94,7 @@ function DisplayCards(products) {
     let status;
     products.forEach(product => {
 
-        if (product.stock === 0) {
+        if (product.stock == '0') {
             statusColor = 'bg-red-200 text-red-600';
             status = 'out stock';
         } else {
