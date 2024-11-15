@@ -10,7 +10,6 @@ const addContainer = document.getElementById("addContainer");
 const addProduct = document.getElementById("addProduct");
 const container = document.getElementById("container");
 const closePop = addContainer.querySelector("#close");
-const closeEdit = document.getElementById("closeEdit");
 const pages = document.getElementById('pages');
 
 const addForm = document.querySelector("#addForm");
@@ -260,8 +259,11 @@ let editBtn = document.getElementById('editBtn');
 
 let currentProduct = null;
 
-closeEdit.addEventListener("close", () => {
-    container.style.display = 'hidden';
+console.log(document.getElementById('closeEdit'));
+
+document.getElementById('closeEdit').addEventListener('click', (e) => {
+    e.preventDefault();
+    container.style.display = 'none';
 });
 
 function editItemm(product) {
@@ -275,6 +277,7 @@ function editItemm(product) {
     stock.value = product.stock;
     sku.value = product.SKU;
     category.value = product.category;
+    console.log(currentProduct);
 }
 
 
