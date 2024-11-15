@@ -1,46 +1,81 @@
+
 let infor = [];
 
-const send = document.getElementById('send');
-const regex = /^[A-Za-zÀ-ÿ]+ [A-Za-zÀ-ÿ]+$/g;
-const regex_email = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/g;
-const regex_message = /^(\s*\S+\s*){1,200}$/g;
-send.addEventListener("click", (e) => {
+
+const regexName = /^[A-Za-zÀ-ÿ]+ [A-Za-zÀ-ÿ]+$/;
+const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+const regexMessage = /^(\s*\S+\s*){1,200}$/;
+
+document.getElementById('send').addEventListener('click', (e) => {
     e.preventDefault();
-
     addToObj();
-    console.log(infor)
-    let json = JSON.stringify(infor);
-    window.localStorage.setItem('json', json);
-});
-function addToObj() {
-    let name = document.getElementById('name-input');
-    let email = document.getElementById('email-input');
-    let message = document.getElementById('message-input');
-    let obj = {
-        name: '',
-        email: '',
-        message: '',
+    console.log(infor);
+
+
+    if (infor.length > 0) {
+        let json = JSON.stringify(infor);
+        window.localStorage.setItem('contact', json);
     }
-        let person = obj;
+});
 
-       
 
-    
-if(regex.test(name)){
-    obj.name = name.value;
+function addToObj() {
+
+    const nameInput = document.getElementById('name-input');
+    const emailInput = document.getElementById('email-input');
+    const messageInput = document.getElementById('message-input');
+
+
+    clearErrors();
+
+
+    let obj = { name: '', email: '', message: '' };
+    let valid = true;
+
+
+    if (regexName.test(nameInput.value)) {
+        obj.name = nameInput.value;
+    } else {
+        showErrorMessage('name-error', 'Please enter a valid name (First Last).');
+        valid = false;
+    }
+
+
+    if (regexEmail.test(emailInput.value)) {
+        obj.email = emailInput.value;
+    } else {
+        showErrorMessage('email-error', 'Please enter a valid email address.');
+        valid = false;
+    }
+
+
+    if (regexMessage.test(messageInput.value)) {
+        obj.message = messageInput.value;
+    } else {
+        showErrorMessage('message-error', 'Message should not exceed 200 words.');
+        valid = false;
+    }
+
+
+    if (valid) {
+        infor.push(obj);
+        nameInput.value = '';
+        emailInput.value = '';
+        messageInput.value = '';
+    }
 }
-else{
-    
-const divname = document.getElementById('divname');
-const errorName = document.createElement('p');
-const place_error_name = divname.appendChild(errorName);
 
-
- console.log(errorName);
+function showErrorMessage(elementId, message) {
+    const errorElement = document.getElementById(elementId);
+    errorElement.innerText = message;
+    errorElement.classList.remove('hidden');
 }
 
 
-infor.push(person);
-
+function clearErrors() {
+    const errorElements = document.querySelectorAll('.text-red-700');
+    errorElements.forEach((element) => {
+        element.classList.add('hidden');
+        element.innerText = '';
+    });
 }
-

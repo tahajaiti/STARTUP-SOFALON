@@ -4,41 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Document</title>
+    <title>Contact Form</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-white font-sans">
 
-
-    <!-- Contact Section -->
     <section class="flex flex-col items-center px-4 py-8">
         <h2 class="text-4xl font-bold mb-2">CONTACT</h2>
-        <p class="text-lg text-lBrown tracking-widest mb-6">HAVE A QUESTION ?</p>
+        <p class="text-lg text-lBrown tracking-widest mb-6">HAVE A QUESTION?</p>
 
-        <form class="w-full max-w-lg flex flex-col items-center">
-            <div class="flex space-x-4 w-full mb-4">
-              <div id="divname">
-                <input type="text" placeholder="Your name" id="name-input" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-orange-300">
-                
+        <form id="contact-form" class="w-full max-w-lg flex flex-col items-center">
+            <div class="flex flex-col w-full mb-4">
+                <div class="flex flex-row gap-3">
+                <div id="divname" class="w-full mb-2">
+                    <input type="text" placeholder="Your name" id="name-input" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-orange-300">
+                    <p class="text-red-700 text-sm mt-1 hidden" id="name-error"></p>
+                </div>
+                <div id="divemail" class="w-full mb-2">
+                    <input type="email" placeholder="Your email" id="email-input" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-orange-300">
+                    <p class="text-red-700 text-sm mt-1 hidden" id="email-error"></p>
+                </div>
             </div>
-            <div>
-                <input type="email" placeholder="Your email" id="email-input" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-orange-300">
-              
+                <div id="divmessage" class="w-full mb-4">
+                    <textarea placeholder="Your question here..." id="message-input" class="w-full p-3 h-32 border border-gray-300 rounded-md resize-none focus:outline-none focus:ring focus:ring-orange-300"></textarea>
+                    <p class="text-red-700 text-sm mt-1 hidden" id="message-error"></p>
+                </div>
             </div>
-            </div>
-
-            <textarea placeholder="Your question here..." id="message-input" class="w-full p-3 h-32 border border-gray-300 rounded-md resize-none focus:outline-none focus:ring focus:ring-orange-300 mb-6"></textarea>
-            <button e.preventDefault(); type="submit" id="send" class="w-full py-3 bg-orange-500 text-white font-semibold rounded-md hover:bg-orange-600 transition" >SEND</button>
+            <button type="submit" id="send" class="w-full py-3 bg-orange-500 text-white font-semibold rounded-md hover:bg-orange-600 transition">SEND</button>
         </form>
     </section>
-    
-    <!-- Visit Us Section -->
     <section class="flex flex-col items-center px-4 py-8">
         <h3 class="text-3xl font-bold mb-6">VISIT US</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-4xl">
-            <img src="./assets/images/contactimg/googlemap.png" alt="Map" class="w-full h-auto rounded-md">
-            <img src="./assets/images/contactimg/googlemap.png" alt="Map" class="w-full h-auto rounded-md">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d107926.39070623022!2d-9.319095230198029!3d32.29305058935353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdac212049843597%3A0x6b618c47dfd85d40!2sSafi!5e0!3m2!1sfr!2sma!4v1731315270084!5m2!1sfr!2sma" 
+                class="w-full h-[400px] md:h-[450px] rounded-md" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d107926.39070623022!2d-9.319095230198029!3d32.29305058935353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdac212049843597%3A0x6b618c47dfd85d40!2sSafi!5e0!3m2!1sfr!2sma!4v1731315270084!5m2!1sfr!2sma" 
+                class="w-full h-[400px] md:h-[450px] rounded-md" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
+
     </section>
 
     <script src="/public/assets/js/script.js"></script>
