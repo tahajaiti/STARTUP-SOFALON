@@ -9,6 +9,88 @@
 </head>
 <body class="bg-white font-sans">
 
+    <header class="w-full pt-1 h-fit relative z-50">
+        <nav id="mobileNav"
+            class="fixed z-[100] mt-[-10px] w-full hidden h-full bg-white/50 backdrop-filter backdrop-blur-lg">
+            <ul class="items-center flex-col justify-between flex gap-8 p-10 text-lg h-2/3">
+                <span id="closeNav"
+                    class="icon-[line-md--close] text-4xl self-end cursor-pointer hover:text-lBrown"></span>
+                <li><a class="navItem p-2" href="index.html">HOME</a></li>
+                <li><a class="navItem p-2" href="AllProducts.html">PRODUCTS</a></li>
+                <li><a class="navItem p-2" href="about.html">ABOUT</a></li>
+                <li><a class="navItem p-2" href="FAQs.html">FAQ</a></li>
+                <li><a class="navItem p-2" href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+
+        <nav class="flex flex-row items-center justify-between px-2 py-2 pt-2 lg:px-12">
+            <img class="pl-2 w-36" src="assets/images/logo.png" alt="COMPANY LOGO">
+            <ul class="items-center justify-between hidden gap-8 pr-20 text-lg lg:flex">
+                <li><a class="navItem" href="index.html">HOME</a></li>
+                <li><a class="navItem" href="AllProducts.html">PRODUCTS</a></li>
+                <li><a class="navItem" href="about.html">ABOUT</a></li>
+                <li><a class="navItem" href="FAQs.html">FAQ</a></li>
+                <li><a class="navItem" href="contact.html">CONTACT</a></li>
+            </ul>
+
+            <div class="flex justify-between gap-10 ">
+                <div class="relative flex items-center cursor-pointer">
+                    <span id="openCart"
+                        class="icon-[iconoir--bag] text-black text-3xl hover:text-lBrown active:text-dBrown transition-all"></span>
+                    <div id="cartNum"
+                        class="absolute right-0 flex items-center justify-center w-5 h-5 rounded-full top-3 bg-lBrown font-Mont">
+                        0</div>
+                </div>
+                <span id="openNav"
+                    class="icon-[iconamoon--menu-burger-horizontal] cursor-pointer text-black text-3xl lg:hidden hover:text-lBrown active:text-dBrown"></span>
+            </div>
+        </nav>
+
+        <nav id="cartMain"
+            class="fixed hidden top-0 flex justify-end bg-black/10 backdrop-blur-md h-screen w-full z-[1000] ">
+            <div id="cartReal" class="lg:w-1/3 md:w-1/2 w-full flex flex-col bg-white h-full">
+                <!-- heading -->
+                <div class="drop-shadow-lg flex justify-between p-2 items-center flex-row h-[5%] bg-lBrown w-full">
+                    <p id="cartMenuNum" class=" ont-medium text-2xl">0 ITEMS</p>
+                    <span id="closeCart" class="icon-[line-md--close] text-4xl cursor-pointer text-black"></span>
+                </div>
+                <!-- container -->
+                <div id="cartContainer" class="h-4/5 w-full bg-gray-200 p-2 gap-2 flex flex-col overflow-y-auto">
+
+                    <!-- card -->
+                    <div class="bg-white w-full h-1/5 flex flex-row">
+                        <img class="w-1/3 object-cover h-full bg-white" src="assets/images/Products/Beds/bed1/1.png"
+                            alt="">
+                        <div class="w-full h-full flex flex-col justify-start p-2">
+                            <div class="flex justify-between">
+                                <p class="text-2xl">TITLE</p>
+                                <span
+                                    class="icon-[iconamoon--trash-light] text-2xl cursor-pointer hover:bg-red-500 transition-all"></span>
+                            </div>
+                            <p class="text-gray-500 h-full">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                            </p>
+                            <div class="flex justify-between flex-wrap">
+                                <p class="font-bold">QTY: 1</p>
+                                <p class="text-lBrown font-medium">250$</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- info -->
+                <div class="flex flex-col p-2 h-[15%] justify-center">
+                    <p id="cartTotal" class="text-2xl font-bold">TOTAL: 555$</p>
+                    <p id="cartSum" class="text-gray-400">SUMMARY: 400$</p>
+                    <p id="cartTax" class="text-gray-400">TAX: 23$</p>
+                    <a class="w-full h-full pt-2 text-center text-xl font-bold text-white bg-lBrown hover:bg-dBrown transition-all"
+                        href="checkout.html">CHECKOUT</a>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
     <section class="flex flex-col items-center px-4 py-8">
         <h2 class="text-4xl font-bold mb-2">CONTACT</h2>
         <p class="text-lg text-lBrown tracking-widest mb-6">HAVE A QUESTION?</p>
@@ -52,6 +134,68 @@
 
     </section>
 
-    <script src="/public/assets/js/script.js"></script>
+
+    <!-- footer -->
+    <footer class="flex flex-col justify-between items-center w-full border-t-2 border-lBrown m-auto pt-10 px-12">
+
+        <div class="flex flex-col justify-center items-center lg:items-baseline lg:flex-row gap-12">
+            <!-- home -->
+            <div class="flex flex-col text-gray-400 gap-2 w-1/3">
+                <h2 class="text-2xl text-black border-b-2 border-black font-bold text-left">HOME</h2>
+                <a class="footerHover">Assembly Guides</a>
+                <a class="footerHover">Furniture Packages</a>
+                <a class="footerHover">Hot Products</a>
+                <a class="footerHover">New Designs</a>
+            </div>
+
+            <!-- about -->
+            <div class="flex flex-col text-gray-400 gap-2 w-1/3">
+                <h2 class="text-2xl text-black border-b-2 border-black font-bold text-left">
+                    ABOUT</h2>
+                <a class="footerHover">Trade Program</a>
+                <a class="footerHover">Gift Cards</a>
+                <a class="footerHover">About us</a>
+                <a class="footerHover">Who Are We</a>
+            </div>
+
+            <!-- socials -->
+            <div class="-order-1 lg:order-[0] flex flex-col gap-4 w-fit justify-center items-center">
+                <img class="w-2/3" src="assets/images/logo.png" alt="">
+                <div class="flex justify-center gap-6 pt-5 flex-wrap w-2/3 text-5xl">
+                    <span class="icon-[mdi--facebook] footerHover"></span>
+                    <span class="icon-[ri--instagram-fill] footerHover"></span>
+                    <span class="icon-[formkit--twitter] footerHover"></span>
+                    <span class="icon-[formkit--whatsapp] footerHover"></span>
+                </div>
+            </div>
+
+            <!-- help -->
+            <div class="flex flex-col text-gray-400 gap-2 w-1/3">
+                <h2 class="text-2xl text-black border-b-2 border-black font-bold text-left">
+                    HELP</h2>
+                <a class="footerHover">Contact</a>
+                <a class="footerHover">Orders</a>
+                <a class="footerHover">Shipping & Delivery</a>
+                <a class="footerHover">Refund</a>
+            </div>
+
+            <!-- FAQ -->
+            <div class="flex flex-col text-gray-400 gap-2 w-1/3">
+                <h2 class="text-2xl text-black border-b-2 border-black font-bold text-left">
+                    FAQ</h2>
+                <a class="footerHover">Most Asked Questions</a>
+                <a class="footerHover">How We Take Orders</a>
+                <a class="footerHover">Delivery Policy</a>
+                <a class="footerHover">Trust</ش>
+            </div>
+        </div>
+
+        <!-- copyright -->
+        <h2 class="flex justify-center py-6 text-2xl text-center font-bold">© 2024 SOFALO. ALL RIGHTS RESERVED.</h2>
+
+    </footer>
+
+    <script src="assets/js/navbar.js"></script>
+    <script src="/public/assets/js/contact/script.js"></script>
 </body>
 </html>

@@ -1,5 +1,7 @@
 let purchaseHistory = JSON.parse(localStorage.getItem("purchaseHistory")) || [];
 
+let contactData = JSON.parse(localStorage.getItem("contact")) || [];
+
 function parsePrice(priceString) {
     return parseFloat(priceString.replace(/[^0-9.-]+/g, ""));
 }
@@ -7,6 +9,8 @@ function parsePrice(priceString) {
 let totalSales = 0;
 let totalOrders = purchaseHistory.length;
 let totalVisitors = new Set();
+
+let totalMessages = 0;
 
 purchaseHistory.forEach(purchase => {
     const price = parsePrice(purchase.totalPrice);
@@ -21,3 +25,4 @@ purchaseHistory.forEach(purchase => {
 document.querySelector("#valueTotal").textContent = `$${totalSales.toFixed(2)}`;
 document.querySelector("#valueOrders").textContent = totalOrders;
 document.querySelector("#valueVisitor").textContent = totalVisitors.size;
+document.querySelector("#valueMessage").textContent = contactData.length;
