@@ -1,5 +1,5 @@
 
-let infor = [];
+let infor = JSON.parse(localStorage.getItem('contact')) || [];
 
 
 const regexName = /^[A-Za-zÀ-ÿ]+ [A-Za-zÀ-ÿ]+$/;
@@ -13,8 +13,8 @@ document.getElementById('send').addEventListener('click', (e) => {
 
 
     if (infor.length > 0) {
-        let json = JSON.stringify(infor);
-        window.localStorage.setItem('contact', json);
+        
+    localStorage.setItem('contact', JSON.stringify(infor));
     }
 });
 
