@@ -30,14 +30,13 @@ function addToObj() {
 
 
     let obj = { name: '', email: '', message: '' };
-    let valid = true;
 
 
     if (regexName.test(nameInput.value)) {
         obj.name = nameInput.value;
     } else {
-        showErrorMessage('name-error', 'Please enter a valid name (First Last).');
-        valid = false;
+        showErrorMessage('name-error', 'Please enter a valid name (Firstname, Lastname).');
+        return;
     }
 
 
@@ -45,7 +44,7 @@ function addToObj() {
         obj.email = emailInput.value;
     } else {
         showErrorMessage('email-error', 'Please enter a valid email address.');
-        valid = false;
+        return;
     }
 
 
@@ -53,16 +52,15 @@ function addToObj() {
         obj.message = messageInput.value;
     } else {
         showErrorMessage('message-error', 'Message should not exceed 200 words.');
-        valid = false;
+        return;
     }
 
 
-    if (valid) {
-        infor.push(obj);
-        nameInput.value = '';
-        emailInput.value = '';
-        messageInput.value = '';
-    }
+    infor.push(obj);
+    nameInput.value = '';
+    emailInput.value = '';
+    messageInput.value = '';
+
 }
 
 function showErrorMessage(elementId, message) {
