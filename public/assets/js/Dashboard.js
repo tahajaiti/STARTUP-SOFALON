@@ -21,7 +21,7 @@ async function fetchProducts() {
 
     if (data.length === 0 && !localStorage.getItem("products_loaded")) {
         try {
-            const response = await fetch('../../../products.json');
+            const response = await fetch('../Products.json');
             dataLocal = await response.json();
 
             if (dataLocal && dataLocal.products) {
