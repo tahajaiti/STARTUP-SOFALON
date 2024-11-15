@@ -2466,6 +2466,11 @@ video {
   background-color: rgb(234 88 12 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-yellow-800:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(133 77 14 / var(--tw-bg-opacity));
+}
+
 .hover\:text-gray-700:hover {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
