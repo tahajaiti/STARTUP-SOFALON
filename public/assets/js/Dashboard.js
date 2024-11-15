@@ -10,6 +10,7 @@ const addContainer = document.getElementById("addContainer");
 const addProduct = document.getElementById("addProduct");
 const container = document.getElementById("container");
 const closePop = addContainer.querySelector("#close");
+const closeEdit = document.getElementById("closeEdit");
 const pages = document.getElementById('pages');
 
 const addForm = document.querySelector("#addForm");
@@ -258,6 +259,10 @@ let category = document.getElementById('category');
 let editBtn = document.getElementById('editBtn');
 
 let currentProduct = null;
+
+closeEdit.addEventListener("close", () => {
+    container.style.display = 'hidden';
+});
 
 function editItemm(product) {
     currentProduct = product;
