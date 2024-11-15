@@ -3,10 +3,10 @@
                 {
                     "id": 1,
                     "category": "Beds",
-                    "mainImage": "assets/images/Products/Beds/bed1/1.png",
+                    "mainImage": "assets/images/Products/Beds/bed1/1.webp",
                     "images": [
-                        "assets/images/Products/Beds/bed1/2.jpg",
-                        "assets/images/Products/Beds/bed1/3.jpg"
+                        "assets/images/Products/Beds/bed1/2.webp",
+                        "assets/images/Products/Beds/bed1/3.webp"
                     ],
                     "title": "KLEPPSTAD",
                     "price": "250",
@@ -17,10 +17,10 @@
                 {
                     "id": 2,
                     "category": "Beds",
-                    "mainImage": "assets/images/Products/Beds/bed2/1.png",
+                    "mainImage": "assets/images/Products/Beds/bed2/1.webp",
                     "images": [
-                        "assets/images/Products/Beds/bed2/2.jpg",
-                        "assets/images/Products/Beds/bed2/3.jpg"
+                        "assets/images/Products/Beds/bed2/2.webp",
+                        "assets/images/Products/Beds/bed2/3.webp"
                     ],
                     "title": "SONGESAND",
                     "price": "350",
@@ -31,10 +31,10 @@
                 {
                     "id": 3,
                     "category": "Beds",
-                    "mainImage": "assets/images/Products/Beds/bed3/1.png",
+                    "mainImage": "assets/images/Products/Beds/bed3/1.webp",
                     "images": [
-                        "assets/images/Products/Beds/bed3/2.jpg",
-                        "assets/images/Products/Beds/bed3/3.jpg"
+                        "assets/images/Products/Beds/bed3/2.webp",
+                        "assets/images/Products/Beds/bed3/3.webp"
                     ],
                     "title": "GLAMBERGET",
                     "price": "150",
@@ -45,10 +45,10 @@
                 {
                     "id": 4,
                     "category": "Beds",
-                    "mainImage": "assets/images/Products/Beds/bed4/1.png",
+                    "mainImage": "assets/images/Products/Beds/bed4/1.webp",
                     "images": [
-                        "assets/images/Products/Beds/bed4/2.jpg",
-                        "assets/images/Products/Beds/bed4/3.jpg"
+                        "assets/images/Products/Beds/bed4/2.webp",
+                        "assets/images/Products/Beds/bed4/3.webp"
                     ],
                     "title": "RAMNEFJÄLL",
                     "price": "450",
@@ -59,10 +59,10 @@
                 {
                     "id": 5,
                     "category": "Decoration",
-                    "mainImage": "assets/images/Products/Decoration/Decoration1/1.png",
+                    "mainImage": "assets/images/Products/Decoration/Decoration1/1.webp",
                     "images": [
-                        "assets/images/Products/Decoration/Decoration1/2.jpg",
-                        "assets/images/Products/Decoration/Decoration1/3.jpg"
+                        "assets/images/Products/Decoration/Decoration1/2.webp",
+                        "assets/images/Products/Decoration/Decoration1/3.webp"
                     ],
                     "title": "TORARED",
                     "price": "30",
@@ -73,10 +73,10 @@
                 {
                     "id": 6,
                     "category": "Decoration",
-                    "mainImage": "assets/images/Products/Decoration/Decoration2/1.png",
+                    "mainImage": "assets/images/Products/Decoration/Decoration2/1.webp",
                     "images": [
-                        "assets/images/Products/Decoration/Decoration2/2.jpg",
-                        "assets/images/Products/Decoration/Decoration2/3.jpg"
+                        "assets/images/Products/Decoration/Decoration2/2.webp",
+                        "assets/images/Products/Decoration/Decoration2/3.webp"
                     ],
                     "title": "SVALLET",
                     "price": "70",
@@ -87,10 +87,10 @@
                 {
                     "id": 7,
                     "category": "Decoration",
-                    "mainImage": "assets/images/Products/Decoration/Decoration3/1.png",
+                    "mainImage": "assets/images/Products/Decoration/Decoration3/1.webp",
                     "images": [
-                        "assets/images/Products/Decoration/Decoration3/2.jpg",
-                        "assets/images/Products/Decoration/Decoration3/3.jpg"
+                        "assets/images/Products/Decoration/Decoration3/2.webp",
+                        "assets/images/Products/Decoration/Decoration3/3.webp"
                     ],
                     "title": "LAMPAN",
                     "price": "49",
@@ -101,10 +101,10 @@
                 {
                     "id": 8,
                     "category": "Decoration",
-                    "mainImage": "assets/images/Products/Decoration/Decoration4/1.png",
+                    "mainImage": "assets/images/Products/Decoration/Decoration4/1.webp",
                     "images": [
-                        "assets/images/Products/Decoration/Decoration4/2.jpg",
-                        "assets/images/Products/Decoration/Decoration4/3.jpg"
+                        "assets/images/Products/Decoration/Decoration4/2.webp",
+                        "assets/images/Products/Decoration/Decoration4/3.webp"
                     ],
                     "title": "VINDKAST",
                     "price": "65",
@@ -114,10 +114,10 @@
                 },{
                             "id": 9,
                             "category": "Kitchen",
-                            "mainImage": "assets/images/Products/Kitchen/kitchen1/1.png",
+                            "mainImage": "assets/images/Products/Kitchen/kitchen1/1.webp",
                             "images": [
-                                "assets/images/Products/Kitchen/kitchen1/2.jpg",
-                                "assets/images/Products/Kitchen/kitchen1/3.jpg"
+                                "assets/images/Products/Kitchen/kitchen1/2.webp",
+                                "assets/images/Products/Kitchen/kitchen1/3.webp"
                             ],
                             "title": "ENHET",
                             "price": "20",
@@ -128,10 +128,10 @@
                         {
                             "id": 10,
                             "category": "Kitchen",
-                            "mainImage": "assets/images/Products/Kitchen/kitchen2/1.png",
+                            "mainImage": "assets/images/Products/Kitchen/kitchen2/1.webp",
                             "images": [
-                                "assets/images/Products/Kitchen/kitchen2/2.jpg",
-                                "assets/images/Products/Kitchen/kitchen2/3.jpg"
+                                "assets/images/Products/Kitchen/kitchen2/2.webp",
+                                "assets/images/Products/Kitchen/kitchen2/3.webp"
                             ],
                             "title": "TILLREDA",
                             "price": "130",
@@ -142,10 +142,10 @@
                         {
                             "id": 11,
                             "category": "Kitchen",
-                            "mainImage": "assets/images/Products/Kitchen/kitchen3/1.png",
+                            "mainImage": "assets/images/Products/Kitchen/kitchen3/1.webp",
                             "images": [
-                                "assets/images/Products/Kitchen/kitchen3/2.jpg",
-                                "assets/images/Products/Kitchen/kitchen3/3.jpg"
+                                "assets/images/Products/Kitchen/kitchen3/2.webp",
+                                "assets/images/Products/Kitchen/kitchen3/3.webp"
                             ],
                             "title": "UTRUSTA",
                             "price": "100",
@@ -156,10 +156,10 @@
                         {
                             "id": 12,
                             "category": "Kitchen",
-                            "mainImage": "assets/images/Products/Kitchen/kitchen4/1.png",
+                            "mainImage": "assets/images/Products/Kitchen/kitchen4/1.webp",
                             "images": [
-                                "assets/images/Products/Kitchen/kitchen4/2.jpg",
-                                "assets/images/Products/Kitchen/kitchen4/3.jpg"
+                                "assets/images/Products/Kitchen/kitchen4/2.webp",
+                                "assets/images/Products/Kitchen/kitchen4/3.webp"
                             ],
                             "title": "POUHGEN",
                             "price": "19",
@@ -170,10 +170,10 @@
                         {
                             "id": 13,
                             "category": "Storage",
-                            "mainImage": "assets/images/Products/Storage/Storage1/1.png",
+                            "mainImage": "assets/images/Products/Storage/Storage1/1.webp",
                             "images": [
-                                "assets/images/Products/Storage/Storage1/2.jpg",
-                                "assets/images/Products/Storage/Storage1/3.jpg"
+                                "assets/images/Products/Storage/Storage1/2.webp",
+                                "assets/images/Products/Storage/Storage1/3.webp"
                             ],
                             "title": "KALLAX",
                             "price": "150",
@@ -184,10 +184,10 @@
                         {
                             "id": 14,
                             "category": "Storage",
-                            "mainImage": "assets/images/Products/Storage/Storage2/1.png",
+                            "mainImage": "assets/images/Products/Storage/Storage2/1.webp",
                             "images": [
-                                "assets/images/Products/Storage/Storage2/2.jpg",
-                                "assets/images/Products/Storage/Storage2/3.jpg"
+                                "assets/images/Products/Storage/Storage2/2.webp",
+                                "assets/images/Products/Storage/Storage2/3.webp"
                             ],
                             "title": "BILLY",
                             "price": "200",
@@ -198,10 +198,10 @@
                         {
                             "id": 15,
                             "category": "Storage",
-                            "mainImage": "assets/images/Products/Storage/Storage3/1.png",
+                            "mainImage": "assets/images/Products/Storage/Storage3/1.webp",
                             "images": [
-                                "assets/images/Products/Storage/Storage3/2.jpg",
-                                "assets/images/Products/Storage/Storage3/3.jpg"
+                                "assets/images/Products/Storage/Storage3/2.webp",
+                                "assets/images/Products/Storage/Storage3/3.webp"
                             ],
                             "title": "LACK",
                             "price": "180",
@@ -212,10 +212,10 @@
                         {
                             "id": 16,
                             "category": "Storage",
-                            "mainImage": "assets/images/Products/Storage/Storage4/1.png",
+                            "mainImage": "assets/images/Products/Storage/Storage4/1.webp",
                             "images": [
-                                "assets/images/Products/Storage/Storage4/2.jpg",
-                                "assets/images/Products/Storage/Storage4/3.jpg"
+                                "assets/images/Products/Storage/Storage4/2.webp",
+                                "assets/images/Products/Storage/Storage4/3.webp"
                             ],
                             "title": "MOSSLANDA",
                             "price": "250",
@@ -226,10 +226,10 @@
                         {
                             "id": 17,
                             "category": "Tables",
-                            "mainImage": "assets/images/Products/Tables/table1/1.png",
+                            "mainImage": "assets/images/Products/Tables/table1/1.webp",
                             "images": [
-                                "assets/images/Products/Tables/table1/2.jpg",
-                                "assets/images/Products/Tables/table1/3.jpg"
+                                "assets/images/Products/Tables/table1/2.webp",
+                                "assets/images/Products/Tables/table1/3.webp"
                             ],
                             "title": "LISABO",
                             "price": "300",
@@ -240,10 +240,10 @@
                         {
                             "id": 18,
                             "category": "Tables",
-                            "mainImage": "assets/images/Products/Tables/table2/1.png",
+                            "mainImage": "assets/images/Products/Tables/table2/1.webp",
                             "images": [
-                                "assets/images/Products/Tables/table2/2.jpg",
-                                "assets/images/Products/Tables/table2/3.jpg"
+                                "assets/images/Products/Tables/table2/2.webp",
+                                "assets/images/Products/Tables/table2/3.webp"
                             ],
                             "title": "GLADOM",
                             "price": "45",
@@ -254,10 +254,10 @@
                         {
                             "id": 19,
                             "category": "Tables",
-                            "mainImage": "assets/images/Products/Tables/table3/1.png",
+                            "mainImage": "assets/images/Products/Tables/table3/1.webp",
                             "images": [
-                                "assets/images/Products/Tables/table3/2.jpg",
-                                "assets/images/Products/Tables/table3/3.jpg"
+                                "assets/images/Products/Tables/table3/2.webp",
+                                "assets/images/Products/Tables/table3/3.webp"
                             ],
                             "title": "LACK",
                             "price": "25",
@@ -268,10 +268,10 @@
                         {
                             "id": 20,
                             "category": "Tables",
-                            "mainImage": "assets/images/Products/Tables/table4/1.png",
+                            "mainImage": "assets/images/Products/Tables/table4/1.webp",
                             "images": [
-                                "assets/images/Products/Tables/table4/2.jpg",
-                                "assets/images/Products/Tables/table4/3.jpg"
+                                "assets/images/Products/Tables/table4/2.webp",
+                                "assets/images/Products/Tables/table4/3.webp"
                             ],
                             "title": "BRUSALI",
                             "price": "75",
