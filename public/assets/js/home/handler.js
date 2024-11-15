@@ -3,7 +3,7 @@ let data = null;
 
 async function getData() {
     try {
-        const response = await fetch('../Products.json');
+        const response = await fetch('./assets/Products.json');
         data = await response.json();
 
         loadData();
