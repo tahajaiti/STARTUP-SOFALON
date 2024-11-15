@@ -9,7 +9,6 @@ document.getElementById('send').addEventListener('click', (e) => {
     e.preventDefault();
     const isAdded = addToObj();
     if (isAdded) {
-
         localStorage.setItem('contact', JSON.stringify(infor));
         console.log('Updated localStorage:', infor);
     }
