@@ -5,12 +5,14 @@ const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const regexMessage = /^(\s*\S+\s*){1,200}$/;
 
 
-document.getElementById('send').addEventListener('click', (e) => {
+document.querySelector('#send').addEventListener('click', (e) => {
     e.preventDefault();
     const isAdded = addToObj();
     if (isAdded) {
         localStorage.setItem('contact', JSON.stringify(infor));
         console.log('Updated localStorage:', infor);
+    } else {
+        console.log('error');
     }
 });
 
