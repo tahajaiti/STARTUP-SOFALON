@@ -1,6 +1,6 @@
-# SOFALON Website Showcase
+# SOFALO Website Showcase
 
-Welcome to SOFALON website project! This website was created to allow users to browse, filter, and purchase products in a visually appealing and responsive interface. Administrators can manage the product catalog and view performance metrics, while users can browse products, manage their cart, and complete purchases.
+Welcome to SOFALO website project! This website was created to allow users to browse, filter, and purchase products in a visually appealing and responsive interface. Administrators can manage the product catalog and view performance metrics, while users can browse products, manage their cart, and complete purchases.
 
 ## Deployed site with Vercel
 https://sofalonstartup.vercel.app/
