@@ -1,3 +1,23 @@
+showLoading();
+
+setTimeout(() => {
+    hideLoading();
+}, 1500)
+
+function showLoading() {
+    const loadingScreen = document.getElementById('loadingScreen');
+    if (loadingScreen) {
+        loadingScreen.classList.remove('hidden');
+    }
+}
+
+function hideLoading() {
+    const loadingScreen = document.getElementById('loadingScreen');
+    if (loadingScreen) {
+        loadingScreen.classList.add('hidden');
+    }
+}
+
 function UserRights() {
     const user_rights = document.getElementById('UserRights');
     user_rights.classList.toggle('hidden');

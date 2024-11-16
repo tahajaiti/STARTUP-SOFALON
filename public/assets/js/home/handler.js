@@ -3,6 +3,7 @@ const loadingScreen = document.getElementById('loadingScreen');
 
 let data = null;
 
+
 async function getData() {
     try {
         loadingScreen.style.display = 'flex';
@@ -19,7 +20,7 @@ async function getData() {
 }
 
 // shuffle
-const shuffleArray = (array) =>{
+const shuffleArray = (array) => {
     for (let i = array.length - 1; i >= 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
@@ -42,6 +43,10 @@ const loadData = () => {
         if (title) title.textContent = random.title;
         if (img) img.src = random.mainImage;
         if (price) price.textContent = `$${random.price}`;
+
+        card.addEventListener('click', () => {
+            window.location.href = `ProductDetails.html?id=${random.id}`;
+        });
     });
 
     const timeline = anime.timeline({
@@ -56,13 +61,13 @@ const loadData = () => {
             opacity: [0, 1],
             scale: [0.3, 0.75],
             filter: ["blur(10px)", "blur(0px)"],
-            delay: anime.stagger(100, {easing: 'easeInQuart',direction: 'reverse'}),
+            delay: anime.stagger(100, { easing: 'easeInQuart', direction: 'reverse' }),
             duration: 700,
             easing: 'easeInOutElastic',
         });
 };
 
-setInterval  (() => {
+setInterval(() => {
     loadData();
 }, 10000);
 

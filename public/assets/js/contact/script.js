@@ -4,6 +4,25 @@ const regexName = /^[A-Za-zÀ-ÿ]+ [A-Za-zÀ-ÿ]+$/;
 const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const regexMessage = /^(\s*\S+\s*){1,200}$/;
 
+showLoading();
+
+setTimeout(() => {
+    hideLoading();
+}, 1500)
+
+function showLoading() {
+    const loadingScreen = document.getElementById('loadingScreen');
+    if (loadingScreen) {
+        loadingScreen.classList.remove('hidden');
+    }
+}
+
+function hideLoading() {
+    const loadingScreen = document.getElementById('loadingScreen');
+    if (loadingScreen) {
+        loadingScreen.classList.add('hidden');
+    }
+}
 
 document.querySelector('#send').addEventListener('click', (e) => {
     e.preventDefault();
