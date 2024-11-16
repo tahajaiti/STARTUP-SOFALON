@@ -1,14 +1,20 @@
 const cards = document.querySelectorAll(".homeCard");
+const loadingScreen = document.getElementById('loadingScreen');
+
 let data = null;
 
 async function getData() {
     try {
+        loadingScreen.style.display = 'flex';
+
         const response = await fetch('./assets/Products.json');
         data = await response.json();
 
-        loadData();
+        await loadData();
     } catch (error) {
         console.error("Error fetching data:", error);
+    } finally {
+        loadingScreen.style.display = 'none';
     }
 }
 

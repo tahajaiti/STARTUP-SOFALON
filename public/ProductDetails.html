@@ -30,11 +30,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
-    
+
     <title>Sofalo - High-Quality Furniture for Your Home</title>
 </head>
 
 <body class="font-Mont">
+
     <header class="w-full pt-1 h-fit relative z-50">
         <nav id="mobileNav"
             class="fixed z-[100] mt-[-10px] w-full hidden h-full bg-white/50 backdrop-filter backdrop-blur-lg">
@@ -116,6 +117,11 @@
             </div>
         </nav>
     </header>
+
+    <!-- Loading -->
+    <div id="loadingScreen" class="fixed inset-0 flex items-center justify-center bg-white z-[1001]">
+        <div class="loadingScreen"></div>
+    </div>
 
     <main>
         <div id="ProductDetails" class="flex flex-col md:flex-row p-4 mt-20 container mx-auto">
