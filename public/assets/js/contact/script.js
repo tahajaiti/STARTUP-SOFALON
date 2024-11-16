@@ -30,6 +30,7 @@ document.querySelector('#send').addEventListener('click', (e) => {
     if (isAdded) {
         localStorage.setItem('contact', JSON.stringify(infor));
         console.log('Updated localStorage:', infor);
+        alert('message sent!');
     } else {
         console.log('error');
     }
