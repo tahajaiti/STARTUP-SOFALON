@@ -15,7 +15,7 @@
     @apply bg-whittt hover:text-lBrown hover:scale-105 hover:bg-gray-100 transition-all cursor-pointer drop-shadow-xl px-2 active:scale-95 active:opacity-50 w-fit h-fit;
   }
   .homeCard {
-    @apply w-full h-fit flex flex-col rounded-md drop-shadow-xl border scale-75 bg-whittt hover:bg-gray-100 transition-all cursor-pointer;
+    @apply border-black/25 w-full h-[500px] flex flex-col rounded-md border scale-75 bg-whittt hover:bg-gray-100 transition-all cursor-pointer;
   }
   .listItem {
     @apply absolute inset-0 overflow-hidden opacity-0 transition-all;

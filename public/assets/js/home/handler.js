@@ -56,7 +56,9 @@ const loadData = () => {
             window.location.href = `ProductDetails.html?id=${random.id}`;
         });
     });
+};
 
+const animate = () => {
     const timeline = anime.timeline({
         easing: 'easeOutExpo',
         duration: 500,
@@ -74,6 +76,10 @@ const loadData = () => {
             easing: 'easeInOutElastic',
         });
 };
+
+setInterval(() => {
+    animate();
+}, 10000);
 
 
 document.addEventListener('DOMContentLoaded', getData(),);

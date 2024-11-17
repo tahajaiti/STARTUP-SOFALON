@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
 
-  <script src="https://cdn.tailwindcss.com"></script>
   <title>Dashboard</title>
 </head>
 
@@ -22,15 +21,17 @@
       <div class="p-4 flex items-center space-x-2">
         <img src="./assets/images/logo.webp" alt="Logo" class="h-8 w-32">
       </div>
+
       <nav class="mt-8">
         <ul>
-          <li><a href="dashboardStats.html" class="flex items-center p-4 hover:bg-gray-100"><span
-                class="mr-2"><span class="icon-[fluent-mdl2--b-i-dashboard]"></span></span>Dashboard</a></li>
-          <li><a href="Dashboard.html" class="flex items-center p-4 hover:bg-gray-100 text-lBrown"><span class="mr-2"><span
-                  class="icon-[fluent-mdl2--product]"></span></span>Product</a>
+          <li><a href="dashboardStats.html" class="flex items-center p-4 hover:bg-gray-100"><span class="mr-2"><span
+                  class="icon-[fluent-mdl2--b-i-dashboard]"></span></span>Dashboard</a></li>
+          <li><a href="Dashboard.html" class="flex items-center p-4 hover:bg-gray-100 text-lBrown"><span
+                class="mr-2"><span class="icon-[fluent-mdl2--product]"></span></span>Product</a>
           </li>
         </ul>
       </nav>
+
     </aside>
 
 
@@ -39,15 +40,16 @@
       <div class="flex flex-col sm:flex-row justify-between items-center mb-6 space-y-4 sm:space-y-0">
         <h1 class="text-2xl font-semibold">Products</h1>
         <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4">
-          <button id="addProduct" class="bg-lBrown text-white px-4 py-2 rounded-md w-full sm:w-auto">Add New Product</button>
+          <button id="addProduct" class="bg-lBrown text-white px-4 py-2 rounded-md w-full sm:w-auto">Add New
+            Product</button>
           <div class="relative w-full sm:w-auto">
             <input type="text" class="w-full sm:w-auto border border-gray-300 rounded-md pl-8 pr-4 py-2"
               placeholder="Search">
             <span class="absolute left-2 top-2 text-gray-500"><span class="icon-[ic--sharp-search] text-2xl"
                 style="color: #878787;"></span></span>
           </div>
-          <img src="./assets/images/reviews/Alex-Foord-e1644436249973.webp" alt="User Avatar"
-            class="h-8 w-8 rounded-full">
+          <span id="logOut"
+            class="icon-[solar--exit-outline] text-gray-500 cursor-pointer hover:text-lBrown transition-all text-4xl"></span>
         </div>
       </div>
 

@@ -1,10 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
     const login = localStorage.getItem('login');
     if (!login || login !== 'true') {
-      window.location.href = 'login.html';
+        window.location.href = 'login.html';
     }
-  });
-  
+});
+
+const logOut = document.querySelector("#logOut");
+
+logOut.addEventListener("click", () => {
+    localStorage.setItem('login', 'false');
+    window.location.href = 'index.html';
+});
+
 let data = JSON.parse(localStorage.getItem("products") || "[]");
 let dataLocal = null;
 let azArray;
