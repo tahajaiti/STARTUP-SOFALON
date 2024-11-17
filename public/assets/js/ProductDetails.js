@@ -31,52 +31,59 @@ const stock = document.getElementById('stock');
 console.log('P ID :', productId);
 
 function fetchProducts() {
-    let ProductToShow;
-    for (let i = 0; i < data.length; i++) {
-        if (data[i].id == productId) {
-            ProductToShow = data[i];
+
+    showLoading();
+
+    setTimeout(() => {
+        let ProductToShow;
+        for (let i = 0; i < data.length; i++) {
+            if (data[i].id == productId) {
+                ProductToShow = data[i];
+            }
         }
-    }
-    mainImage.src = ProductToShow.mainImage;
-    var1.src = ProductToShow.mainImage;
-    var2.src = ProductToShow.images[0];
-    var3.src = ProductToShow.images[1];
-    let prc = `$${ProductToShow.price}`;
-    let prcRemove = `$${ProductToShow.price * 2}`;
-    titleProduct.innerText = ProductToShow.title;
-    priceProduct.innerText = prc;
-    priceremove.innerText = prcRemove;
-    descriptionProduct.innerText = ProductToShow.description;
-    Qnt.innerText = q;
-    SKU.innerText = ProductToShow.SKU;
-    stock.innerText = ProductToShow.stock;
-    category.innerText = ProductToShow.category;
+        mainImage.src = ProductToShow.mainImage;
+        var1.src = ProductToShow.mainImage;
+        var2.src = ProductToShow.images[0];
+        var3.src = ProductToShow.images[1];
+        let prc = `$${ProductToShow.price}`;
+        let prcRemove = `$${ProductToShow.price * 2}`;
+        titleProduct.innerText = ProductToShow.title;
+        priceProduct.innerText = prc;
+        priceremove.innerText = prcRemove;
+        descriptionProduct.innerText = ProductToShow.description;
+        Qnt.innerText = q;
+        SKU.innerText = ProductToShow.SKU;
+        stock.innerText = ProductToShow.stock;
+        category.innerText = ProductToShow.category;
 
 
 
 
-    let thumbnails = [var1, var2, var3];
-    thumbnails.forEach(thumbnail => {
-        thumbnail.addEventListener('click', function () {
-            thumbnails.forEach(thumbnail => thumbnail.classList.remove('border', 'border-lBrown'));
-            mainImage.src = this.src;
-            this.classList.add('border', 'border-lBrown');
+        let thumbnails = [var1, var2, var3];
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', function () {
+                thumbnails.forEach(thumbnail => thumbnail.classList.remove('border', 'border-lBrown'));
+                mainImage.src = this.src;
+                this.classList.add('border', 'border-lBrown');
+            });
         });
-    });
 
-    plus.addEventListener('click', function () {
-        if (q < ProductToShow.stock) {
-            q += 1;
-            Qnt.innerText = q;
-        }
-    })
-    minus.addEventListener('click', function () {
-        if (q > 1) {
-            q -= 1;
-            Qnt.innerText = q;
-        }
+        plus.addEventListener('click', function () {
+            if (q < ProductToShow.stock) {
+                q += 1;
+                Qnt.innerText = q;
+            }
+        })
+        minus.addEventListener('click', function () {
+            if (q > 1) {
+                q -= 1;
+                Qnt.innerText = q;
+            }
 
-    })
+        })
+
+        hideLoading();
+    }, 1500)
 
 }
 fetchProducts();
@@ -106,7 +113,7 @@ addCart.addEventListener('click', () => {
             quantity: quantityToAdd,
             image: var1.src,
         };
-        
+
         cartStorage.push(cartItem);
         localStorage.setItem("cart", JSON.stringify(cartStorage));
     }
@@ -142,7 +149,7 @@ const loadNumber = () => {
 
 const loadCartItem = () => {
     const container = document.querySelector("#cartContainer");
-    container.innerHTML = ""; 
+    container.innerHTML = "";
 
     cartStorage.forEach(item => {
         const description = item.description.split(" ").slice(0, 15).join(" ") + "...";
@@ -183,6 +190,20 @@ const removeItemFromCart = (title) => {
 
         counter--;
         loadNumber();
-        loadCartItem(); 
+        loadCartItem();
     }
 };
+
+function showLoading() {
+    const loadingScreen = document.getElementById('loadingScreen');
+    if (loadingScreen) {
+        loadingScreen.classList.remove('hidden');
+    }
+}
+
+function hideLoading() {
+    const loadingScreen = document.getElementById('loadingScreen');
+    if (loadingScreen) {
+        loadingScreen.classList.add('hidden');
+    }
+}

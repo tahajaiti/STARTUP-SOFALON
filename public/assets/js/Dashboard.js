@@ -208,9 +208,9 @@ applyBtn.addEventListener('click', async (e) => {
 
     console.log(formImage);
 
-    const mainImageBase64 = await convertToBase64(formImage.files[0]);
-    const image1Base64 = await convertToBase64(formImage1.files[0]);
-    const image2Base64 = await convertToBase64(formImage2.files[0]);
+    const mainImageBase64 = await convertToWebp(formImage.files[0]);
+    const image1Base64 = await convertToWebp(formImage1.files[0]);
+    const image2Base64 = await convertToWebp(formImage2.files[0]);
 
     const newProduct = {
         id: nextId++,
@@ -247,10 +247,23 @@ applyBtn.addEventListener('click', async (e) => {
 
 });
 
-function convertToBase64(file) {
+function convertToWebp(file) {
     return new Promise((resolve, reject) => {
         const reader = new FileReader();
-        reader.onloadend = () => resolve(reader.result);
+        reader.onload = () => {
+            const img = new Image();
+            img.onload = () => {
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                canvas.width = img.width;
+                canvas.height = img.height;
+                ctx.drawImage(img, 0, 0);
+                const webpDataUrl = canvas.toDataURL('image/webp');
+                resolve(webpDataUrl);
+            };
+            img.onerror = reject;
+            img.src = reader.result;
+        };
         reader.onerror = reject;
         reader.readAsDataURL(file);
     });
@@ -266,6 +279,13 @@ let editBtn = document.getElementById('editBtn');
 
 let currentProduct = null;
 
+console.log(document.getElementById('closeEdit'));
+
+document.getElementById('closeEdit').addEventListener('click', (e) => {
+    e.preventDefault();
+    container.style.display = 'none';
+});
+
 function editItemm(product) {
     currentProduct = product;
 
@@ -277,6 +297,7 @@ function editItemm(product) {
     stock.value = product.stock;
     sku.value = product.SKU;
     category.value = product.category;
+    console.log(currentProduct);
 }
 
 
