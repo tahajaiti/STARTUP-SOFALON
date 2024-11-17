@@ -1,3 +1,10 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const login = localStorage.getItem('login');
+    if (!login || login !== 'true') {
+      window.location.href = 'login.html';
+    }
+  });
+  
 let data = JSON.parse(localStorage.getItem("products") || "[]");
 let dataLocal = null;
 let azArray;
