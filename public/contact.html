@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <title>Contact Form</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-white font-sans">
 
     <header class="w-full pt-1 h-fit relative z-50">
@@ -20,6 +22,7 @@
                 <li><a class="navItem p-2" href="about.html">ABOUT</a></li>
                 <li><a class="navItem p-2" href="FAQs.html">FAQ</a></li>
                 <li><a class="navItem p-2" href="contact.html">CONTACT</a></li>
+                <li><a href="login.html" class="loginBtn px-12 py-2">LOGIN</a></li>
             </ul>
         </nav>
 
@@ -33,9 +36,10 @@
                 <li><a class="navItem" href="contact.html">CONTACT</a></li>
             </ul>
 
-            <div class="flex justify-between gap-10 ">
-                <div class="relative flex items-center cursor-pointer">
-                    <span id="openCart"
+            <div class="flex justify-between items-center gap-10 ">
+                <a href="login.html" class="hidden lg:flex loginBtn">LOGIN</a>
+                <div class="relative flex items-center cursor-pointer" id="openCart">
+                    <span
                         class="icon-[iconoir--bag] text-black text-3xl hover:text-lBrown active:text-dBrown transition-all"></span>
                     <div id="cartNum"
                         class="absolute right-0 flex items-center justify-center w-5 h-5 rounded-full top-3 bg-lBrown font-Mont">
@@ -98,37 +102,37 @@
         <form id="contact-form" class="w-full max-w-lg flex flex-col items-center">
             <div class="flex flex-col w-full mb-4">
                 <div class="flex flex-row gap-3">
-                <div id="divname" class="w-full mb-2">
-                    <input type="text" placeholder="Your name" id="name-input" class="w-full p-3 border border-gray-300  focus:outline-none focus:ring focus:ring-orange-300">
-                    <p class="text-red-700 text-sm mt-1 hidden" id="name-error"></p>
+                    <div id="divname" class="w-full mb-2">
+                        <input type="text" placeholder="Your name" id="name-input"
+                            class="w-full p-3 border border-gray-300  focus:outline-none focus:ring focus:ring-orange-300">
+                        <p class="text-red-700 text-sm mt-1 hidden" id="name-error"></p>
+                    </div>
+                    <div id="divemail" class="w-full mb-2">
+                        <input type="email" placeholder="Your email" id="email-input"
+                            class="w-full p-3 border border-gray-300  focus:outline-none focus:ring focus:ring-orange-300">
+                        <p class="text-red-700 text-sm mt-1 hidden" id="email-error"></p>
+                    </div>
                 </div>
-                <div id="divemail" class="w-full mb-2">
-                    <input type="email" placeholder="Your email" id="email-input" class="w-full p-3 border border-gray-300  focus:outline-none focus:ring focus:ring-orange-300">
-                    <p class="text-red-700 text-sm mt-1 hidden" id="email-error"></p>
-                </div>
-            </div>
                 <div id="divmessage" class="w-full mb-4">
-                    <textarea placeholder="Your question here..." id="message-input" class="w-full p-3 h-32 border border-gray-300  resize-none focus:outline-none focus:ring focus:ring-orange-300"></textarea>
+                    <textarea placeholder="Your question here..." id="message-input"
+                        class="w-full p-3 h-32 border border-gray-300  resize-none focus:outline-none focus:ring focus:ring-orange-300"></textarea>
                     <p class="text-red-700 text-sm mt-1 hidden" id="message-error"></p>
                 </div>
             </div>
-            <button type="submit" id="send" class="w-full py-3 bg-lBrown text-white font-semibold  hover:bg-yellow-800 transition">SEND</button>
+            <button type="submit" id="send"
+                class="w-full py-3 bg-lBrown text-white font-semibold  hover:bg-yellow-800 transition">SEND</button>
         </form>
     </section>
     <section class="flex flex-col items-center px-4 py-8">
         <h3 class="text-3xl font-bold mb-6">VISIT US</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-4xl">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d98651.54161421787!2d-9.392589593118627!3d32.292981566420856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdac212049843597%3A0x6b618c47dfd85d40!2sSafi!5e1!3m2!1sfr!2sma!4v1731671792426!5m2!1sfr!2sma" 
-                class="w-full h-[400px] md:h-[450px] rounded-md" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy" 
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d98651.54161421787!2d-9.392589593118627!3d32.292981566420856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdac212049843597%3A0x6b618c47dfd85d40!2sSafi!5e1!3m2!1sfr!2sma!4v1731671792426!5m2!1sfr!2sma"
+                class="w-full h-[400px] md:h-[450px] rounded-md" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d97234.98548740814!2d-7.669394073471019!3d33.57226019903078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7cd4778aa113b%3A0xb06c1d84f310fd3!2sCasablanca!5e1!3m2!1sfr!2sma!4v1731671697064!5m2!1sfr!2sma" 
-                class="w-full h-[400px] md:h-[450px] rounded-md" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy" 
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d97234.98548740814!2d-7.669394073471019!3d33.57226019903078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7cd4778aa113b%3A0xb06c1d84f310fd3!2sCasablanca!5e1!3m2!1sfr!2sma!4v1731671697064!5m2!1sfr!2sma"
+                class="w-full h-[400px] md:h-[450px] rounded-md" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
 
@@ -198,4 +202,5 @@
     <script src="assets/js/navbar.js"></script>
     <script src="/public/assets/js/contact/script.js"></script>
 </body>
+
 </html>

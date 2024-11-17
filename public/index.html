@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Meta Description -->
     <meta name="description"
-   content="Discover Sofalo, your one-stop online shop for stylish and affordable furniture, home decor, and storage solutions. 
+        content="Discover Sofalo, your one-stop online shop for stylish and affordable furniture, home decor, and storage solutions. 
         Shop quality beds, tables, kitchenware, and more with convenient delivery options. Find inspiration for every room in your home with Sofalo.">
 
     <!-- Keywords -->
@@ -47,6 +47,7 @@
                 <li><a class="navItem p-2" href="about.html">ABOUT</a></li>
                 <li><a class="navItem p-2" href="FAQs.html">FAQ</a></li>
                 <li><a class="navItem p-2" href="contact.html">CONTACT</a></li>
+                <li><a href="login.html" class="loginBtn px-12 py-2">LOGIN</a></li>
             </ul>
         </nav>
 
@@ -60,9 +61,10 @@
                 <li><a class="navItem" href="contact.html">CONTACT</a></li>
             </ul>
 
-            <div class="flex justify-between gap-10 ">
-                <div class="relative flex items-center cursor-pointer">
-                    <span id="openCart"
+            <div class="flex justify-between items-center gap-10 ">
+                <a href="login.html" class="hidden lg:flex loginBtn">LOGIN</a>
+                <div class="relative flex items-center cursor-pointer" id="openCart">
+                    <span
                         class="icon-[iconoir--bag] text-black text-3xl hover:text-lBrown active:text-dBrown transition-all"></span>
                     <div id="cartNum"
                         class="absolute right-0 flex items-center justify-center w-5 h-5 rounded-full top-3 bg-lBrown font-Mont">

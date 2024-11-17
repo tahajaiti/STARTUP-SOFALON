@@ -1,43 +1,51 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Sofalo - Login</title>
 </head>
-<body class="bg-gray-200 flex items-center justify-center min-h-screen">
-    
-    <div class="bg-white drop-shadow-lg p-8 rounded-lg shadow-lg w-full max-w-md">
-      <h2 class="text-2xl text-lBrown font-semibold text-center mb-6">Login</h2>
-      <form id="form" class="space-y-4">
-        
-        <div>
-          <label for="username" class="block text-sm font-medium">Email</label>
-          <input type="email" id="email" placeholder="Enter your email" class="w-full px-4 py-2 mt-1 text-gray-900 bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-[#DDA15E]" required/>
-        </div>
-        
-        <div>
-          <label for="password" class="block text-sm font-medium">Password</label>
-          <input type="password" id="password" placeholder="Enter your password" class="w-full px-4 py-2 mt-1 text-gray-900 bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-[#DDA15E]" required />
-        </div>
-        <div id="errormsg" class="hidden text-sm text-red-500 mt-2"></div>
 
-        <div class="flex items-center">
-          <input type="checkbox" id="stay-signed-in" class="h-4 w-4 text-[#DDA15E] border-gray-300 rounded focus:ring-[#DDA15E]" />
-          <label for="stay-signed-in" class="ml-2 text-sm">Stay signed in </label>
-        </div>
-         
-        <button id="submit" type="submit" class="w-full bg-[#DDA15E] text-white py-2 rounded-md font-medium transition-all hover:text-[#DDA15E] hover:bg-transparent hover:border hover:border-[#DDA15E] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#DDA15E]">
-          Sign In
-        </button>
-      </form>
-       
-      <div class="text-center mt-4">
-        <a href="#" class="text-sm text-gray-400 hover:underline">Forgot Password?</a>
+<body class="bg-gray-200 flex items-center justify-center min-h-screen">
+
+  <div class="bg-white drop-shadow-lg p-8 rounded-lg shadow-lg w-full max-w-md">
+    <h2 class="text-2xl text-lBrown font-semibold text-center mb-6">Login</h2>
+    <form id="form" class="space-y-4">
+
+      <div>
+        <label for="username" class="block text-sm font-medium">Email</label>
+        <input type="email" id="email" placeholder="Enter your email"
+          class="w-full px-4 py-2 mt-1 text-gray-900 bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-lBrown"
+          required />
       </div>
+
+      <div>
+        <label for="password" class="block text-sm font-medium">Password</label>
+        <input type="password" id="password" placeholder="Enter your password"
+          class="w-full px-4 py-2 mt-1 text-gray-900 bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-lBrown"
+          required />
+      </div>
+      <div id="errormsg" class="hidden text-sm text-red-500 mt-2"></div>
+
+      <div class="flex items-center">
+        <input type="checkbox" id="stay-signed-in"
+          class="h-4 w-4 text-lBrown border-gray-300 rounded focus:ring-lBrown" />
+        <label for="stay-signed-in" class="ml-2 text-sm">Stay signed in </label>
+      </div>
+
+      <button id="submit" type="submit"
+        class="w-full bg-lBrown text-white py-2 rounded-md font-medium transition-all hover:text-lBrown hover:bg-transparent hover:border hover:border-lBrown focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-lBrown">
+        Sign In
+      </button>
+    </form>
+
+    <div class="text-center mt-4">
+      <a href="#" class="text-sm text-gray-400 hover:underline">Forgot Password?</a>
     </div>
-  <script src="assets/js/login.js"></script>
+  </div>
+  <script src="./assets/js/login.js"></script>
 </body>
+
 </html>

@@ -22,7 +22,7 @@ form.addEventListener('submit', async function (event) {
 
   if (emailValue === login.email && passValue === login.password) {
     localStorage.setItem('login', 'true'); 
-    window.location.href = 'dashboard.html';
+    window.location.href = 'Dashboard.html';
   } else {
 
     errorMsg.classList.remove('hidden');

@@ -32,6 +32,9 @@
   .footerHover {
     @apply transition-all hover:scale-105 hover:text-lBrown cursor-pointer;
   }
+  .loginBtn {
+    @apply bg-lBrown px-6 py-1 border border-lBrown text-white rounded-sm hover:bg-white hover:text-lBrown transition-all;
+  }
 }
 
 .listItem::after {
