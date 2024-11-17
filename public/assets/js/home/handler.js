@@ -1,22 +1,28 @@
 const cards = document.querySelectorAll(".homeCard");
 const loadingScreen = document.getElementById('loadingScreen');
 
-let data = null;
-
+let data = JSON.parse(localStorage.getItem("products") || "[]");
+let dataLocal = null;
 
 async function getData() {
-    try {
-        loadingScreen.style.display = 'flex';
+    if (data.length === 0 && !localStorage.getItem("products_loaded")) {
+        try {
+            loadingScreen.style.display = 'flex';
+            const response = await fetch('./assets/Products.json');
+            dataLocal = await response.json();
 
-        const response = await fetch('./assets/Products.json');
-        data = await response.json();
-
-        await loadData();
-    } catch (error) {
-        console.error("Error fetching data:", error);
-    } finally {
-        loadingScreen.style.display = 'none';
+            if (dataLocal && dataLocal.products) {
+                data = dataLocal.products;
+                localStorage.setItem("products", JSON.stringify(data));
+                localStorage.setItem("products_loaded", "true");
+            }
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        } finally {
+            loadingScreen.style.display = 'none';
+        }
     }
+    loadData();
 }
 
 // shuffle
@@ -30,15 +36,17 @@ const shuffleArray = (array) => {
 const loadData = () => {
     if (!data) return;
 
-    const dataCopy = [...data.products];
+    loadingScreen.style.display = 'none';
+
+    const dataCopy = [...data];
     shuffleArray(dataCopy);
 
     cards.forEach((card, index) => {
-        const random = dataCopy[index % dataCopy.length];
+        let random = dataCopy[index % dataCopy.length];
 
-        const title = card.querySelector('#productName');
-        const img = card.querySelector('img');
-        const price = card.querySelector('#productPrice');
+        let title = card.querySelector('#productName');
+        let img = card.querySelector('img');
+        let price = card.querySelector('#productPrice');
 
         if (title) title.textContent = random.title;
         if (img) img.src = random.mainImage;
@@ -67,8 +75,5 @@ const loadData = () => {
         });
 };
 
-setInterval(() => {
-    loadData();
-}, 10000);
 
-document.addEventListener('DOMContentLoaded', getData);
+document.addEventListener('DOMContentLoaded', getData(),);
