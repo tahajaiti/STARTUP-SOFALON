@@ -15,20 +15,21 @@
         
         <div>
           <label for="username" class="block text-sm font-medium">Email</label>
-          <input type="email" id="email" placeholder="Enter your email" class="w-full px-4 py-2 mt-1 text-gray-900 bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" required/>
+          <input type="email" id="email" placeholder="Enter your email" class="w-full px-4 py-2 mt-1 text-gray-900 bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-[#DDA15E]" required/>
         </div>
         
         <div>
           <label for="password" class="block text-sm font-medium">Password</label>
-          <input type="password" id="password" placeholder="Enter your password" class="w-full px-4 py-2 mt-1 text-gray-900 bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" required />
+          <input type="password" id="password" placeholder="Enter your password" class="w-full px-4 py-2 mt-1 text-gray-900 bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-[#DDA15E]" required />
         </div>
-         
+        <div id="errormsg" class="hidden text-sm text-red-500 mt-2"></div>
+
         <div class="flex items-center">
-          <input type="checkbox" id="stay-signed-in" class="h-4 w-4 text-yellow-500 border-gray-300 rounded focus:ring-yellow-500" />
+          <input type="checkbox" id="stay-signed-in" class="h-4 w-4 text-[#DDA15E] border-gray-300 rounded focus:ring-[#DDA15E]" />
           <label for="stay-signed-in" class="ml-2 text-sm">Stay signed in </label>
         </div>
          
-        <button id="submit" type="submit" class="w-full bg-yellow-600 text-white py-2 rounded-md font-medium hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500">
+        <button id="submit" type="submit" class="w-full bg-[#DDA15E] text-white py-2 rounded-md font-medium hover:bg-transparent hover:border hover:border-[#DDA15E] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#DDA15E]">
           Sign In
         </button>
       </form>
