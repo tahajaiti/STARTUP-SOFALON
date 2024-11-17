@@ -1,7 +1,7 @@
 let login;
 
 async function FetchLogin() {
-  const response = await fetch('../../../../login.json');
+  const response = await fetch('./assets/login.json');
   login = await response.json();
   console.log("Fetched data:", login);
 }
