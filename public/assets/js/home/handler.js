@@ -40,6 +40,7 @@ const loadData = () => {
 
     const dataCopy = [...data];
     shuffleArray(dataCopy);
+    console.log(dataCopy);
 
     cards.forEach((card, index) => {
         let random = dataCopy[index % dataCopy.length];
@@ -64,6 +65,8 @@ const animate = () => {
         duration: 500,
     });
 
+    loadData();
+
     timeline
         .add({
             targets: cards,
@@ -72,7 +75,7 @@ const animate = () => {
             scale: [0.3, 0.75],
             filter: ["blur(10px)", "blur(0px)"],
             delay: anime.stagger(100, { easing: 'easeInQuart', direction: 'reverse' }),
-            duration: 700,
+            duration: 300,
             easing: 'easeInOutElastic',
         });
 };
